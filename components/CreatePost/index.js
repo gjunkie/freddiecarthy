@@ -1,5 +1,5 @@
 import * as React from 'react';
-import fire from '../config/fire-config'
+import fire from '../../config/fire-config'
 
 export const CreatePost = () => {
   const [title, setTitle] = React.useState('')

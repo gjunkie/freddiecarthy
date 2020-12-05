@@ -1,8 +1,9 @@
-import * as React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import fire from '../config/fire-config';
-import { CreatePost } from '../components/CreatePost'
+import * as React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import fire from '../config/fire-config'
+
+import styles from './Home.module.css'
 
 const Home = () => {
   const [blogs, setBlogs] = React.useState([])
@@ -16,28 +17,41 @@ const Home = () => {
           ...doc.data()
         }))
         setBlogs(blogs)
-      });
+      })
   }, [])
 
-  const user = fire.auth().currentUser
-
   return (
-    <div>
-      <Head>
-        <title>Freddie Carthy</title>
-      </Head>
-      <h1>Blog</h1>
-      <ul>
-        {blogs.map(blog =>
-          <li key={blog.id}>
-            <Link href="/blog/[id]" as={'/blog/' + blog.id}>
-              {blog.title}
+    <>
+      <div>
+        <Head>
+          <title>Freddie Carthy</title>
+        </Head>
+      </div>
+
+      <section>
+        <ul className={styles.list}>
+          <li>
+            <Link href="/dev-environment">
+              My Developer Environment
             </Link>
           </li>
-        )}
-      </ul>
-      {user ? <CreatePost /> : null}
-    </div>
+          {blogs.length
+            ? (
+              <li>
+                <Link href="/blog/[id]" as={'/blog/' + blogs[0].id}>
+                  Latest Blog Post
+                </Link>
+              </li>
+              )
+            : null}
+          <li>
+            <Link href="/thing">
+              Other Thing
+            </Link>
+          </li>
+        </ul>
+      </section>
+    </>
   )
 }
-export default Home;
+export default Home

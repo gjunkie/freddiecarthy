@@ -1,0 +1,14 @@
+.header {
+  align-items: center;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+}
+
+.me {
+  display: flex;
+}
+
+.me img {
+  border-radius: 65px;
+}
