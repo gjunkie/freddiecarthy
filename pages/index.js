@@ -18,7 +18,6 @@ const Home = () => {
         setBlogs(blogs)
       });
   }, [])
-  console.log(blogs)
 
   return (
     <div>

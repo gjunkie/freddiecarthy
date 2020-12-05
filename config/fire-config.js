@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_firebaseApiKey,
@@ -10,6 +10,7 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_firebaseMeasurementId
 };
 
+console.log(process, firebaseConfig)
 try {
   firebase.initializeApp(firebaseConfig);
 } catch(err){
