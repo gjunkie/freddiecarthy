@@ -19,6 +19,8 @@ const Home = () => {
       });
   }, [])
 
+  const user = fire.auth().currentUser
+
   return (
     <div>
       <Head>
@@ -34,7 +36,7 @@ const Home = () => {
           </li>
         )}
       </ul>
-      <CreatePost />
+      {user ? <CreatePost /> : null}
     </div>
   )
 }
