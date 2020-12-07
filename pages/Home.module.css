@@ -1,9 +1,17 @@
+.main {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.main p {
+  line-height: 22px;
+}
+
 .list {
   list-style-type: none;
 }
 
 .list li {
-  background-color: yellow;
   display: inline-block;
   height: 200px;
   width: 50%;
@@ -11,4 +19,10 @@
 
 .list li:hover {
   background-color: pink;
+}
+
+.list a {
+  display: block;
+  height: 100%;
+  width: 100%;
 }

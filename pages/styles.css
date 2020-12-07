@@ -1,3 +1,38 @@
+.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.dark-mode a {
+  color: #2de2e6;
+}
+
+.dark-mode a:hover {
+  color: #ff3864;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.light-mode a {
+  color: #ff3864;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
