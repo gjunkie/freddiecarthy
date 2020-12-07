@@ -1,0 +1,54 @@
+.controls {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+
+.controls ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 800px;
+}
+
+.controls li {
+  border-radius: 30px;
+  height: 40px;
+  margin: 5px;
+  width: 40px;
+}
+
+.controls li:hover {
+  cursor: pointer;
+}
+
+.controls a {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls.dark-mode li {
+  background: #333333;
+}
+
+.controls.dark-mode li:hover {
+  background: #2de2e6;
+}
+
+.controls.dark-mode svg {
+  fill: #ffffff;
+}
+
+.controls.light-mode li {
+  background: #ececec;
+}
+
+.controls.light-mode li:hover {
+  background: #ff3864
+}
+
+.controls.light-mode li:hover svg {
+  fill: #ffffff;
+}

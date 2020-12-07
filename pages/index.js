@@ -2,14 +2,11 @@ import * as React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import fire from '../config/fire-config'
-import { useTheme } from '../contexts/ThemeContext'
 
 import styles from './Home.module.css'
 
 const Home = () => {
   const [blogs, setBlogs] = React.useState([])
-  const theme = useTheme()
-  console.log({theme})
 
   React.useEffect(() => {
     fire.firestore()

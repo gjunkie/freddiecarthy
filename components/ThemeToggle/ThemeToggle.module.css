@@ -1,5 +1,10 @@
 .themeToggle {
-  position: absolute;
-  right: 0;
-  top: 0;
+  background: transparent;
+  border: none;
+  height: 40px;
+  width: 40px;
+}
+
+.themeToggle:hover {
+  cursor: pointer;
 }

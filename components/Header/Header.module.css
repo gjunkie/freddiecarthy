@@ -1,12 +1,44 @@
 .header {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.header.light-mode {
+  border-bottom-color: #cacaca;
+}
+
+.header.dark-mode {
+  border-bottom-color: #292929;
 }
 
 .header img {
-  border-radius: 65px;
+  border-radius: 40px;
   margin-right: 10px;
+}
+
+.earth {
+  background-image: url('/sky.svg');
+  background-position: center top;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  transition-duration: 250ms;
+  width: 100%;
+}
+
+.header.light-mode .earth {
+  transform: rotate(180deg);
+}
+
+.header.dark-mode .earth {
+  transform: rotate(360deg);
 }
 
 .contents {
@@ -17,7 +49,8 @@
 }
 
 .me {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 800px;
+  z-index: 1;
 }
