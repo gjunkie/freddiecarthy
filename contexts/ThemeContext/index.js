@@ -6,8 +6,6 @@ const ThemeToggleContext = React.createContext()
 
 const ThemeProvider = ({children}) => {
   const [theme, setTheme] = React.useState('light-mode')
-  console.log('initial', theme)
-
 
   const onToggleTheme = () => {
     const nextTheme = theme === 'light-mode' ? 'dark-mode' : 'light-mode'

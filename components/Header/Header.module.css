@@ -3,7 +3,7 @@
   border-bottom-style: solid;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   overflow: hidden;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -25,7 +25,6 @@
 
 .earth {
   background-image: url('/sky.svg');
-  background-position: center top;
   height: 300px;
   position: absolute;
   top: 0;
@@ -34,10 +33,12 @@
 }
 
 .header.light-mode .earth {
+  background-position: center bottom;
   transform: rotate(180deg);
 }
 
 .header.dark-mode .earth {
+  background-position: center top;
   transform: rotate(360deg);
 }
 
