@@ -13,6 +13,11 @@ export const ThemeToggle = ({
   const ariaLabel = theme === 'light-mode' ? 'Switch to dark mode' : 'Switch to light mode';
   const Icon = theme === 'light-mode' ? Moon : Sun;
 
+  React.useEffect(() => {
+    document.body.classList.remove('dark-mode', 'light-mode')
+    document.body.classList.add(theme)
+  }, [theme])
+
   return (
     <button
       className={styles.themeToggle}

@@ -4,13 +4,17 @@ import PropTypes from 'prop-types'
 const ThemeContext = React.createContext()
 const ThemeToggleContext = React.createContext()
 
-const ThemeProvider = ({children}) => {
-  const [theme, setTheme] = React.useState('light-mode')
+const ThemeProvider = ({children, systemMode}) => {
+  const [theme, setTheme] = React.useState(systemMode)
 
   const onToggleTheme = () => {
     const nextTheme = theme === 'light-mode' ? 'dark-mode' : 'light-mode'
     setTheme(nextTheme)
   }
+
+  React.useEffect(() => {
+    setTheme(systemMode)
+  }, [systemMode])
 
   return (
     <ThemeContext.Provider value={theme}>
@@ -43,6 +47,7 @@ const useThemeToggle = () => {
 
 ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
+  systemMode: PropTypes.string.isRequired,
 }
 
 export { ThemeProvider, useTheme, useThemeToggle }

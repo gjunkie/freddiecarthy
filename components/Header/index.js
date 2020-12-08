@@ -7,11 +7,6 @@ import styles from './Header.module.css'
 export const Header = () => {
   const theme = useTheme()
 
-  React.useEffect(() => {
-    document.body.classList.remove('dark-mode', 'light-mode')
-    document.body.classList.add(theme)
-  }, [theme])
-
   return (
     <>
       <div className={`${styles.header} ${styles[theme]}`}>
