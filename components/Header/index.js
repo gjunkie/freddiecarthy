@@ -18,7 +18,7 @@ export const Header = () => {
           </div>
           <Controls />
         </div>
-        <div className={styles.earth}></div>
+        <div className={styles.sky}></div>
       </div>
     </>
   )

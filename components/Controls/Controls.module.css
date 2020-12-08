@@ -57,16 +57,50 @@
   .contents {
     width: 100%;
   }
+
+  .controls {
+    right: 50px;
+  }
+
+  .controls button {
+    height: 35px;
+    width: 35px;
+  }
+
+  .controls a,
+  .controls li {
+    height: 35px;
+    width: 35px;
+  }
+
+  .controls a svg {
+    width: 20px;
+  }
 }
 
 @media (max-width: 800px) {
+  .controls {
+    right: 10px;
+    top: -30px;
+  }
+
+  .controls button {
+    height: 30px;
+    width: 30px;
+  }
+
   .controls a,
   .controls li {
     height: 30px;
     width: 30px;
   }
 
-  .controls svg {
+  .controls a svg {
     width: 16px;
+  }
+
+  .controls button svg {
+    height: 22px;
+    width: 22px;
   }
 }

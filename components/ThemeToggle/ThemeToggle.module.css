@@ -2,9 +2,14 @@
   background: transparent;
   border: none;
   height: 40px;
+  padding: 0;
   width: 40px;
 }
 
 .themeToggle:hover {
   cursor: pointer;
+}
+
+.themeToggle svg {
+  margin-left: 1px;
 }

@@ -23,7 +23,7 @@
   margin-right: 10px;
 }
 
-.earth {
+.sky {
   background-image: url('/sky.svg');
   height: 300px;
   position: absolute;
@@ -32,12 +32,12 @@
   width: 100%;
 }
 
-.header.light-mode .earth {
+.header.light-mode .sky {
   background-position: center bottom;
   transform: rotate(180deg);
 }
 
-.header.dark-mode .earth {
+.header.dark-mode .sky {
   background-position: center top;
   transform: rotate(360deg);
 }
@@ -59,5 +59,27 @@
 @media (max-width: 1170px) {
   .contents {
     width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding-top: 45px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+
+  .contents {
+    justify-content: left;
+  }
+
+  .me {
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  .sky {
+    background-size: 1100px;
+    top: 20px;
   }
 }
