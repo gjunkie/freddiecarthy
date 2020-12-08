@@ -1,7 +1,7 @@
 .controls {
   position: absolute;
   top: -20px;
-  right: -20px;
+  right: 0;
 }
 
 .controls ul {
@@ -51,4 +51,22 @@
 
 .controls.light-mode li:hover svg {
   fill: #ffffff;
+}
+
+@media (max-width: 1170px) {
+  .contents {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .controls a,
+  .controls li {
+    height: 30px;
+    width: 30px;
+  }
+
+  .controls svg {
+    width: 16px;
+  }
 }

@@ -44,14 +44,20 @@
 
 .contents {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   position: relative;
   width: 800px;
+  z-index: 1;
 }
 
 .me {
   text-align: center;
   position: relative;
-  width: 800px;
   z-index: 1;
+}
+
+@media (max-width: 1170px) {
+  .contents {
+    width: 100%;
+  }
 }

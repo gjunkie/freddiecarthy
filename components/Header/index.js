@@ -11,9 +11,11 @@ export const Header = () => {
     <>
       <div className={`${styles.header} ${styles[theme]}`}>
         {/* <img src="/freddiecarthy-thumb.jpg" /> */}
-        <div className={styles.me}>
-          <h1>Freddie Carthy</h1>
-          <h2>Software Engineer</h2>
+        <div className={styles.contents}>
+          <div className={styles.me}>
+            <h1>Freddie Carthy</h1>
+            <h2>Software Engineer</h2>
+          </div>
           <Controls />
         </div>
         <div className={styles.earth}></div>

@@ -27,3 +27,16 @@
   height: 100%;
   width: 100%;
 }
+
+@media (max-width: 1170px) {
+  .main {
+    padding: 0 50px;
+    width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    padding: 0 20px;
+  }
+}
