@@ -16,7 +16,9 @@ function MyApp({ Component, pageProps }) {
 
   React.useEffect(() => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setMode('dark-mode')
+      setTimeout(() => {
+        setMode('dark-mode')
+      }, 1000)
     }
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', handleSystemModeChange)
     return () => window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', handleSystemModeChange)

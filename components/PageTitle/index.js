@@ -7,7 +7,7 @@ export const PageTitle = ({
   title,
 }) => {
   return (
-    <h2 className={styles.heading}>{title}</h2>
+    <h3 className={styles.heading}>{title}</h3>
   )
 }
 

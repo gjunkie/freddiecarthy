@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import { useTheme } from '../../contexts/ThemeContext'
 import { Controls } from '../Controls'
 
@@ -9,17 +10,17 @@ export const Header = () => {
 
   return (
     <>
-      <div className={`${styles.header} ${styles[theme]}`}>
+      <header className={`${styles.header} ${styles[theme]}`}>
         {/* <img src="/freddiecarthy-thumb.jpg" /> */}
         <div className={styles.contents}>
           <div className={styles.me}>
-            <h1>Freddie Carthy</h1>
+            <h1><Link href="/">Freddie Carthy</Link></h1>
             <h2>Software Engineer</h2>
           </div>
           <Controls />
         </div>
         <div className={styles.sky}></div>
-      </div>
+      </header>
     </>
   )
 }

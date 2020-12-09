@@ -1,47 +1,19 @@
-.main {
-  margin: 0 auto;
-  width: 800px;
+.home h3 {
+  font-weight: lighter;
 }
 
-.main p {
-  line-height: 28px;
-  font-size: 20px;
+.home section {
+  display: flex;
+  margin: 50px 0;
 }
 
-.list {
-  list-style-type: none;
+.home svg {
+  flex-shrink: 0;
+  height: 100px;
+  margin-right: 20px;
+  width: 100px;
 }
 
-.list li {
-  display: inline-block;
-  height: 200px;
-  width: 50%;
-}
-
-.list li:hover {
-  background-color: pink;
-}
-
-.list a {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-
-@media (max-width: 1170px) {
-  .main {
-    padding: 0 50px;
-    width: auto;
-  }
-}
-
-@media (max-width: 800px) {
-  .main {
-    padding: 0 20px;
-  }
-
-  .main p {
-    line-height: 26px;
-    font-size: 16px;
-  }
+.home p {
+  margin:  10px 0;
 }
