@@ -1,0 +1,21 @@
+.footer {
+  border-top-width: 1px;
+  border-top-style: solid;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  padding-top: 20px;
+}
+
+.footer.light-mode {
+  border-top-color: #cacaca;
+}
+
+.footer.dark-mode {
+  border-top-color: #292929;
+}
+
+.contents {
+  width: 800px;
+  z-index: 1;
+}
