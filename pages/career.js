@@ -2,15 +2,13 @@ import * as React from 'react';
 import Head from 'next/head'
 import { PageTitle } from '../components/PageTitle'
 
-import styles from './Career.module.css'
-
 const Career = () => {
   return (
     <>
       <Head>
         <title>Freddie Carthy - Career</title>
       </Head>
-      <main className={styles.career}>
+      <main>
         <PageTitle title="My Career"></PageTitle>
         <p>
           I&apos;m a self-taught Software Engineer and have been working in the industry since 2010. Here&apos;s a little breakdown of what my first decade in the industry has looked like.
