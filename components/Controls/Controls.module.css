@@ -12,21 +12,25 @@
 
 .controls li {
   border-radius: 30px;
-  height: 40px;
+  height: 35px;
   margin: 5px;
-  width: 40px;
+  width: 35px;
 }
 
 .controls li:hover {
   cursor: pointer;
 }
 
+.controls button,
 .controls a {
-  display: flex;
-  width: 40px;
-  height: 40px;
-  justify-content: center;
+  height: 35px;
+  width: 35px;
+}
+
+.controls a {
   align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .controls.dark-mode li {
@@ -60,17 +64,6 @@
 
   .controls {
     right: 50px;
-  }
-
-  .controls button {
-    height: 35px;
-    width: 35px;
-  }
-
-  .controls a,
-  .controls li {
-    height: 35px;
-    width: 35px;
   }
 
   .controls a svg {

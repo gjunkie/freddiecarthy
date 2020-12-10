@@ -17,3 +17,13 @@
 .home p {
   margin:  10px 0;
 }
+
+.home ul {
+  font-size: 18px;
+  list-style-type: initial;
+  padding-left: 20px;
+}
+
+.home li {
+  margin: 10px 0;
+}

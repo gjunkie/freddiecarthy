@@ -11,6 +11,10 @@ body {
   color: #ffffff;
 }
 
+.dark-mode code {
+  background: #232323;
+}
+
 .dark-mode a {
   color: #2de2e6;
 }
@@ -23,6 +27,10 @@ body {
 .light-mode {
   background-color: #ffffff;
   color: #000000;
+}
+
+.light-mode code {
+  background: #efefef;
 }
 
 .light-mode a {
@@ -56,6 +64,10 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+code {
+  padding: 0 5px 3px;
 }
 
 main {
