@@ -24,6 +24,7 @@ const About = () => {
           I&apos;ve lived in quite a few places, and I consider myself &quot;from&quot; a few of those. I was born in Los Angeles, CA, but grew up in Córdoba, Argentina before moving <i>back</i> to LA.
         </p>
 
+        <h4>Some of my favorites</h4>
         <ul className={styles.favorites}>
           <li><strong>Favorite roasters</strong>: <a href="https://extractocoffee.com/" target="_blank" rel="noreferrer">Extractor Coffee</a> and <a href="https://proudmarycoffee.com/" target="_blank" rel="noreferrer">Proud Mary</a>.</li>
           <li><strong>Favorite breweries</strong>: <a href="https://breakside.com/" target="_blank" rel="noreferrer">Breakside Brewery</a> and <a href="https://www.buoybeer.com/" target="_blank" rel="noreferrer">Buoy Beer Company</a>.</li>

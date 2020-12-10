@@ -41,14 +41,17 @@ const WhatMattersToMe = () => {
           </li>
         </ul>
 
-        <h4>What you say matters, and so does what you don&apos;t say</h4>
+        <h4>Truth is debatable</h4>
         <p>
-          The clearest example of this is POTUS 45. But ...
+          Probably the craziest thing to come out of the past four years, particulalry 2020, is that <strong>facts and truth are no longer such things</strong>. They are now  points of view, talking points, and often considered fake news.
+        </p>
+        <p>
+          <strong>Racism, climate change, voter suppresion, police bruality, gender inequality</strong>, and so on. These aren&apos;t opinions, they <strong>are facts</strong>. But about 50% of the country would disagree.
         </p>
 
         <h4>Nurture your relationships</h4>
         <p>
-          I&apos;m exhausted of getting bombarded with information, misinformation, breaking news, controversies, 
+          I&apos;m exhausted of getting bombarded with information, misinformation, breaking news, controversies. I would wager you are too. Fuck that noise. Look around you. <strong>Who matters most to you? What do you value? What is most important to you?</strong> The answer to these questions is absolutely the most important thing.
         </p>
       </main>
     </>
