@@ -16,21 +16,21 @@ export const Controls = () => {
         <li>
           <a
             className={styles.link}
-            href="https://github.com/gjunkie"
-            rel="noreferrer"
-            target="_blank"
-            title="GitHub Profile">
-            <GitHubIcon />
-          </a>
-        </li>
-        <li>
-          <a
-            className={styles.link}
             href="https://twitter.com/freddiecarthy"
             rel="noreferrer"
             target="_blank"
             title="Twitter Profile">
             <TwitterIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            className={styles.link}
+            href="https://github.com/gjunkie"
+            rel="noreferrer"
+            target="_blank"
+            title="GitHub Profile">
+            <GitHubIcon />
           </a>
         </li>
         <li>
