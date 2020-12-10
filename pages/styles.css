@@ -67,6 +67,7 @@ h4 {
 }
 
 ul {
+  font-size: 18px;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -108,6 +109,10 @@ main p {
 
   h2 {
     font-size: 17px;
+  }
+
+  ul {
+    font-size: 16px;
   }
 
   main {

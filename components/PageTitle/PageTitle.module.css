@@ -2,3 +2,9 @@
   font-size: 32px;
   font-weight: lighter;
 }
+
+@media (max-width: 800px) {
+  .heading {
+    font-size: 26px;
+  }
+}
