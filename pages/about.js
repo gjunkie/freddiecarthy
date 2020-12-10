@@ -26,7 +26,7 @@ const About = () => {
 
         <h4>Some of my favorites</h4>
         <ul className={styles.favorites}>
-          <li><strong>Favorite roasters</strong>: <a href="https://extractocoffee.com/" target="_blank" rel="noreferrer">Extractor Coffee</a> and <a href="https://proudmarycoffee.com/" target="_blank" rel="noreferrer">Proud Mary</a>.</li>
+          <li><strong>Favorite roasters</strong>: <a href="https://extractocoffee.com/" target="_blank" rel="noreferrer">Extracto Coffee</a> and <a href="https://proudmarycoffee.com/" target="_blank" rel="noreferrer">Proud Mary</a>.</li>
           <li><strong>Favorite breweries</strong>: <a href="https://breakside.com/" target="_blank" rel="noreferrer">Breakside Brewery</a> and <a href="https://www.buoybeer.com/" target="_blank" rel="noreferrer">Buoy Beer Company</a>.</li>
         </ul>
       </main>
