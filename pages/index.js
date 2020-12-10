@@ -29,10 +29,9 @@ const Home = () => {
           Some hot takes:
         </p>
         <ul>
-          <li>Learn web fundamentals, not just <code>create-react-app</code>. 💻</li>
-          <li>Challenge assumptions, including your own. 🧠</li>
-          <li>Coffee is meant to be had black. ☕️</li>
-          <li>I don&apos;t tolerare intolerance. ✊</li>
+          <li>Learn web fundamentals, not just <code>create-react-app</code> or Webpack configs. 💻</li>
+          <li>Assumptions are meant to be challenged, particularly your own. 🧠</li>
+          <li>If you put cream and sugar in your coffee you don&apos;t like coffee. ☕️</li>
         </ul>
 
         <section>
@@ -52,7 +51,7 @@ const Home = () => {
           <div>
             <h3>What Matters To Me</h3>
             <p>
-              2020 was the fucking worst, but it <i>did</i> teach me quite bit about what I find most valuable. This is my open farewell to the worst year ever.
+              2020 was the fucking worst, but it <i>did</i> teach me quite bit about what I find most valuable. Here are a few of those things.
             </p>
             <Link href="/what-matters-to-me" title="What matters to me">
               Read more...
@@ -76,7 +75,7 @@ const Home = () => {
           <div>
             <h3>My Developer Environment</h3>
             <p>
-              I&apos;ve been a Vim user since the day I started working in this industry. Since then I&apos;ve learned a thing or two and made myself a pretty sweet setup. <a href="https://github.com/gjunkie/dotfiles" target="_blank" rel="noreferrer">Check out my dotfiles</a> for a one-line install of all my settings, apps, and tooling that I use. I update it regularly.
+              I&apos;ve been a Vim user since the day I started working in this industry. <a href="https://github.com/gjunkie/dotfiles" target="_blank" rel="noreferrer">Check out my dotfiles</a> for a one-line install of all my settings, apps, and tooling that I use. I update it regularly.
             </p>
           </div>
         </section>

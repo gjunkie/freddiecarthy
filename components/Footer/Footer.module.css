@@ -19,3 +19,17 @@
   width: 800px;
   z-index: 1;
 }
+
+@media (max-width: 1170px) {
+  .contents {
+    margin: 0 50px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .contents {
+    justify-content: left;
+    margin: 0 20px;
+  }
+}
