@@ -11,7 +11,12 @@ body {
   color: #ffffff;
 }
 
-.dark-mode code {
+.dark-mode pre {
+  background-color: #ffffff;
+  color: #151515;
+}
+
+.dark-mode p code {
   background: #232323;
 }
 
@@ -29,7 +34,12 @@ body {
   color: #000000;
 }
 
-.light-mode code {
+.light-mode pre {
+  background-color: #151515;
+  color: #ffffff;
+}
+
+.light-mode p code {
   background: #efefef;
 }
 
@@ -60,22 +70,38 @@ h2 {
   font-weight: 300;
 }
 
-h4 {
-  font-size: 24px;
-  margin-top: 60px;
+h3 {
   font-weight: lighter;
 }
 
+h4 {
+  font-size: 24px;
+  margin-top: 60px;
+}
+
+ol,
 ul {
   font-size: 18px;
+  line-height: 28px;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-code {
+p code {
   padding: 0 5px 3px;
 }
+
+pre {
+  border-radius: 5px;
+  font-size: 14px;
+  overflow: auto;
+  padding: 10px;
+}
+
+/* pre code { */
+/*   padding: 0; */
+/* } */
 
 main {
   margin: 0 auto;
@@ -111,8 +137,10 @@ main p {
     font-size: 17px;
   }
 
+  ol,
   ul {
     font-size: 16px;
+    line-height: 26px;
   }
 
   main {

@@ -1,0 +1,24 @@
+.blogPost h3 {
+  margin-bottom: 10px;
+}
+
+.blogPost .meta {
+  color: #757575;
+}
+
+.blogPost date {
+  color: #353535;
+}
+
+.blogPost ol,
+.blogPost ul {
+  padding-left: 20px;
+}
+
+.blogPost ul {
+  list-style-type: initial;
+}
+
+.blogPost ol {
+  list-style-type: decimal;
+}

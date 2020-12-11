@@ -16,6 +16,7 @@ const Home = () => {
     <>
       <div>
         <Head>
+          <meta name="description" content="Freddie Carthy is a Software Engineer living in the Pacific Northwest" />
           <title>Freddie Carthy - Software Engineer</title>
         </Head>
       </div>
