@@ -1,0 +1,179 @@
+---
+title: "How to sync your dotfiles across systems, part 1"
+date: "2020-12-11"
+author: "Freddie Carthy"
+excerpt: "Part 1 of syncing your dotfiles across systems"
+image: "laptop-code.jpg"
+---
+
+I don't know about you but my dotfiles are like my digital identity. They not only hold all of my settings for various tools I use day-to-day, I use my dotfiles to install all of my tooling and keep my computers synced at all times.
+
+Time and again I see engineers under-utilizing the power of their dotfiles. They either don't maintain a version-controlled set of dotfiles, or they do but they haven't been touched in years. This can lead to a fragmented developer environment between your personal and work computer. Wouldn't it be cool if you could have a one-line install for your dotfiles and a single command to keep them up-to-date between different computers?
+
+At minimum there's a handful of files that I like to share across systems. These include files like `.gitignore`, `.gitconfig`, bash aliases, `.bash_profile`, `.vimrc`, and a number of others.
+
+There's also several tools that I always use regardless of the system I'm working on; Git, Vim, yarn, npm, and Homebrew to name a few.
+
+In this post I'll show you how to supercharge your dotfiles and keep them synced across your machines effortlessly.
+
+#### 1. Setting things up.
+First things first you'll need to setup a repo on GitHub (or preferred location) for your dotfiles. I simply called mine [dotfiles](https://github.com/gjunkie/dotfiles).
+
+Clone the repo and `cd` into it. Create a folder called `/opt`, and in there a file called `files`. In that file paste the following (add any dotfiles relevant to you):
+
+```
+# /opt/files
+configs/.gitconfig    .gitconfig
+configs/.gitignore    .gitignore
+configs/.bash_profile .bash_profile
+configs/.vimrc        .vimrc
+```
+
+This list will tell our future `install` script to look for the files listed on the left and create symlinks in our home directory with the names on the right. We haven't setup the `/configs` folder to hold our dotfiles quite yet, so let's do that next!
+
+Create a `/configs` folder at the root of the project. This folder is what will hold all of our dotfiles (as listed above). Think of these files as the "source of truth" for each of your dotfiles. For each of the files you can paste in the contents of your current dotfiles to get started. Make a commit and push this baby up! This is how things should look like now:
+
+```
+/dotfiles
+  /opt
+    files
+
+  /configs
+    .gitconfig
+    .gitignore
+    .bash_profile
+    .vimrc
+```
+
+OK, moving on...
+
+
+#### 2. Creating a simple install script
+
+Now we've got our dotfiles in our `/configs` folder and pushed to GitHub. Pretty great! But what we _really_ want to do is have an easy way to download these dotfiles onto a new system _without even having Git installed_.
+
+Create a file called `install` at the root of the project. We'll need this script to do a couple of things for us:
+
+1. Download the repo and set itself up in the `/usr/local/opt` directry.
+2. Symlink our dotfiles in that director from files in our home directory.
+
+At the top of the file let's set up a few variables for easy use in our functions:
+
+```
+# /install
+LOG="${HOME}/Library/Logs/dotfiles.log"
+GITHUB_USER=<your github user name here>
+DIR="/usr/local/opt/dotfiles"
+```
+
+Make sure to set `GITHUB_USER` to your username. Let's also set up a couple of helper functions that will print out some fancy output as our script runs.
+
+```
+# /install
+_process() {
+	echo "$(date) PROCESSING:  $@" >> $LOG
+	printf "$(tput setaf 6) %s...$(tput sgr0)\n" "$@"
+}
+
+_success() {
+  local message=$1
+  printf "%s✓ Success:%s\n" "$(tput setaf 2)" "$(tput sgr0) $message"
+}
+```
+
+OK, so now we get to the fun part. Let's write a function that downloads our `dotfiles` repo so we can use it locally.
+
+```
+# /install
+download_dotfiles() {
+	_process "→ Creating directory at ${DIR} and setting permissions"
+	mkdir -p "${DIR}"
+
+	_process "→ Downloading repository to /tmp directory"
+	curl -#fLo /tmp/dotfiles.tar.gz "https://github.com/${GITHUB_USER}/dotfiles/tarball/main"
+
+	_process "→ Extracting files to ${DIR}"
+	tar -zxf /tmp/dotfiles.tar.gz --strip-components 1 -C "${DIR}"
+
+	_process "→ Removing tarball from /tmp directory"
+	rm -rf /tmp/dotfiles.tar.gz
+
+	[[ $? ]] && _success "${DIR} created, repository downloaded and extracted"
+
+	# Change to the dotfiles directory
+	cd "${DIR}"
+}
+```
+
+What this is doing is creating a `/dotfiles` directory at `DIR`, downloading a tarball of your latest `main` branch, extracting the file, cleaning up, and finally changing your working directory to `/usr/local/opt/dotfiles`.
+
+Now that we've downloaded your dotfiles we need a basic function to grab your dotfiles from the `/configs` folder and create symlinks to them in your home directory. Here it is:
+
+```
+# /install
+link_dotfiles() {
+	# symlink files to the HOME directory.
+	if [[ -f "${DIR}/opt/files" ]]; then
+		_process "→ Linking files"
+
+		# Set variable for list of files
+		files="${DIR}/opt/files"
+
+		# Store IFS separator within a temp variable
+		OIFS=$IFS
+		# Set the separator to a carriage return & a new line break
+		# read in passed-in file and store as an array
+		IFS=$'\r\n'
+		links=($(cat "${files}"))
+
+		# Loop through array of files
+		for index in ${!links[*]}
+		do
+			for link in ${links[$index]}
+			do
+				# set IFS back to space to split string on
+				IFS=$' '
+				# create an array of line items
+				file=(${links[$index]})
+				# Create symbolic link
+				ln -fs "${DIR}/${symlink[0]}" "${HOME}/${symlink[1]}"
+			done
+			# set separater back to carriage return & new line break
+			IFS=$'\r\n'
+		done
+
+		# Reset IFS back
+		IFS=$OIFS
+
+	# set global Git .gitignore file
+    git config --global core.excludesFile '~/.gitignore'
+		[[ $? ]] && _success "All files have been copied"
+	fi
+}
+```
+
+Looks a bit complex, but what's happening here is actually quite simple. It looks at the `/opt/files` file we created, which lists each of your dotfiles, and loops through each line. It then creates a symlink in your home directory for each of those pointing to the files in your `/usr/local/opt/dotfiles/configs` folder. It also runs `git config --global core.excludesFile` to set it to your newly symlinked `.gitigore` file in your home directory.
+
+#### 3. Putting it all together
+
+Finally, we need to actually run these functions for things to actually happen. Here's how I like to do that:
+
+```
+# /install
+install() {
+	download_dotfiles
+	link_dotfiles
+}
+
+install
+```
+
+Place that snipped at the bottom of your `install` file and you're ready to go. **Keep in mind that running this script will replace any dotfiles you've listed in your `files` file!**
+
+Now, running the following command in your terminal will execute our script:
+
+```
+$ bash -c "$(curl -#fL raw.github.com/<your github username>/dotfiles/main/install)"
+```
+
+In the next _installments_ 😂 we'll expand on this by having it install our tooling as well as setting up an update script. That way, if we already have our dotfiles setup locally but they're outdated, we can easily update them.
