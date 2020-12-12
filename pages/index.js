@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useTheme } from '../contexts/ThemeContext'
 import { AboutMeGraphic } from '../components/graphics/AboutMe'
+import { BlogGraphic } from '../components/graphics/Blog'
 import { CareerGraphic } from '../components/graphics/Career'
 import { BLMGraphic } from '../components/graphics/BLM'
 import { DevGraphic } from '../components/graphics/Dev'
@@ -44,6 +45,18 @@ const Home = () => {
             </p>
             <Link href="/about" title="About me">
               Read more...
+            </Link>
+          </div>
+        </section>
+        <section>
+          <BlogGraphic theme={theme} width="100" height="100" />
+          <div>
+            <h3>My Blog</h3>
+            <p>
+              Sometimes I like to write.
+            </p>
+            <Link href="/blog" title="Blog">
+               Go to the blog
             </Link>
           </div>
         </section>
