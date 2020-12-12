@@ -3,23 +3,23 @@ import Link from "next/link"
 import PropTypes from 'prop-types'
 import { getSortedPosts } from "../../lib/posts"
 
+import styles from './BlogIndex.module.css'
+
 const BlogIndex = ({ allPostsData }) => {
   return (
-    <>
-      {allPostsData.map(({ slug, date, title, excerpt }) => (
-          <li key={slug}>
-              <Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>
-                <a>
-                  {title}
-                </a>
-              </Link>
-
-              {excerpt}
-
-              {date}
-          </li>
-      ))}
-    </>
+    <main className={styles.blogIndex}>
+      <ul>
+        {allPostsData.map(({ slug, date, title, description }) => (
+            <li key={slug}>
+              <Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link>
+              <div>
+                <date>{date}</date>
+              </div>
+              <p>{description}</p>
+            </li>
+        ))}
+      </ul>
+    </main>
   );
 };
 

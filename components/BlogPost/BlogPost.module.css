@@ -2,11 +2,25 @@
   margin-bottom: 10px;
 }
 
-.blogPost .meta {
+.blogPost img {
+  display: block;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.blogPost.dark-mode .readingTime {
+  color: #adadad;
+}
+
+.blogPost.light-mode .readingTime {
   color: #757575;
 }
 
-.blogPost date {
+.blogPost.dark-mode .date {
+  color: #ffffff;
+}
+
+.blogPost.light-mode .date {
   color: #353535;
 }
 

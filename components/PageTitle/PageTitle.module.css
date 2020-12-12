@@ -1,6 +1,6 @@
 .heading {
   font-size: 32px;
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 @media (max-width: 800px) {

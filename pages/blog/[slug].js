@@ -35,6 +35,7 @@ export default function Post({ source, meta }) {
         <BlogPost
           content={content}
           date={meta.date}
+          image={meta.image}
           title={meta.title} />
       </main>
     </>
