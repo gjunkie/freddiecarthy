@@ -2,6 +2,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import { PageTitle } from '../PageTitle'
 import { useTheme } from '../../contexts/ThemeContext'
+import { TweetCTA } from '../TweetCTA'
 
 import styles from './BlogPost.module.css'
 
@@ -40,6 +41,8 @@ export const BlogPost = ({
         </div>
         <img src={`/blog-images/${image}`} alt="" loading="lazy" />
         <div>{content}</div>
+        <div className={styles.divider}>...</div>
+        <TweetCTA title={title} />
       </article>
     </>
   )

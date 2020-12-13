@@ -109,11 +109,23 @@
     margin-bottom: 20px;
   }
 
+  .header img {
+    display: none;
+  }
+
+  .header h2 {
+    /* display: none; */
+  }
+
   .group {
     margin-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 12px;
   }
 
   .me {
+    align-items: flex-start;
     margin-left: 20px;
   }
 /*  */

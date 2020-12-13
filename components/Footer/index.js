@@ -18,7 +18,7 @@ export const Footer = () => {
             href="https://twitter.com/freddiecarthy"
             rel="noreferrer"
             target="_blank"
-            title="Twitter Profile">
+            title="@freddiecarthy">
             <TwitterIcon />
           </a>
           <a

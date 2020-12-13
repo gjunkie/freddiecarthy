@@ -15,6 +15,26 @@
   border-top-color: #292929;
 }
 
+.footer a {
+  margin: 0 5px;
+}
+
+.footer.light-mode svg {
+  fill: #000000;
+}
+
+.footer.light-mode svg:hover {
+  fill: #ff3864;
+}
+
+.footer.dark-mode svg {
+  fill: #ffffff;
+}
+
+.footer.dark-mode svg:hover {
+  fill: #2de2e6;
+}
+
 .contents {
   display: flex;
   width: 800px;

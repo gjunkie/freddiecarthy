@@ -1,0 +1,22 @@
+.tweetcta {
+  display: flex;
+  justify-content: center;
+}
+
+.tweetcta:hover {
+  color: #2de2e6;
+}
+
+.tweetcta:hover {
+  cursor: pointer;
+}
+
+.tweetcta h3 {
+  font-weight: bold;
+  text-align: center;
+  width: 300px;
+}
+
+.tweetcta span {
+  color: #2de2e6;
+}
