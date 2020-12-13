@@ -135,6 +135,10 @@ main p {
     font-size: 30px;
   }
 
+  h2 {
+    font-size: 20px;
+  }
+
   main {
     padding: 0 50px;
     width: auto;

@@ -90,7 +90,7 @@
 
 @media (max-width: 1170px) {
   .header {
-    height: 250px;
+    height: 280px;
   }
 
   .group {
@@ -114,14 +114,14 @@
   }
 
   .header h2 {
-    /* display: none; */
+    display: none;
   }
 
   .group {
-    margin-right: 20px;
+    margin-right: 5px;
     position: absolute;
     right: 0;
-    top: 12px;
+    top: 65px;
   }
 
   .me {
