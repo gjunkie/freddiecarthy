@@ -26,11 +26,11 @@ body {
 }
 
 .dark-mode a {
-  color: #2de2e6;
+  /* color: #2de2e6; */
 }
 
 .dark-mode a:hover {
-  color: #ff3864;
+  color: #2de2e6;
 }
 
 /* Light Mode */
@@ -54,11 +54,11 @@ body {
 }
 
 .light-mode a {
-  color: #ff3864;
+  /* color: #ff3864; */
 }
 
 .light-mode a:hover {
-  color: #2de2e6;
+  color: #ff3864;
 }
 
 h1,
@@ -71,12 +71,13 @@ h6 {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 700;
+  margin-top: 15px;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 300;
 }
 
@@ -131,11 +132,7 @@ main p {
 
 @media (max-width: 1170px) {
   h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 26px;
+    font-size: 30px;
   }
 
   main {

@@ -12,25 +12,28 @@ export const Header = () => {
   return (
     <>
       <header className={`${styles.header} ${styles[theme]}`}>
-        {/* <img src="/freddiecarthy-thumb.jpg" /> */}
         <div className={styles.contents}>
-          <div className={styles.me}>
-            <h1><Link href="/">Freddie Carthy</Link></h1>
+          <div className={styles.group}>
+            <nav className={`${styles.nav} ${styles[theme]}`}>
+              <ul>
+                <li>
+                  <Link href="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+              </ul>
+            </nav>
+            <ThemeToggle onClick={toggleTheme} />
           </div>
-          <ThemeToggle onClick={toggleTheme} />
+          <div className={styles.me}>
+            <img src="/profile-pictures/freddie-carthy-small.jpg" />
+            <h1><Link href="/">Freddie Carthy</Link></h1>
+            <h2>I write things in a terminal and they show up on the web</h2>
+          </div>
         </div>
-        <div className={styles.sky}></div>
+        {/* <div className={styles.sky}></div> */}
       </header>
-      <nav className={`${styles.nav} ${styles[theme]}`}>
-        <ul>
-          <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
     </>
   )
 }

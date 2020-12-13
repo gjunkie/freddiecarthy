@@ -4,9 +4,9 @@
   border-bottom-style: solid;
   display: flex;
   flex-direction: column;
-  height: 182px;
+  height: 300px;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   overflow: hidden;
   position: relative;
 }
@@ -20,23 +20,28 @@
 }
 
 .header img {
-  border-radius: 40px;
-  margin-right: 10px;
+  border-radius: 50px;
 }
+/*  */
+/* .sky { */
+/*   background-image: url('/sky.svg'); */
+/*   height: 300px; */
+/*   position: absolute; */
+/*   top: 0; */
+/*   transition-duration: 250ms; */
+/*   width: 100%; */
+/* } */
 
-.sky {
-  background-image: url('/sky.svg');
-  height: 300px;
-  position: absolute;
-  top: 0;
-  transition-duration: 250ms;
-  width: 100%;
+.group {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin: 10px 10px 10px 0;
 }
 
 .nav ul {
@@ -51,46 +56,21 @@
   padding: 0 10px;
 }
 
-.nav.dark-mode a,
-.nav.light-mode a {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.nav.dark-mode a:hover,
-.nav.light-mode a:hover {
-  color: #ffffff;
-}
-
-.nav.dark-mode li {
-  background: #2de2e6;
-}
-
-.nav.dark-mode li:hover {
-  background: #ff3864;
-}
-
-.nav.light-mode li {
-  background: #ff3864;
-}
-
-.nav.light-mode li:hover {
-  background: #2de2e6;
-}
-
-.header.light-mode .sky {
-  background-position: center bottom;
-  transform: rotate(180deg);
-}
-
-.header.dark-mode .sky {
-  background-position: center top;
-  transform: rotate(360deg);
-}
+/*  */
+/* .header.light-mode .sky { */
+/*   background-position: center bottom; */
+/*   transform: rotate(180deg); */
+/* } */
+/*  */
+/* .header.dark-mode .sky { */
+/*   background-position: center top; */
+/*   transform: rotate(360deg); */
+/* } */
 
 .contents {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
   position: relative;
   width: 800px;
@@ -100,44 +80,45 @@
 .me {
   align-items: center;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+  margin-bottom: 50px;
   position: relative;
   z-index: 1;
 }
 
 @media (max-width: 1170px) {
   .header {
-    height: 130px;
+    height: 250px;
+  }
+
+  .group {
+    margin-right: 50px;
   }
 
   .nav ul,
   .contents {
     width: 100%;
   }
-
-  .nav {
-    padding-right: 50px;
-  }
 }
 
 @media (max-width: 800px) {
   .header {
-    height: 100px;
+    height: auto;
     margin-bottom: 20px;
   }
 
+  .group {
+    margin-right: 20px;
+  }
+
   .me {
-    text-align: left;
     margin-left: 20px;
   }
-
-  .sky {
-    background-size: 1100px;
-    top: 20px;
-  }
-
-  .nav {
-    padding-right: 20px;
-  }
+/*  */
+/*   .sky { */
+/*     background-size: 1100px; */
+/*     top: 20px; */
+/*   } */
 }

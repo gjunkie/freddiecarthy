@@ -1,6 +1,5 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import Link from "next/link"
 import { PageTitle } from '../PageTitle'
 import { useTheme } from '../../contexts/ThemeContext'
 
@@ -34,7 +33,6 @@ export const BlogPost = ({
 
   return (
     <>
-      <Link href="/blog">&#8592; Posts</Link>
       <article className={`${styles.blogPost} ${styles[theme]}`} ref={articleRef}>
         <PageTitle title={title} />
         <div>

@@ -16,8 +16,13 @@
 }
 
 .contents {
+  display: flex;
   width: 800px;
   z-index: 1;
+}
+
+.copyright {
+  flex-grow: 1;
 }
 
 @media (max-width: 1170px) {
