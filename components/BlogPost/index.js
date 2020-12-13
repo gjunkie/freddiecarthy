@@ -34,7 +34,7 @@ export const BlogPost = ({
 
   return (
     <>
-      <Link href="/blog">Back</Link>
+      <Link href="/blog">&#8592; Posts</Link>
       <article className={`${styles.blogPost} ${styles[theme]}`} ref={articleRef}>
         <PageTitle title={title} />
         <div>

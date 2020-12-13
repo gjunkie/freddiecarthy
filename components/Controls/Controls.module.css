@@ -21,12 +21,6 @@
   cursor: pointer;
 }
 
-.controls button,
-.controls a {
-  height: 35px;
-  width: 35px;
-}
-
 .controls a {
   align-items: center;
   display: flex;

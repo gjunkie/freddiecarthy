@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
 
   const meta = {
     ...data,
-    date: format(parseISO(data.date), 'MMMM dd, yyyy'),
+    date: format(parseISO(data.date), 'MMM dd, yyyy'),
     image: data.image,
     slug: params.slug,
   }

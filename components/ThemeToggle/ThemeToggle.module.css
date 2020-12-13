@@ -1,13 +1,65 @@
 .themeToggle {
   background: transparent;
   border: none;
+  border-radius: 30px;
+  height: 35px;
   padding: 0;
+  position: absolute;
+  right: 15px;
+  top: -45px;
+  width: 35px;
+  z-index: 1;
 }
 
 .themeToggle:hover {
   cursor: pointer;
 }
 
+.themeToggle.dark-mode {
+  background: #333333;
+}
+
+.themeToggle.dark-mode:hover {
+  background: #2de2e6;
+}
+
 .themeToggle svg {
   margin-left: 1px;
+}
+
+.themeToggle.dark-mode svg {
+  fill: #ffffff;
+}
+
+.themeToggle.light-mode {
+  background: #ececec;
+}
+
+.themeToggle.light-mode:hover {
+  background: #ff3864
+}
+
+.themeToggle.light-mode:hover svg {
+  fill: #ffffff;
+}
+
+@media (max-width: 1170px) {
+  .themeToggle {
+    right: 50px;
+    top: -25px;
+  }
+}
+
+@media (max-width: 800px) {
+  .themeToggle {
+    height: 30px;
+    right: 20px;
+    top: -15px;
+    width: 30px;
+  }
+
+  .themeToggle svg {
+    height: 25px;
+    width: 25px;
+  }
 }
