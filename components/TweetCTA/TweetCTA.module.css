@@ -1,5 +1,13 @@
-.tweetcta:hover {
+.tweetcta {
+  text-align: center;
+}
+
+.tweetcta.dark-mode:hover {
   color: #2de2e6;
+}
+
+.tweetcta.light-mode:hover {
+  color: #ff3864;
 }
 
 .tweetcta:hover {
@@ -10,8 +18,12 @@
   font-weight: bold;
 }
 
-.tweetcta span {
+.tweetcta.dark-mode span {
   color: #2de2e6;
+}
+
+.tweetcta.light-mode span {
+  color: #ff3864;
 }
 
 @media (max-width: 1170px) {
