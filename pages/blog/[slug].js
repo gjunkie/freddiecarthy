@@ -15,6 +15,7 @@ export default function Post({ source, meta }) {
   return (
     <>
       <Head>
+        <link rel="canonical" href={`https://freddiecarthy.com/blog/${meta.slug}`} />
         <meta name="description" content={meta.excerpt} />
         <title>{meta.title}</title>
         {/* Twitter */}
