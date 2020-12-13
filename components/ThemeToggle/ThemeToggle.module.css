@@ -19,10 +19,6 @@
   background: #2de2e6;
 }
 
-.themeToggle svg {
-  margin-left: 1px;
-}
-
 .themeToggle.dark-mode svg {
   fill: #ffffff;
 }

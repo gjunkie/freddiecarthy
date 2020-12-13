@@ -29,8 +29,12 @@ body {
   /* color: #2de2e6; */
 }
 
-.dark-mode a:hover {
+.dark-mode a {
   color: #2de2e6;
+}
+
+.dark-mode a:hover {
+  color: #ff3864;
 }
 
 /* Light Mode */
@@ -54,11 +58,11 @@ body {
 }
 
 .light-mode a {
-  /* color: #ff3864; */
+  color: #ff3864;
 }
 
 .light-mode a:hover {
-  color: #ff3864;
+  color: #2de2e6;
 }
 
 h1,

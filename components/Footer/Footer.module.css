@@ -24,7 +24,7 @@
 }
 
 .footer.light-mode svg:hover {
-  fill: #ff3864;
+  fill: #2de2e6;
 }
 
 .footer.dark-mode svg {
@@ -32,7 +32,7 @@
 }
 
 .footer.dark-mode svg:hover {
-  fill: #2de2e6;
+  fill: #ff3864;
 }
 
 .contents {
