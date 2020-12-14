@@ -45,7 +45,7 @@
 .nav ul {
   display: flex;
   justify-content: flex-end;
-  width: 1170px;
+  width: 960px;
 }
 
 .nav li {
@@ -71,7 +71,7 @@
   flex-grow: 1;
   justify-content: center;
   position: relative;
-  width: 1170px;
+  width: 960px;
   z-index: 1;
 }
 
