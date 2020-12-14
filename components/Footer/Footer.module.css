@@ -37,7 +37,7 @@
 
 .contents {
   display: flex;
-  width: 800px;
+  width: 1170px;
   z-index: 1;
 }
 
@@ -45,7 +45,7 @@
   flex-grow: 1;
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1270px) {
   .contents {
     margin: 0 50px;
     width: 100%;

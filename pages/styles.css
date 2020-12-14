@@ -87,11 +87,13 @@ h2 {
 
 h3 {
   font-weight: lighter;
+  font-size: 26px;
+  margin-top: 50px;
 }
 
 h4 {
-  font-size: 24px;
-  margin-top: 60px;
+  font-size: 22px;
+  margin-top: 40px;
 }
 
 ol,
@@ -126,7 +128,7 @@ pre {
 
 main {
   margin: 0 auto;
-  width: 800px;
+  width: 1170px;
 }
 
 main p {
@@ -134,7 +136,7 @@ main p {
   font-size: 18px;
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1270px) {
   h1 {
     font-size: 30px;
   }

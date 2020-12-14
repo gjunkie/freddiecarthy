@@ -26,9 +26,6 @@
   color: #ff3864;
 }
 
-@media (max-width: 1170px) {
-}
-
 @media (max-width: 800px) {
   .tweetcta h3 {
     text-align: center;

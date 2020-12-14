@@ -14,7 +14,6 @@ const getWordCount = (elem) => {
 
 export const BlogPost = ({
   content,
-  date,
   image,
   title,
 }) => {
@@ -37,9 +36,9 @@ export const BlogPost = ({
       <article className={`${styles.blogPost} ${styles[theme]}`} ref={articleRef}>
         <PageTitle title={title} />
         <div>
-          <date className={styles.date}>{date}</date> - <span className={styles.readingTime}>{readingTime} min read</span>
+          <span className={styles.readingTime}>{readingTime} min read</span>
         </div>
-        <img src={`/blog-images/${image}`} alt="" loading="lazy" />
+        <img src={`/blog-images/${image}.jpg`} alt="" loading="lazy" />
         <div>{content}</div>
         <div className={styles.divider}>...</div>
         <TweetCTA title={title} />
@@ -50,7 +49,6 @@ export const BlogPost = ({
 
 BlogPost.propTypes = {
   content: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }

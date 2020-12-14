@@ -7,7 +7,7 @@
 .controls ul {
   display: flex;
   justify-content: flex-end;
-  width: 800px;
+  width: 1170px;
 }
 
 .controls li {
@@ -51,7 +51,7 @@
   fill: #ffffff;
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1270px) {
   .contents {
     width: 100%;
   }
