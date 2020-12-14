@@ -37,6 +37,8 @@ export default function Post({ source, meta }) {
           content={content}
           date={meta.date}
           image={meta.image}
+          imageAttribution={meta.attribution}
+          imageLink={meta.attributionLink}
           title={meta.title} />
       </main>
     </>
@@ -83,6 +85,8 @@ Post.propTypes = {
     date: PropTypes.string.isRequired,
     excerpt: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    attribution: PropTypes.string.isRequired,
+    attributionLink: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,

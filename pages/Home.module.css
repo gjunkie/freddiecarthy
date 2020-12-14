@@ -14,11 +14,20 @@
   margin:  10px 0;
 }
 
-.home ul {
+.home li {
+  margin: 10px 0;
+}
+
+.hotTakes {
   list-style-type: initial;
   padding-left: 20px;
 }
 
-.home li {
-  margin: 10px 0;
+.postList {
+
+}
+
+.divider {
+  text-align: center;
+  margin-top: 50px;
 }

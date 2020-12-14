@@ -24,7 +24,7 @@ const WhatMattersToMe = () => {
 
         <h4>Black Lives Matter, just as much as they always have.</h4>
         <p>
-          Look, I know how this sounds coming from me; I&apos;m a white dude working in tech living in a white city. I&apos;m beyond privilaged. What I don&apos;t want to do is add noise to this incredibly important conversation and movement. But I <i>will</i> say that it&apos;s not enough to put a bumper sticker on your car. It&apos;s not enought to say you aren&apos;t racist. It&apos;s not enough to show up and vote. <strong>You have to be actively against racism</strong>. Donate to a cause if you can. Volunteer if you can make the time. Encourage your employer (if you&apos;re still employed) to take a public stance on social issues. Contact your representative.
+          Look, I know how this sounds coming from me; I&apos;m a white dude working in tech living in a white city. I&apos;m beyond privileged. What I don&apos;t want to do is add noise to this incredibly important conversation and movement. But I <i>will</i> say that it&apos;s not enough to put a bumper sticker on your car. It&apos;s not enough to say you aren&apos;t racist. It&apos;s not enough to show up and vote. <strong>You have to be actively against racism</strong>. Donate to a cause if you can. Volunteer if you can make the time. Encourage your employer (if you&apos;re still employed) to take a public stance on social issues. Contact your representative.
         </p>
         <p>
           Every little bit helps. Here are some things you can do <i>right now</i>.
@@ -43,10 +43,10 @@ const WhatMattersToMe = () => {
 
         <h4>Truth is debatable</h4>
         <p>
-          Probably the craziest thing to come out of the past four years, particulalry 2020, is that <strong>facts and truth are no longer such things</strong>. They are now  points of view, talking points, and often considered fake news. The news outlets that you consume very much define your world view.
+          Probably the craziest thing to come out of the past four years, particularly 2020, is that <strong>facts and truth are no longer such things</strong>. They are now  points of view, talking points, and often considered fake news. The news outlets that you consume very much define your world view.
         </p>
         <p>
-          <strong>Racism, climate change, gerrymandering, voter suppresion, police bruality, gender inequality, pay inequity</strong>, and so on. These aren&apos;t opinions, they <strong>are realities</strong>. But about 50% of the country would disagree.
+          <strong>Racism, climate change, gerrymandering, voter suppression, police brutality, gender inequality, pay inequity</strong>, and so on. These aren&apos;t opinions, they <strong>are realities</strong>. But about 50% of the country would disagree.
         </p>
 
         <h4>Your relationships are the most important thing</h4>

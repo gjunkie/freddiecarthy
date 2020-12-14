@@ -1,17 +1,12 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useTheme } from '../contexts/ThemeContext'
-import { AboutMeGraphic } from '../components/graphics/AboutMe'
-import { BlogGraphic } from '../components/graphics/Blog'
-import { CareerGraphic } from '../components/graphics/Career'
-import { BLMGraphic } from '../components/graphics/BLM'
-import { DevGraphic } from '../components/graphics/Dev'
+import PropTypes from 'prop-types'
+import { getSortedPosts } from "../lib/posts"
 
 import styles from './Home.module.css'
 
-const Home = () => {
-  const theme = useTheme()
+const Home = ({allPostsData}) => {
 
   return (
     <>
@@ -28,73 +23,51 @@ const Home = () => {
         </p>
 
         <p>
+          I went to school at San Francisco State University (go Gators!) where I majored in Television Broadcasting 📺. Before that I was on my way to be a firefighter🧑‍🚒. Fast forward a couple of years, and countless hours learning frontend development, and I landed my first job at a start up in Santa Monica, CA 🧑‍💻.
+        </p>
+
+        <p>
+          I&apos;m a Vim <strike>user</strike> addict. I absolutely love tinkering with it and learning new ways to supersharge my workflow.
+        </p>
+
+        <p>
           Some hot takes:
         </p>
-        <ul>
+        <ul className={styles.hotTakes}>
           <li>Learn web fundamentals, not just <code>create-react-app</code> or Webpack configs. 💻</li>
           <li>Assumptions are meant to be challenged, particularly your own. 🧠</li>
           <li>If you put cream and sugar in your coffee you don&apos;t like coffee. ☕️</li>
         </ul>
 
-        <section>
-          <AboutMeGraphic theme={theme} width="100" height="100" />
-          <div>
-            <h3>About Me</h3>
-            <p>
-               I love coffee, beer, the Pacific Northwest, great software, and building lasting relationships with good people.
-            </p>
-            <Link href="/about" title="About me">
-              Read more...
-            </Link>
-          </div>
-        </section>
-        <section>
-          <BlogGraphic theme={theme} width="100" height="100" />
-          <div>
-            <h3>My Blog</h3>
-            <p>
-              Sometimes I like to write.
-            </p>
-            <Link href="/blog" title="Blog">
-               Go to the blog
-            </Link>
-          </div>
-        </section>
-        <section>
-          <BLMGraphic theme={theme} width="100" height="100" />
-          <div>
-            <h3>What Matters To Me</h3>
-            <p>
-              2020 was the fucking worst, but it <i>did</i> teach me quite bit about what I find most valuable. Here are a few of those things.
-            </p>
-            <Link href="/what-matters-to-me" title="What matters to me">
-              Read more...
-            </Link>
-          </div>
-        </section>
-        <section>
-          <CareerGraphic theme={theme} width="100" height="100" />
-          <div>
-            <h3>My Career</h3>
-            <p>
-              I&apos;m a Software Engineer. My 10+ years in the industry have been incredibly rewarding and I&apos;ve learned more about software and people than I could have ever imagined when I first started.
-            </p>
-            <Link href="/career" title="My career">
-              Read more...
-            </Link>
-          </div>
-        </section>
-        <section>
-          <DevGraphic theme={theme} width="100" height="100" />
-          <div>
-            <h3>My Developer Environment</h3>
-            <p>
-              I&apos;ve been a Vim user since the day I started working in this industry. <a href="https://github.com/gjunkie/dotfiles" target="_blank" rel="noreferrer">Check out my dotfiles</a> for a one-line install of all my settings, apps, and tooling that I use. I update it regularly.
-            </p>
-          </div>
-        </section>
+        <div className={styles.divider}>...</div>
+
+        <h3>Sometimes I like to write...</h3>
+        <ul className={styles.postList}>
+          {allPostsData.map(({ slug, title, description }) => (
+            <li key={slug}>
+              <h4><Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link></h4>
+              <p>{description}</p>
+            </li>
+          ))}
+        </ul>
+
+        <div className={styles.divider}>...</div>
       </main>
     </>
   )
 }
 export default Home
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPosts();
+  console.log(allPostsData)
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+Home.propTypes = {
+  allPostsData: PropTypes.array,
+}

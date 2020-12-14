@@ -15,6 +15,8 @@ const getWordCount = (elem) => {
 export const BlogPost = ({
   content,
   image,
+  imageAttribution,
+  imageLink,
   title,
 }) => {
   const theme = useTheme()
@@ -39,6 +41,7 @@ export const BlogPost = ({
           <span className={styles.readingTime}>{readingTime} min read</span>
         </div>
         <img src={`/blog-images/${image}.jpg`} alt="" loading="lazy" />
+        <small><a href={imageLink} target="_blank" rel="noreferrer">{imageAttribution}</a></small>
         <div>{content}</div>
         <div className={styles.divider}>...</div>
         <TweetCTA title={title} />
@@ -50,5 +53,7 @@ export const BlogPost = ({
 BlogPost.propTypes = {
   content: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  imageAttribution: PropTypes.string.isRequired,
+  imageLink: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }
