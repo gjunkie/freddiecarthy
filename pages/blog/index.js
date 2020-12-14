@@ -9,10 +9,9 @@ const BlogIndex = ({ allPostsData }) => {
   return (
     <main className={styles.blogIndex}>
       <ul>
-        {allPostsData.map(({ image, slug, title, description }) => (
+        {allPostsData.map(({ slug, title, description }) => (
           <li key={slug}>
-            <img src={`/blog-images/${image}-small.jpg`} alt="" loading="lazy" />
-            <h4><Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link></h4>
+            <h3><Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link></h3>
             <p>{description}</p>
           </li>
         ))}
