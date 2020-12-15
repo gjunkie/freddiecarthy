@@ -51,7 +51,7 @@ export const BlogPost = ({
 }
 
 BlogPost.propTypes = {
-  content: PropTypes.string.isRequired,
+  content: PropTypes.object.isRequired,
   image: PropTypes.string.isRequired,
   imageAttribution: PropTypes.string.isRequired,
   imageLink: PropTypes.string.isRequired,

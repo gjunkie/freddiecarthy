@@ -25,5 +25,4 @@ export const TweetCTA = ({
 
 TweetCTA.propTypes = {
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
 }
