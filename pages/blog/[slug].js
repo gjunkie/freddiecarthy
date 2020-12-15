@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 import renderToString from "next-mdx-remote/render-to-string"
 import hydrate from "next-mdx-remote/hydrate"
@@ -9,8 +10,10 @@ import { format, parseISO } from 'date-fns'
 import { getAllPostSlugs, getPostdata } from "../../lib/posts"
 import { BlogPost } from '../../components/BlogPost'
 
+const components = { Link }
+
 export default function Post({ source, meta }) {
-  const content = hydrate(source);
+  const content = hydrate(source, { components });
 
   return (
     <>
@@ -64,7 +67,7 @@ export async function getStaticProps({ params }) {
     slug: params.slug,
   }
 
-  const mdxSource = await renderToString(content)
+  const mdxSource = await renderToString(content, { components })
 
   return {
     props: {
