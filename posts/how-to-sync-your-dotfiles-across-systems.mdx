@@ -171,12 +171,14 @@ Finally, we need to actually run these functions for things to actually happen. 
 install() {
 	download_dotfiles
 	link_dotfiles
+
+  . "${HOME}/.bash_profile"
 }
 
 install
 ```
 
-Place that snipped at the bottom of your `install` file and you're ready to go. **Keep in mind that running this script will replace any dotfiles you've listed in your `files` file!**
+Place that snipped at the bottom of your `install` file and you're ready to go. The last line sources your new `.bash_profile` file once the process is done. **Keep in mind that running this script will replace any dotfiles you've listed in your `files` file!**
 
 Now, running the following command in your terminal will execute our script:
 
@@ -184,4 +186,4 @@ Now, running the following command in your terminal will execute our script:
 $ bash -c "$(curl -#fL raw.github.com/<your github username>/<your dotfiles repo name>/main/install)"
 ```
 
-In the next _installments_ 😂 we'll expand on this by having it install our tooling as well as setting up an update script. That way, if we already have our dotfiles setup locally but they're outdated, we can easily update them.
+In the next _installments_ 😂 we'll expand on this by having it install our tooling as well as setting up an update script.
