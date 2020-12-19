@@ -28,8 +28,8 @@ export const Header = () => {
           </div>
           <div className={styles.me}>
             <img src="/profile-pictures/freddie-carthy-small.jpg" />
-            <h1><Link href="/">Freddie Carthy</Link></h1>
-            <h2>I write things in a terminal and they show up on the web</h2>
+            <div className={styles.name}><Link href="/">Freddie Carthy</Link></div>
+            <div className={styles.blurb}>I write things in a terminal and they show up on the web</div>
           </div>
         </div>
         {/* <div className={styles.sky}></div> */}

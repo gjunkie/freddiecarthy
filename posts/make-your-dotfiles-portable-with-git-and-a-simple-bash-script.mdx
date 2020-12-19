@@ -1,15 +1,15 @@
 ---
-title: "How To Sync Your dotfiles Across Systems"
+title: "Make Your dotfiles Portable With Git and a Simple Bash Script"
 date: "2020-12-11"
 author: "Freddie Carthy"
 excerpt: "Make syncing your dotfiles across systems one of your superpowers."
-description: "Syncing your dotfiles between systems shouldn't be a hassle. In this walk-through I'll show you how you can set up your dotfiles to easily sync them between multiple systems."
+description: "Syncing your dotfiles between systems shouldn't be a hassle. In this walk-through I'll show you how you can use Git and a simple, yet power Bash script to easily sync your dotfiles between multiple systems."
 image: "laptop-code"
 attribution: "Photo by Clément H"
 attributionLink: "https://unsplash.com/@clemhlrdt"
 ---
 
-Time and again I see engineers under-utilizing the power of their dotfiles. They either don't maintain a version-controlled set of dotfiles, or they do but they haven't been touched in years. This can lead to a fragmented developer environment between your personal and work computer. **Wouldn't it be cool if you could have a one-line install for your dotfiles and a single command to keep them up-to-date between systems?**
+Are you getting the most out of your dotfiles? Time and again I see engineers under-utilizing the power of their dotfiles. They either don't maintain a version-controlled set of dotfiles, or they do but they haven't been touched in years. This can lead to a fragmented developer environment between your personal and work computer. **Wouldn't it be cool if you could have a one-line install for your dotfiles and a single command to keep them up-to-date between systems?**
 
 My dotfiles are like my digital identity. They serve two primary purposes; they hold all of my settings and I use them to install all of my tooling. This keeps my work and personal computer 100% synced.
 
@@ -19,8 +19,9 @@ There's also several tools that I always use regardless of the system I'm workin
 
 In this series **I'll show you how to supercharge your dotfiles to keep them synced across your machines effortlessly.**
 
-#### 1. Setting things up.
-First things first you'll need to setup a repo on GitHub (or preferred location) for your dotfiles.
+## 1. Setting things up.
+
+**This script assumes you're using a Mac**. First things first you'll need to setup a repo on GitHub (or preferred location) for your dotfiles.
 
 > I've set up a [sample repo here](https://github.com/gjunkie/dotfiles-starter-kit) if you just want to get going. 
 
@@ -53,7 +54,7 @@ Create a `/configs` folder at the root of the project. This folder is what will 
 OK, moving on...
 
 
-#### 2. Creating a simple install script
+## 2. Creating a simple install script
 
 Now we've got our dotfiles in our `/configs` folder and pushed to GitHub. Pretty great! But what we _really_ want to do is have an easy way to download these dotfiles onto a new system _without even having Git installed_.
 
@@ -73,7 +74,7 @@ GITHUB_REPO=<your github repo name>
 DIR="/usr/local/opt/${GITHUB_REPO}"
 ```
 
-Make sure to set `GITHUB_USER` to your username and `GITHUB_REPO` to whatever you're calling your dotfiles repo. Let's also set up a couple of helper functions that will print out some fancy output as our script runs.
+Setting the `LOG` location to this will ensure that all logs are visible in the macOS Console app. Handy if something goes wrong and you need to check the logs. Make sure to set `GITHUB_USER` to your username and `GITHUB_REPO` to whatever you're calling your dotfiles repo. Let's also set up a couple of helper functions that will print out some fancy output as our script runs.
 
 ```
 # /install
@@ -153,16 +154,14 @@ link_dotfiles() {
 		# Reset IFS back
 		IFS=$OIFS
 
-	# set global Git .gitignore file
-    git config --global core.excludesFile '~/.gitignore'
 		[[ $? ]] && _success "All files have been copied"
 	fi
 }
 ```
 
-Looks a bit complex, but what's happening here is actually quite simple. It looks at the `/opt/files` file we created, which lists each of your dotfiles, and loops through each line. It then creates a symlink in your home directory for each of those pointing to the files in your `/usr/local/opt/<repo name>/configs` folder. It also runs `git config --global core.excludesFile` to set it to your newly symlinked `.gitigore` file in your home directory.
+Looks a bit complex, but what's happening here is actually quite simple. It looks at the `/opt/files` file we created, which lists each of your dotfiles, and loops through each line. It then creates a symlink in your home directory for each of those pointing to the files in your `/usr/local/opt/<repo name>/configs` folder.
 
-#### 3. Putting it all together
+## 3. Putting it all together
 
 Finally, we need to actually run these functions for things to actually happen. Here's how I like to do that:
 
@@ -172,7 +171,7 @@ install() {
 	download_dotfiles
 	link_dotfiles
 
-  . "${HOME}/.bash_profile"
+  source "${HOME}/.bash_profile"
 }
 
 install
@@ -183,7 +182,7 @@ Place that snipped at the bottom of your `install` file and you're ready to go. 
 Now, running the following command in your terminal will execute our script:
 
 ```
-$ bash -c "$(curl -#fL raw.github.com/<your github username>/<your dotfiles repo name>/main/install)"
+$ bash -c "$(curl -#fL raw.githubusercontent.com/<your github username>/<your dotfiles repo name>/main/install)"
 ```
 
 In the next _installments_ 😂 we'll expand on this by having it install our tooling as well as setting up an update script.

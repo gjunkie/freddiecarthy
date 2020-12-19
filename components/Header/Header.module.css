@@ -84,6 +84,17 @@
   margin-bottom: 50px;
 }
 
+.me .name {
+  font-size: 35px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.me .blurb {
+  font-size: 22px;
+  font-weight: 300;
+}
+
 @media (max-width: 1270px) {
   .header {
     height: 280px;
@@ -97,6 +108,14 @@
   .contents {
     width: 100%;
   }
+
+  .me .name {
+    font-size: 30px;
+  }
+
+  .me .blurb {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -109,7 +128,7 @@
     display: none;
   }
 
-  .header h2 {
+  .me .blurb {
     display: none;
   }
 
@@ -124,6 +143,11 @@
     align-items: flex-start;
     margin-left: 20px;
   }
+
+  .me .name {
+    font-size: 32px;
+  }
+
 /*  */
 /*   .sky { */
 /*     background-size: 1100px; */
