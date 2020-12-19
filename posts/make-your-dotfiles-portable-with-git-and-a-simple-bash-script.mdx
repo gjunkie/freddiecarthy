@@ -154,6 +154,8 @@ link_dotfiles() {
 		# Reset IFS back
 		IFS=$OIFS
 
+    source "${HOME}/.bash_profile"
+
 		[[ $? ]] && _success "All files have been copied"
 	fi
 }
@@ -170,8 +172,6 @@ Finally, we need to actually run these functions for things to actually happen. 
 install() {
 	download_dotfiles
 	link_dotfiles
-
-  source "${HOME}/.bash_profile"
 }
 
 install
