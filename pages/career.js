@@ -13,11 +13,6 @@ const Career = () => {
         <p>
           I&apos;m a self-taught Software Engineer and have been working in the industry since 2010. Here&apos;s a little breakdown of what my first decade in the industry has looked like.
         </p>
-        {/* <h4>Key takeaways</h4> */}
-        {/* <ul> */}
-        {/*   <li>Relationships</li> */}
-        {/*   <li>Leadership</li> */}
-        {/* </ul> */}
         <h4>Beginnings (2010 - 2015)</h4>
         <p>
           Oh, how I wish code schools were a thing when I started learning to code...
