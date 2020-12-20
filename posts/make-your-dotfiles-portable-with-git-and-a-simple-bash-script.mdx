@@ -27,7 +27,7 @@ In this series **I'll show you how to supercharge your dotfiles to keep them syn
 
 Clone the repo and `cd` into it. Create a folder called `/opt`, and in there a file called `files` (in the future this folder will also hold a list of tools you use). In that file paste the following (add any dotfiles relevant to you):
 
-```
+```bash
 # /opt/files
 configs/.gitconfig    .gitconfig
 configs/.gitignore    .gitignore
@@ -39,11 +39,10 @@ This list will tell our future `install` script to look for the files listed on 
 
 Create a `/configs` folder at the root of the project. This folder is what will hold all of our dotfiles (as listed above). Think of these files as the "source of truth" for each of your dotfiles. For each of the files you can paste in the contents of your current dotfiles to get started. Make a commit and push this baby up! This is how things should look like now:
 
-```
+```bash
 /dotfiles
   /opt
     files
-
   /configs
     .gitconfig
     .gitignore
@@ -65,22 +64,22 @@ Create a file called `install` at the root of the project. We'll need this scrip
 
 At the top of the file let's set up a few variables for easy use in our functions:
 
-```
+```bash
 # /install
 #!/usr/bin/env bash
 LOG="${HOME}/Library/Logs/dotfiles.log"
-GITHUB_USER=<your github user name here>
-GITHUB_REPO=<your github repo name>
+GITHUB_USER=your github user name here
+GITHUB_REPO=<your github repo name
 DIR="/usr/local/opt/${GITHUB_REPO}"
 ```
 
 Setting the `LOG` location to this will ensure that all logs are visible in the macOS Console app. Handy if something goes wrong and you need to check the logs. Make sure to set `GITHUB_USER` to your username and `GITHUB_REPO` to whatever you're calling your dotfiles repo. Let's also set up a couple of helper functions that will print out some fancy output as our script runs.
 
-```
+```bash
 # /install
 _process() {
-	echo "$(date) PROCESSING:  $@" >> $LOG
-	printf "$(tput setaf 6) %s...$(tput sgr0)\n" "$@"
+  echo "$(date) PROCESSING:  $@" >> $LOG
+  printf "$(tput setaf 6) %s...$(tput sgr0)\n" "$@"
 }
 
 _success() {
@@ -91,25 +90,25 @@ _success() {
 
 OK, so now we get to the fun part. Let's write a function that downloads our `dotfiles` repo so we can use it locally.
 
-```
+```bash
 # /install
 download_dotfiles() {
-	_process "→ Creating directory at ${DIR} and setting permissions"
-	mkdir -p "${DIR}"
+  _process "→ Creating directory at ${DIR} and setting permissions"
+  mkdir -p "${DIR}"
 
-	_process "→ Downloading repository to /tmp directory"
-	curl -#fLo /tmp/${GITHUB_REPO}.tar.gz "https://github.com/${GITHUB_USER}/${GITHUB_REPO}/tarball/main"
+  _process "→ Downloading repository to /tmp directory"
+  curl -#fLo /tmp/${GITHUB_REPO}.tar.gz "https://github.com/${GITHUB_USER}/${GITHUB_REPO}/tarball/main"
 
-	_process "→ Extracting files to ${DIR}"
-	tar -zxf /tmp/${GITHUB_REPO}.tar.gz --strip-components 1 -C "${DIR}"
+  _process "→ Extracting files to ${DIR}"
+  tar -zxf /tmp/${GITHUB_REPO}.tar.gz --strip-components 1 -C "${DIR}"
 
-	_process "→ Removing tarball from /tmp directory"
-	rm -rf /tmp/${GITHUB_REPO}.tar.gz
+  _process "→ Removing tarball from /tmp directory"
+  rm -rf /tmp/${GITHUB_REPO}.tar.gz
 
-	[[ $? ]] && _success "${DIR} created, repository downloaded and extracted"
+  [[ $? ]] && _success "${DIR} created, repository downloaded and extracted"
 
-	# Change to the dotfiles directory
-	cd "${DIR}"
+  # Change to the dotfiles directory
+  cd "${DIR}"
 }
 ```
 
@@ -117,47 +116,47 @@ What this is doing is creating a `/dotfiles` directory at `DIR`, downloading a t
 
 Now that we've downloaded your dotfiles we need a basic function to grab your dotfiles from the `/configs` folder and create symlinks to them in your home directory. Here it is:
 
-```
+```bash
 # /install
 link_dotfiles() {
-	# symlink files to the HOME directory.
-	if [[ -f "${DIR}/opt/files" ]]; then
+  # symlink files to the HOME directory.
+  if [[ -f "${DIR}/opt/files" ]]; then
     _process "→ Symlinking dotfiles in /configs"
 
-		# Set variable for list of files
-		files="${DIR}/opt/files"
+    # Set variable for list of files
+    files="${DIR}/opt/files"
 
-		# Store IFS separator within a temp variable
-		OIFS=$IFS
-		# Set the separator to a carriage return & a new line break
-		# read in passed-in file and store as an array
-		IFS=$'\r\n'
-		links=($(cat "${files}"))
+    # Store IFS separator within a temp variable
+    OIFS=$IFS
+    # Set the separator to a carriage return & a new line break
+    # read in passed-in file and store as an array
+    IFS=$'\r\n'
+    links=($(cat "${files}"))
 
-		# Loop through array of files
-		for index in ${!links[*]}
-		do
-			for link in ${links[$index]}
-			do
+    # Loop through array of files
+    for index in ${!links[*]}
+    do
+      for link in ${links[$index]}
+      do
         _process "→ Linking ${links[$index]}"
-				# set IFS back to space to split string on
-				IFS=$' '
-				# create an array of line items
-				file=(${links[$index]})
-				# Create symbolic link
-				ln -fs "${DIR}/${file[0]}" "${HOME}/${file[1]}"
-			done
-			# set separater back to carriage return & new line break
-			IFS=$'\r\n'
-		done
+        # set IFS back to space to split string on
+        IFS=$' '
+        # create an array of line items
+        file=(${links[$index]})
+        # Create symbolic link
+        ln -fs "${DIR}/${file[0]}" "${HOME}/${file[1]}"
+      done
+      # set separater back to carriage return & new line break
+      IFS=$'\r\n'
+    done
 
-		# Reset IFS back
-		IFS=$OIFS
+    # Reset IFS back
+    IFS=$OIFS
 
     source "${HOME}/.bash_profile"
 
-		[[ $? ]] && _success "All files have been copied"
-	fi
+    [[ $? ]] && _success "All files have been copied"
+  fi
 }
 ```
 
@@ -167,21 +166,21 @@ Looks a bit complex, but what's happening here is actually quite simple. It look
 
 Finally, we need to actually run these functions for things to actually happen. Here's how I like to do that:
 
-```
+```bash
 # /install
 install() {
-	download_dotfiles
-	link_dotfiles
+  download_dotfiles
+  link_dotfiles
 }
 
 install
 ```
 
-Place that snipped at the bottom of your `install` file and you're ready to go. The last line sources your new `.bash_profile` file once the process is done. **Keep in mind that running this script will replace any dotfiles you've listed in your `files` file!**
+Place that snipped at the bottom of your `install` file and you're ready to go. **Keep in mind that running this script will replace any dotfiles you've listed in your `files` file!**
 
 Now, running the following command in your terminal will execute our script:
 
-```
+```bash
 $ bash -c "$(curl -#fL raw.githubusercontent.com/<your github username>/<your dotfiles repo name>/main/install)"
 ```
 
