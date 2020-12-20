@@ -9,8 +9,9 @@ import { format, parseISO } from 'date-fns'
 
 import { getAllPostSlugs, getPostdata } from "../../lib/posts"
 import { BlogPost } from '../../components/BlogPost'
+import { CodeBlock } from '../../components/CodeBlock'
 
-const components = { Link }
+const components = { CodeBlock, Link }
 
 export default function Post({ source, meta }) {
   const content = hydrate(source, { components });

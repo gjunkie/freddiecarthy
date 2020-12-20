@@ -1,10 +1,24 @@
 import * as React from 'react'
+import { MDXProvider } from '@mdx-js/react'
+import { preToCodeBlock } from "mdx-utils"
 import '../styles/globals.css'
 import { ThemeProvider } from '../contexts/ThemeContext'
 import { Header } from '../components/Header/'
 import { Footer } from '../components/Footer/'
+import { CodeBlock } from '../components/CodeBlock/'
 
 import './styles.css'
+
+const components = {
+  pre: preProps => {
+    const props = preToCodeBlock(preProps)
+    if (props) {
+      return <CodeBlock {...props} />
+    } else {
+      return <pre {...preProps} />
+    }
+  },
+}
 
 function MyApp({ Component, pageProps }) {
   let initialMode = 'light-mode'
@@ -31,13 +45,15 @@ function MyApp({ Component, pageProps }) {
   }, [mode])
 
   return (
-    <ThemeProvider systemMode={mode}>
-      <>
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </>
-    </ThemeProvider>
+    <MDXProvider components={components}>
+      <ThemeProvider systemMode={mode}>
+        <>
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </>
+      </ThemeProvider>
+    </MDXProvider>
   )
 }
 

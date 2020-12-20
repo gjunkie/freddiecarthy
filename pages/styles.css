@@ -21,8 +21,9 @@ body {
   color: #151515;
 }
 
-.dark-mode p code {
-  background: #232323;
+.dark-mode code {
+  background: rgb(41 41 41);
+  color: rgb(243 243 243);
 }
 
 .dark-mode a {
@@ -53,8 +54,9 @@ body {
   color: #ffffff;
 }
 
-.light-mode p code {
-  background: #efefef;
+.light-mode code {
+  background: rgb(251 251 251);
+  color: rgb(76 75 94);
 }
 
 .light-mode a {
@@ -137,13 +139,64 @@ main p {
   font-size: 18px;
 }
 
+.prism-code {
+  background-color: transparent;
+  font-size: 1.2rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.token {
+  display: inline-block;
+}
+
+p > code,
+li > code {
+  background: rgb(1, 22, 39);
+  color: rgb(214, 222, 235);
+}
+
+.mdx-highlight {
+  font-size: 1rem;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
+
+.mdx-highlight > code[class*="language-"],
+.mdx-highlight > pre[class*="language-"] {
+  word-spacing: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+.line-number-style {
+  display: inline-block;
+  opacity: 0.3;
+  padding-right: 10px;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  width: 30px;
+}
+
+.highlight-line {
+  background-color: rgb(2, 55, 81);
+  border-left: 4px solid rgb(2, 155, 206);
+}
+
+.highlight-line .line-number-style {
+  opacity: 0.5;
+  width: calc(1.2em - 4px);
+  left: -2px;
+}
+
 @media (max-width: 1270px) {
   h1 {
     font-size: 30px;
-  }
-
-  h2 {
-    font-size: 20px;
   }
 
   main {
@@ -155,10 +208,6 @@ main p {
 @media (max-width: 800px) {
   h1 {
     font-size: 32px;
-  }
-
-  h2 {
-    font-size: 17px;
   }
 
   ol,

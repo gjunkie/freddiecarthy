@@ -27,7 +27,7 @@ const Home = ({allPostsData}) => {
         </p>
 
         <p>
-          I&apos;m a Vim <strike>user</strike> addict. I absolutely love tinkering with it and learning new ways to supersharge my workflow.
+          I&apos;m a Vim <strike>user</strike> addict. I absolutely love tinkering with it and learning new ways to supercharge my workflow.
         </p>
 
         <p>
