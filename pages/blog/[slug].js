@@ -27,11 +27,11 @@ export default function Post({ source, meta }) {
         <meta name="twitter:title" content={meta.title} key="twtitle" />
         <meta name="twitter:description" content={meta.excerpt} key="twtitle" />
         <meta name="twitter:creator" content="@freddiecarthy" key="twhandle" />
-        <meta name="twitter:image" content={`https://freddiecarthy.com/blog-images/${meta.image}`} key="twimage" />
+        <meta name="twitter:image" content={`https://freddiecarthy.com/blog-images/${meta.image}.jpg`} key="twimage" />
 
         {/* Open Graph */}
         <meta property="og:url" content={`https://freddiecarthy.com/blog/${meta.slug}`} key="ogurl" />
-        <meta property="og:image" content={`https://freddiecarthy.com/blog-images/${meta.image}`} key="ogimage" />
+        <meta property="og:image" content={`https://freddiecarthy.com/blog-images/${meta.image}.jpg`} key="ogimage" />
         <meta property="og:site_name" content="Freddie Carthy Blog" key="ogsitename" />
         <meta property="og:title" content={meta.title} key="ogtitle" />
         <meta property="og:description" content={meta.excerpt} key="ogdesc" />
