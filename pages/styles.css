@@ -126,7 +126,7 @@ pre {
   border-radius: 5px;
   font-size: 14px;
   overflow: auto;
-  padding: 10px;
+  padding: 10px 10px 10px 0;
 }
 
 main {
@@ -176,22 +176,26 @@ li > code {
 .line-number-style {
   display: inline-block;
   opacity: 0.3;
-  padding-right: 10px;
+  padding: 0 10px;
   position: relative;
   text-align: center;
   user-select: none;
-  width: 30px;
+  width: 40px;
 }
 
-.highlight-line {
+.dark-mode .highlight-line {
+  background-color: rgb(232, 232, 232);
+  border-left: 4px solid #2de2e6;
+}
+
+.light-mode .highlight-line {
   background-color: rgb(2, 55, 81);
-  border-left: 4px solid rgb(2, 155, 206);
+  border-left: 4px solid #ff3864;
 }
 
 .highlight-line .line-number-style {
+  margin-left: -4px;
   opacity: 0.5;
-  width: calc(1.2em - 4px);
-  left: -2px;
 }
 
 @media (max-width: 1270px) {
