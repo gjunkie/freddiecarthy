@@ -47,9 +47,6 @@ const Career = () => {
         </p>
 
         <h4>Today</h4>
-        <p>
-          Today <strong>I work at Twitter as a Senior Software Engineer</strong>.
-        </p>
       </main>
     </>
   )
