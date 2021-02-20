@@ -1,12 +1,20 @@
 import * as React from 'react'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import PropTypes from 'prop-types'
 import { getSortedPosts } from "../lib/posts"
 
 import styles from './Home.module.css'
 
-const Home = ({allPostsData}) => {
+type HomeProps = {
+  allPostsData: {
+    description: string
+    slug: string,
+    title: string,
+  }[],
+}
+
+const Home: React.FC<HomeProps> = ({allPostsData}) => {
 
   return (
     <>
@@ -58,15 +66,11 @@ const Home = ({allPostsData}) => {
 }
 export default Home
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPosts();
   return {
     props: {
       allPostsData,
     },
   };
-}
-
-Home.propTypes = {
-  allPostsData: PropTypes.array,
 }
