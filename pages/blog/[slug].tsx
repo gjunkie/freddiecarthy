@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import PropTypes from 'prop-types'
 import renderToString from "next-mdx-remote/render-to-string"
 import hydrate from "next-mdx-remote/hydrate"
 import matter from "gray-matter"
@@ -11,9 +10,28 @@ import { getAllPostSlugs, getPostdata } from "../../lib/posts"
 import { BlogPost } from '../../components/BlogPost'
 import { CodeBlock } from '../../components/CodeBlock'
 
+type PostProps = {
+  source: {
+    compiledSource: string,
+    renderedOutput: string,
+    scope: object,
+  },
+  meta: {
+    author: string,
+    date: string,
+    excerpt: string,
+    image: string,
+    attribution: string,
+    attributionLink: string,
+    slug: string,
+    title: string,
+  },
+}
+
 const components = { CodeBlock, Link }
 
-export default function Post({ source, meta }) {
+// export default function Post({ source, meta }) {
+const Home: React.FC<PostProps> = ({source, meta}) => {
   const content = hydrate(source, { components });
 
   return (
@@ -39,7 +57,6 @@ export default function Post({ source, meta }) {
       <main>
         <BlogPost
           content={content}
-          date={meta.date}
           image={meta.image}
           imageAttribution={meta.attribution}
           imageLink={meta.attributionLink}
@@ -78,20 +95,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-Post.propTypes = {
-  source: PropTypes.shape({
-    compiledSource: PropTypes.string.isRequired,
-    renderedOutput: PropTypes.string.isRequired,
-    scope: PropTypes.object.isRequired,
-  }).isRequired,
-  meta: PropTypes.shape({
-    author: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    excerpt: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    attribution: PropTypes.string.isRequired,
-    attributionLink: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
-}
+export default Home

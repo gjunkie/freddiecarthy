@@ -1,5 +1,4 @@
 import * as React from 'react'
-import PropTypes from 'prop-types'
 import { PageTitle } from '../PageTitle'
 import { useTheme } from '../../contexts/ThemeContext'
 import { TweetCTA } from '../TweetCTA'
@@ -8,11 +7,17 @@ import styles from './BlogPost.module.css'
 
 const avgWordsPerMin = 250;
 
-const getWordCount = (elem) => {
-  return elem.innerText.match(/\w+/g).length;
+const getWordCount = (text: string) => text.match(/\w+/g).length
+
+type BlogPostProps = {
+  content: object,
+  image: string,
+  imageAttribution: string,
+  imageLink: string,
+  title: string,
 }
 
-export const BlogPost = ({
+export const BlogPost: React.FC<BlogPostProps> = ({
   content,
   image,
   imageAttribution,
@@ -20,15 +25,15 @@ export const BlogPost = ({
   title,
 }) => {
   const theme = useTheme()
-  const articleRef = React.useRef(null)
-  const [readingTime, setReadingTime] = React.useState()
+  const articleRef = React.useRef<HTMLDivElement>(null)
+  const [readingTime, setReadingTime] = React.useState(0)
 
   React.useEffect(() => {
     if (!articleRef.current) {
       return
     }
 
-    const count = getWordCount(articleRef.current);
+    const count = getWordCount(articleRef.current.innerText)
     setReadingTime(Math.ceil(count / avgWordsPerMin))
   }, [articleRef])
 
@@ -48,12 +53,4 @@ export const BlogPost = ({
       </article>
     </>
   )
-}
-
-BlogPost.propTypes = {
-  content: PropTypes.object.isRequired,
-  image: PropTypes.string.isRequired,
-  imageAttribution: PropTypes.string.isRequired,
-  imageLink: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 }
