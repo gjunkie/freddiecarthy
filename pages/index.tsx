@@ -38,7 +38,7 @@ const Home: React.FC<HomeProps> = ({allPostsData}) => (
       </Paragraph>
 
       <Paragraph>
-        I&apos;m a Vim <strike>user</strike> addict. I absolutely love tinkering with it and learning new ways to supercharge my workflow.
+        I&apos;m a Vim addict. I absolutely love tinkering with it and learning new ways to supercharge my workflow.
       </Paragraph>
 
       <Paragraph>
