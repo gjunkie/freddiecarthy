@@ -16,7 +16,7 @@ import {
 
 const avgWordsPerMin = 250;
 
-const getWordCount = (text: string) => text.match(/\w+/g).length
+const getWordCount = (text: string) => (text.match(/\w+/g) || '').length
 
 type BlogPostProps = {
   content: object,

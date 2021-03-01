@@ -1,13 +1,12 @@
 import * as React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { preToCodeBlock } from "mdx-utils"
-import '../styles/globals.css'
 import { ThemeProvider } from '../contexts/ThemeContext'
 import { Header } from '../components/Header/'
 import { Footer } from '../components/Footer/'
 import { CodeBlock } from '../components/CodeBlock/'
 
-import './styles.css'
+import GlobalStyle from '../styles/globalStyles'
 
 const components = {
   pre: preProps => {
@@ -48,6 +47,7 @@ function MyApp({ Component, pageProps }) {
     <MDXProvider components={components}>
       <ThemeProvider systemMode={mode}>
         <>
+          <GlobalStyle />
           <Header />
           <Component {...pageProps} />
           <Footer />
