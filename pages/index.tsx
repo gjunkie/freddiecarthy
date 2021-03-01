@@ -9,7 +9,7 @@ import {
   ListItem,
   HotList,
   Divider
-} from './homeStyles'
+} from '../styles/homeStyles'
 
 type HomeProps = {
   allPostsData: {

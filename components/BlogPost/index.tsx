@@ -3,7 +3,16 @@ import { PageTitle } from '../PageTitle'
 import { useTheme } from '../../contexts/ThemeContext'
 import { TweetCTA } from '../TweetCTA'
 
-import styles from './BlogPost.module.css'
+import {
+  ArticleStyles,
+  HeadingStyles,
+  HeroImageStyles,
+  DateStyles,
+  DividerStyles,
+  OrderedListStyles,
+  UnorderedListStyles,
+  ReadingTimeStyles,
+} from './styles'
 
 const avgWordsPerMin = 250;
 
@@ -39,18 +48,28 @@ export const BlogPost: React.FC<BlogPostProps> = ({
 
 
   return (
-    <>
-      <article className={`${styles.blogPost} ${styles[theme]}`} ref={articleRef}>
-        <PageTitle title={title} />
-        <div>
-          <span className={styles.readingTime}>{readingTime} min read</span>
-        </div>
-        <img src={`/blog-images/${image}.jpg`} alt="" loading="lazy" />
+    <ArticleStyles>
+      <article ref={articleRef}>
+
+        <HeadingStyles>
+          <PageTitle title={title} />
+        </HeadingStyles>
+
+        <ReadingTimeStyles theme={theme}>
+          <span>{readingTime} min read</span>
+        </ReadingTimeStyles>
+
+        <HeroImageStyles src={`/blog-images/${image}.jpg`} alt="" loading="lazy" />
+
         <small><a href={imageLink} target="_blank" rel="noreferrer">{imageAttribution}</a></small>
+
         <div>{content}</div>
-        <div className={styles.divider}>...</div>
+
+        <DividerStyles>...</DividerStyles>
+
         <TweetCTA title={title} />
+
       </article>
-    </>
+    </ArticleStyles>
   )
 }

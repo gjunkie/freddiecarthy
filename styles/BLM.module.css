@@ -1,0 +1,8 @@
+.blm ul {
+  list-style-type: initial;
+  padding-left: 20px;
+}
+
+.blm li {
+  margin: 10px 0;
+}
