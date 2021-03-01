@@ -4,13 +4,10 @@ import { useTheme } from '../../contexts/ThemeContext'
 import { TweetCTA } from '../TweetCTA'
 
 import {
-  ArticleStyles,
+  Article,
   HeadingStyles,
-  HeroImageStyles,
-  DateStyles,
+  HeroImage,
   DividerStyles,
-  OrderedListStyles,
-  UnorderedListStyles,
   ReadingTimeStyles,
 } from './styles'
 
@@ -48,28 +45,22 @@ export const BlogPost: React.FC<BlogPostProps> = ({
 
 
   return (
-    <ArticleStyles>
-      <article ref={articleRef}>
+    <Article ref={articleRef}>
+      <PageTitle title={title} />
 
-        <HeadingStyles>
-          <PageTitle title={title} />
-        </HeadingStyles>
+      <ReadingTimeStyles theme={theme}>
+        <span>{readingTime} min read</span>
+      </ReadingTimeStyles>
 
-        <ReadingTimeStyles theme={theme}>
-          <span>{readingTime} min read</span>
-        </ReadingTimeStyles>
+      <HeroImage src={`/blog-images/${image}.jpg`} alt="" />
 
-        <HeroImageStyles src={`/blog-images/${image}.jpg`} alt="" loading="lazy" />
+      <small><a href={imageLink} target="_blank" rel="noreferrer">{imageAttribution}</a></small>
 
-        <small><a href={imageLink} target="_blank" rel="noreferrer">{imageAttribution}</a></small>
+      <div>{content}</div>
 
-        <div>{content}</div>
+      <DividerStyles>...</DividerStyles>
 
-        <DividerStyles>...</DividerStyles>
-
-        <TweetCTA title={title} />
-
-      </article>
-    </ArticleStyles>
+      <TweetCTA title={title} />
+    </Article>
   )
 }

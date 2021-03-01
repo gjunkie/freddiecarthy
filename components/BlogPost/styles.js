@@ -7,8 +7,7 @@ export const HeadingStyles = styled.h3`
     margin: 30px 0 10px;
   }
 `
-export const HeroImageStyles = styled.img`
-  display: block;
+export const HeroImage = styled.img`
   margin: 20px 0;
   width: 100%;
 `
@@ -36,13 +35,13 @@ export const DateStyles = styled.div`
     `
   }}
 `
-export const ArticleStyles = styled.div`
+export const Article = styled.article`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`;
+`
 export const OrderedListStyles = styled.ol`
   list-style-type: decimal;
   padding-left: 20px;
