@@ -4,7 +4,10 @@ import Head from 'next/head'
 // import { BLMGraphic } from '../components/graphics/BLM'
 import { PageTitle } from '../components/PageTitle'
 
-import styles from './BLM.module.css'
+import {
+  ListItem,
+  UnorderedList,
+} from '../styles/whatMattersStyles'
 
 const WhatMattersToMe = () => {
   // const theme = useTheme()
@@ -14,7 +17,7 @@ const WhatMattersToMe = () => {
       <Head>
         <title>Freddie Carthy - What Matters To Me</title>
       </Head>
-      <main className={styles.blm}>
+      <main>
         {/* <BLMGraphic theme={theme} width="400" height="400" /> */}
         <PageTitle title="What Matters To Me"></PageTitle>
 
@@ -29,17 +32,17 @@ const WhatMattersToMe = () => {
         <p>
           Every little bit helps. Here are some things you can do <i>right now</i>.
         </p>
-        <ul>
-          <li>
+        <UnorderedList>
+          <ListItem>
             Donate to the <a href="https://blacklives.help/view/tbzQRwmyzuOBZ47UArCP" target="_blank" rel="noreferrer">Black Lives Matter movement</a>.
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             Support the <a href="https://rfkhumanrights.org/" target="_blank" rel="noreferrer">Robert F. Kennedy Human Rights</a> organization.
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noreferrer">Find out who your Representative is</a> and contact them.
-          </li>
-        </ul>
+          </ListItem>
+        </UnorderedList>
 
         <h4>Truth is debatable</h4>
         <p>
