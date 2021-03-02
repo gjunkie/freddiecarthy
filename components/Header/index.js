@@ -20,6 +20,9 @@ export const Header = () => {
                   <Link href="/blog">Blog</Link>
                 </li>
                 <li>
+                  <Link href="/reading">Reading</Link>
+                </li>
+                <li>
                   <Link href="/about">About</Link>
                 </li>
               </ul>

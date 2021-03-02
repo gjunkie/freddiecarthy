@@ -102,14 +102,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: bold;
     margin-top: 70px;
   }
 
   h3 {
     font-weight: lighter;
-    font-size: 26px;
+    font-size: 22px;
     margin-top: 50px;
   }
 
