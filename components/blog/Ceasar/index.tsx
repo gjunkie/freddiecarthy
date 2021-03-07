@@ -1,0 +1,68 @@
+import * as React from 'react'
+// import { useTheme } from '../../../contexts/ThemeContext'
+import CipherKey from './CipherKey'
+
+import { CeasarBox, Icon, Slider, Text } from './styles'
+const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+const Ceasar = () => {
+  const [originalText, setOriginalText] = React.useState('Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him. The evil that men do lives after them; The good is oft interred with their bones; So let it be with Caesar. The noble Brutus Hath told you Caesar was ambitious: If it were so, it was a grievous fault, and grievously hath Caesar answer’d it.')
+  const [encodedText, setEncodedText] = React.useState('m')
+  const [rot, setRot] = React.useState(0)
+  // const theme = useTheme()
+
+  const encodeLetter = (letter: string) => {
+    const index = alphabet.indexOf(letter)
+    let newIndex = index - rot
+    if (newIndex < 0) {
+      newIndex = alphabet.length - 1 + newIndex
+    }
+    return alphabet[newIndex]
+  }
+
+  const encodeArray = (letters: Array<string>) => {
+    const encodedLetters = []
+    letters.forEach((letter) => {
+      if (!letter.match(`[a-zA-Z]`)) {
+        encodedLetters.push(letter)
+        return
+      }
+      if (letter == letter.toUpperCase()) {
+        encodedLetters.push(encodeLetter(letter.toLowerCase()).toUpperCase())
+        return
+      }
+      encodedLetters.push(encodeLetter(letter))
+    })
+    return encodedLetters
+  }
+
+  React.useEffect(() => {
+    const textArray = originalText.split('')
+    const nextArray = encodeArray(textArray)
+    setEncodedText(nextArray.join(''))
+  }, [rot])
+
+  const onROTChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setRot(parseInt(e.currentTarget.value, 10))
+  }
+
+  return (
+    <CeasarBox>
+      <Icon>?</Icon>
+      <Slider
+        onChange={onROTChange}
+        type="range"
+        name="volume"
+        min="0"
+        max="25"
+        value={rot}
+      />
+      <CipherKey rot={rot} />
+      <Text>
+        {encodedText}
+      </Text>
+    </CeasarBox>
+  )
+}
+
+export default Ceasar

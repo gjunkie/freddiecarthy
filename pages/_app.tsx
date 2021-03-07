@@ -44,16 +44,16 @@ function MyApp({ Component, pageProps }) {
   }, [mode])
 
   return (
-    <MDXProvider components={components}>
-      <ThemeProvider systemMode={mode}>
+    <ThemeProvider systemMode={mode}>
+      <MDXProvider components={components}>
         <>
           <GlobalStyle />
           <Header />
           <Component {...pageProps} />
           <Footer />
         </>
-      </ThemeProvider>
-    </MDXProvider>
+      </MDXProvider>
+    </ThemeProvider>
   )
 }
 

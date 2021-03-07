@@ -23,6 +23,9 @@ export const Header = () => {
                   <Link href="/reading">Reading</Link>
                 </li>
                 <li>
+                  <Link href="/watching">Watching</Link>
+                </li>
+                <li>
                   <Link href="/about">About</Link>
                 </li>
               </ul>
