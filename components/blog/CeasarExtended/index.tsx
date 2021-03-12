@@ -18,7 +18,7 @@ const Ceasar = () => {
   }
 
   const encodeArray = (letters: Array<string>) => {
-    const encodedLetters = []
+    const encodedLetters: Array<string> = []
     letters.forEach((letter) => {
       if (letter == letter.toUpperCase()) {
         encodedLetters.push(encodeLetter(letter.toLowerCase()).toUpperCase())
