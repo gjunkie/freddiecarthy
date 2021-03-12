@@ -18,10 +18,11 @@ const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N
 
 const PlayfairCipher: React.FC = () => {
   const [key, setKey] = React.useState('playfair example'.toUpperCase())
-  const [message, setMessage] = React.useState('WE KNOW THAT FROM TIME TO TIME THERE ARISE AMONG HUMAN BEINGS PEOPLE WHO SEEM TO EXUDE LOVE AS NATURALLY AS THE SUN GIVES OUT HEAT.'.match(/[a-zA-Z]+/g).join(' '))
-  const [digrams, setDigrams] = React.useState([])
+  const [message, setMessage] = React.useState('WE KNOW THAT FROM TIME TO TIME THERE ARISE AMONG HUMAN BEINGS PEOPLE WHO SEEM TO EXUDE LOVE AS NATURALLY AS THE SUN GIVES OUT HEAT.'.match(/[a-zA-Z]+/g)?.join(' ') || '')
+  const defaultDigrams: Array<string> = []
+  const [digrams, setDigrams] = React.useState(defaultDigrams)
   const [encryptedMessage, setEncryptedMessage] = React.useState('')
-  const defaultTable: Array<Array<string>> = [[],[],[],[],[],]
+  const defaultTable: Array<Array<string>> = [[],[],[],[],[]]
   const [table, setTable] = React.useState(defaultTable)
 
   const addLetterToTable = (newTable: Array<Array<string>>, letter: string) => {
@@ -70,7 +71,7 @@ const PlayfairCipher: React.FC = () => {
         messageArray.splice(i, 0, 'X')
       }
     }
-    const newDigrams = messageArray.join('').match(/(..?)/g)
+    const newDigrams = messageArray.join('').match(/(..?)/g) || []
     setDigrams(newDigrams)
   }, [key, message])
 
@@ -81,7 +82,7 @@ const PlayfairCipher: React.FC = () => {
   const onChangeKey = (e: React.FormEvent<HTMLInputElement>) => {
     setKey(e.currentTarget.value.toUpperCase())
   }
-  const onChangeMessage = (e: React.FormEvent<HTMLInputElement>) => {
+  const onChangeMessage = (e: React.FormEvent<HTMLTextAreaElement>) => {
     setMessage(e.currentTarget.value.toUpperCase())
   }
 
@@ -211,7 +212,9 @@ const PlayfairCipher: React.FC = () => {
           </Label>
           <Label>
             <span>Message:</span>
-            <TextArea type="input" onChange={onChangeMessage} value={message}/>
+            <TextArea
+              onChange={onChangeMessage}
+              value={message}/>
           </Label>
         </InputWrapper>
         <TableWrapper>
