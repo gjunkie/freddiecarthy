@@ -102,9 +102,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: 26px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: 500;
     margin-top: 70px;
+    position: relative;
+
+    ::before {
+      background: #ff3864;
+      content: "";
+      height: 2px;
+      position: absolute;
+      top: -10px;
+      width: 25px;
+    }
   }
 
   h3 {

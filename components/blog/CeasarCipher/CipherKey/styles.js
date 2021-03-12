@@ -10,6 +10,7 @@ export const Letter = styled.li`
   background: #ffffff;
   border: 1px solid #000000;
   border-radius: 4px;
+  color: #000000;
   padding: 0 5px;
   text-align: center;
   height: 27px;
@@ -20,8 +21,8 @@ export const Letter = styled.li`
 `
 
 export const KeyLetter = styled.li`
-  background: #131313;
-  border: 1px dashed #131313;
+  background: #ff3864;
+  border: 1px solid #1d1d1d;
   border-radius: 4px;
   color: #ffffff;
   font-weight: 600;

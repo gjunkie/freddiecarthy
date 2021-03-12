@@ -1,15 +1,14 @@
 import * as React from 'react'
-// import { useTheme } from '../../../contexts/ThemeContext'
+import Link from 'next/link'
 import CipherKey from './CipherKey'
 
-import { CeasarBox, Icon, Slider, Text } from './styles'
+import { CeasarBox, Icon, LinkWrapper, Slider, Text } from './styles'
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-const Ceasar = () => {
+const CeasarCipher: React.FC = () => {
   const [originalText, setOriginalText] = React.useState('Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him. The evil that men do lives after them; The good is oft interred with their bones; So let it be with Caesar. The noble Brutus Hath told you Caesar was ambitious: If it were so, it was a grievous fault, and grievously hath Caesar answer’d it.')
-  const [encodedText, setEncodedText] = React.useState('m')
+  const [encodedText, setEncodedText] = React.useState('')
   const [rot, setRot] = React.useState(0)
-  // const theme = useTheme()
 
   const encodeLetter = (letter: string) => {
     const index = alphabet.indexOf(letter)
@@ -21,8 +20,8 @@ const Ceasar = () => {
   }
 
   const encodeArray = (letters: Array<string>) => {
-    const encodedLetters = []
-    letters.forEach((letter) => {
+    const encodedLetters: Array<string> = []
+    letters.forEach((letter: string) => {
       if (!letter.match(`[a-zA-Z]`)) {
         encodedLetters.push(letter)
         return
@@ -48,7 +47,7 @@ const Ceasar = () => {
 
   return (
     <CeasarBox>
-      <Icon>?</Icon>
+      <Icon>Your offset: {-rot}</Icon>
       <Slider
         onChange={onROTChange}
         type="range"
@@ -61,8 +60,11 @@ const Ceasar = () => {
       <Text>
         {encodedText}
       </Text>
+      <LinkWrapper>
+        <Link href="http://gooogle.com">See the code 🧑‍💻</Link>
+      </LinkWrapper>
     </CeasarBox>
   )
 }
 
-export default Ceasar
+export default CeasarCipher

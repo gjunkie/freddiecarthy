@@ -1,0 +1,29 @@
+---
+title: "Having Fun With Simple Ciphers"
+date: "2021-03-11"
+author: "Freddie Carthy"
+excerpt: "Building interactive React components to showcase simple ciphers"
+description: "I was recently looking into learning more about certain algorithms. One GitHub repo led to another and I instead ended up learning about some simple ciphers used throughout human history."
+image: "ariel-Oal07Ai4oTk-unsplash"
+attribution: "Photo by Ariel Besagar"
+attributionLink: "https://unsplash.com/@arielbesagar"
+---
+**THIS IS A DRAFT**
+
+I was recently looking into learning more about certain algorithms. One GitHub repo led to another and I instead ended up learning about some simple ciphers used throughout human history. 
+
+The history of cryptography is fascinating. It is thousands of years old; Egyptians used it some 4000 years ago. But it wasn't until the 19th century that cryptography began to mature, both in encryption and cryptanalysis (the science of finding weaknesses in crypto systems). I highly recommend checking out the [History of Cryptography Wikipedia page](https://en.wikipedia.org/wiki/History_of_cryptography).
+
+I wanted to use this blog post as a way to learn how to implement some of the simpler cryptography methods in JavaScript, and create interactive examples with React components.
+
+## Ceasar Cipher
+The first technique I'll cover is the Ceasar cipher, named after Julius Ceasar. It is one of the simplest ones. The Ceasar cipher, also knowns as the shift shift, is a type of substitution cipher where every letter in your message is replaced by another letter that is some offset number of spots in the same alphabet. So if your offset is -3 the letter D would become the letter A.
+
+While this may have been a suitable level of encryption 2000 years ago, the same did not hold true for the 20th century.  Russians attempted to use the Ceasar Cipher during World War I in lieu of more sophisticated methods. This was largely because it was easier for their troops to decode messages in the field, but the same was true for German and Austrian cryptanalysts that got a hold of those "secret" messages.
+
+Take a look at this example. Use the slider to increase the offset and encrypt the text.
+<CeasarCipher />
+
+## Playfair Cipher
+Now we take it up a level. The Playfair Cipher uses a symmetric-key algorithm. These are algorithms for cryptography that use the same cryptographic keys for both the encryption of plaintext and the decryption of ciphertext.
+<PlayfairCipher />
