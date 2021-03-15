@@ -23,7 +23,7 @@ export const Header = () => {
                   <Link href="/reading">Reading</Link>
                 </li>
                 <li>
-                  <Link href="/watching">Watching</Link>
+                  <Link href="/listening">Listening</Link>
                 </li>
                 <li>
                   <Link href="/about">About</Link>

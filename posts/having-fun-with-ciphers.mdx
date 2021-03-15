@@ -17,7 +17,7 @@ The history of cryptography is fascinating. It is thousands of years old; Egypti
 I wanted to use this blog post as a way to learn how to implement some of the simpler cryptography methods in JavaScript, and create interactive examples with React components.
 
 ## Ceasar Cipher
-The first technique I'll cover is the Ceasar cipher, named after Julius Ceasar. It is one of the simplest ones. The Ceasar cipher, also knowns as the shift shift, is a type of substitution cipher where every letter in your message is replaced by another letter that is some offset number of spots in the same alphabet. So if your offset is -3 the letter D would become the letter A.
+The first technique I'll cover is the Ceasar cipher, named after Julius Ceasar. It is one of the simplest ones. The Ceasar cipher, also known as the Ceasar shift, is a type of substitution cipher where every letter in your message is replaced by another letter that is some offset number of spots in the same alphabet. So if your offset is -3 the letter D would become the letter A.
 
 While this may have been a suitable level of encryption 2000 years ago, the same did not hold true for the 20th century.  Russians attempted to use the Ceasar Cipher during World War I in lieu of more sophisticated methods. This was largely because it was easier for their troops to decode messages in the field, but the same was true for German and Austrian cryptanalysts that got a hold of those "secret" messages.
 
@@ -25,5 +25,11 @@ Take a look at this example. Use the slider to increase the offset and encrypt t
 <CeasarCipher />
 
 ## Playfair Cipher
-Now we take it up a level. The Playfair Cipher uses a symmetric-key algorithm. These are algorithms for cryptography that use the same cryptographic keys for both the encryption of plaintext and the decryption of ciphertext.
+Now we take it up a level. The Playfair Cipher uses a symmetric-key algorithm. These are algorithms for cryptography that use the same cryptographic keys for both the encryption of plaintext and the decryption of ciphertext. It was used during the first and second World Wars by the British.
+
+There are a number of rules that make this cipher interesting. First, one must create a key table with which your message will be encrypted (as you can see an example of below). This key is create following a set of simple rules; come up with a short phrase are your starter key and place each letter in a square from left to right, but skip duplicate letters. Fill the rest of the grid with the alphabet, also skipping any letters already on the grid.
+
+Using this table you can now encrypt pairs of letters from your message following another set of simple rules.
+<PlayfairExample />
+
 <PlayfairCipher />

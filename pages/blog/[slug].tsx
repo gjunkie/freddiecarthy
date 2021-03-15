@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import CeasarCipher from  '../../components/blog/CeasarCipher'
 import PlayfairCipher from  '../../components/blog/PlayfairCipher'
+import PlayfairExample from  '../../components/blog/PlayfairExample'
 import renderToString from "next-mdx-remote/render-to-string"
 import hydrate from "next-mdx-remote/hydrate"
 import matter from "gray-matter"
@@ -30,7 +31,7 @@ type PostProps = {
   },
 }
 
-const components = { CeasarCipher, CodeBlock, Link, PlayfairCipher }
+const components = { CeasarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample }
 
 // export default function Post({ source, meta }) {
 const Home: React.FC<PostProps> = ({source, meta}) => {

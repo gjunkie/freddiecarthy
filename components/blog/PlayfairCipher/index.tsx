@@ -18,7 +18,7 @@ const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N
 
 const PlayfairCipher: React.FC = () => {
   const [key, setKey] = React.useState('playfair example'.toUpperCase())
-  const [message, setMessage] = React.useState('WE KNOW THAT FROM TIME TO TIME THERE ARISE AMONG HUMAN BEINGS PEOPLE WHO SEEM TO EXUDE LOVE AS NATURALLY AS THE SUN GIVES OUT HEAT.'.match(/[a-zA-Z]+/g)?.join(' ') || '')
+  const [message, setMessage] = React.useState('WE HOLD THESE TRUTHS TO BE SELF EVIDENT.'.match(/[a-zA-Z]+/g)?.join(' ') || '')
   const defaultDigrams: Array<string> = []
   const [digrams, setDigrams] = React.useState(defaultDigrams)
   const [encryptedMessage, setEncryptedMessage] = React.useState('')
@@ -27,7 +27,6 @@ const PlayfairCipher: React.FC = () => {
 
   const addLetterToTable = (newTable: Array<Array<string>>, letter: string) => {
     let letterExists: boolean = false
-    console.log(newTable)
     for(let row: number = 0; row < newTable.length; row++) {
       letterExists = newTable[row].some(l => l === letter)
       if (letterExists) {
@@ -61,11 +60,14 @@ const PlayfairCipher: React.FC = () => {
 
   React.useEffect(() => {
     let newMessage = message.replace(/\s/g, '').toUpperCase()
+    // this ensures that a message with an odd number of characters gets a Q appended
     if (isOdd(newMessage.length)) {
-      newMessage = newMessage + 'X'
+      newMessage = newMessage + 'Q'
     }
     const normalizedMessage: string = newMessage
     const messageArray: Array<string> = normalizedMessage.split('')
+
+    // this ensures that repeating letters are separated by an X
     for (let i = 0; i < messageArray.length; i++) {
       if (isOdd(i) && messageArray[i] === messageArray[i - 1]) {
         messageArray.splice(i, 0, 'X')
@@ -86,7 +88,7 @@ const PlayfairCipher: React.FC = () => {
     setMessage(e.currentTarget.value.toUpperCase())
   }
 
-  const isOdd = (num: number) => num % 2
+  const isOdd = (num: number): boolean => Boolean(num % 2)
 
   const getRow = (letter: string): number => {
     let result = -1
