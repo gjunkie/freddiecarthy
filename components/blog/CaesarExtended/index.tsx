@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { CeasarBox, Slider } from './styles'
+import { CaesarBox, Slider } from './styles'
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '!']
 
-const Ceasar = () => {
+const Caesar = () => {
   const [originalText, setOriginalText] = React.useState('It is better to create than to learn! Creating is the essence of life.')
   const [encodedText, setEncodedText] = React.useState('m')
   const [rot, setRot] = React.useState(3)
@@ -40,7 +40,7 @@ const Ceasar = () => {
   }
 
   return (
-    <CeasarBox>
+    <CaesarBox>
       <Slider
         onChange={onROTChange}
         type="range"
@@ -53,8 +53,8 @@ const Ceasar = () => {
       <div>
         {encodedText}
       </div>
-    </CeasarBox>
+    </CaesarBox>
   )
 }
 
-export default Ceasar
+export default Caesar

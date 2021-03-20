@@ -2,10 +2,10 @@ import * as React from 'react'
 import Link from 'next/link'
 import CipherKey from './CipherKey'
 
-import { CeasarBox, Icon, LinkWrapper, Slider, Text } from './styles'
+import { CaesarBox, Icon, LinkWrapper, Slider, Text } from './styles'
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-const CeasarCipher: React.FC = () => {
+const CaesarCipher: React.FC = () => {
   const [originalText, setOriginalText] = React.useState('Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him. The evil that men do lives after them; The good is oft interred with their bones; So let it be with Caesar. The noble Brutus Hath told you Caesar was ambitious: If it were so, it was a grievous fault, and grievously hath Caesar answer’d it.')
   const [encodedText, setEncodedText] = React.useState('')
   const [rot, setRot] = React.useState(0)
@@ -46,7 +46,7 @@ const CeasarCipher: React.FC = () => {
   }
 
   return (
-    <CeasarBox>
+    <CaesarBox>
       <Icon>Your offset: {-rot}</Icon>
       <Slider
         onChange={onROTChange}
@@ -63,8 +63,8 @@ const CeasarCipher: React.FC = () => {
       <LinkWrapper>
         <Link href="http://gooogle.com">See the code 🧑‍💻</Link>
       </LinkWrapper>
-    </CeasarBox>
+    </CaesarBox>
   )
 }
 
-export default CeasarCipher
+export default CaesarCipher

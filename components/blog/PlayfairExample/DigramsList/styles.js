@@ -4,6 +4,7 @@ export const Digrams = styled.ul`
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  padding: 0;
 `
 
 export const Digram = styled.li`

@@ -17,6 +17,7 @@ const PlayfairExample: React.FC = () => {
   const encryptedDigrams: Array<string> = ['UG', 'FH', 'TC', 'PD', 'IL', 'KL', 'MZ', 'PD', 'TL', 'AH', 'IL', 'LU', 'GF', 'XF', 'CK', 'RQ']
   const key = 'Monarchy'
   const message = 'We hold these truths to be self-evident'
+  const encryptedMessage = 'UGFHTCPDILKLMZPDTLAHILLUGFXFCKRQ'
 
   const table = [
     ['M', 'O', 'N', 'A', 'R'],
@@ -36,7 +37,7 @@ const PlayfairExample: React.FC = () => {
 
   return (
     <PlayfairBox>  
-      <Key onMouseEnter={() => handleKeyHover(true)} onMouseLeave={() => handleKeyHover(false)}>Key: {key}</Key>
+      <Key onMouseEnter={() => handleKeyHover(true)} onMouseLeave={() => handleKeyHover(false)}>{key}</Key>
       <Message>{message}</Message>
       <DigramsList digrams={plaintextDigrams} onHoverDigram={handleDigramHover} />
       <PlayfairTable
@@ -47,6 +48,7 @@ const PlayfairExample: React.FC = () => {
         table={table}
       />
       <DigramsList digrams={encryptedDigrams} activeDigramIndex={activeDigramIndex} />
+      <Message>{encryptedMessage}</Message>
       <LinkWrapper>
         <Link href="http://gooogle.com">See the code 🧑‍💻</Link>
       </LinkWrapper>

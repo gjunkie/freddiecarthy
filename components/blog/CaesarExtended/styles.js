@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const CeasarBox = styled.div`
+export const CaesarBox = styled.div`
   background: #ffabbd;
   border-radius: 10px;
   padding: 10px;

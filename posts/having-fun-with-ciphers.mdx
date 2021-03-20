@@ -8,28 +8,49 @@ image: "ariel-Oal07Ai4oTk-unsplash"
 attribution: "Photo by Ariel Besagar"
 attributionLink: "https://unsplash.com/@arielbesagar"
 ---
-**THIS IS A DRAFT**
 
-I was recently looking into learning more about certain algorithms. One GitHub repo led to another and I instead ended up learning about some simple ciphers used throughout human history. 
+I was recently looking into learning more about certain algorithms, but one GitHub repo led to another and I instead ended up learning about some simple ciphers used throughout human history. 
 
 The history of cryptography is fascinating. It is thousands of years old; Egyptians used it some 4000 years ago. But it wasn't until the 19th century that cryptography began to mature, both in encryption and cryptanalysis (the science of finding weaknesses in crypto systems). I highly recommend checking out the [History of Cryptography Wikipedia page](https://en.wikipedia.org/wiki/History_of_cryptography).
 
-I wanted to use this blog post as a way to learn how to implement some of the simpler cryptography methods in JavaScript, and create interactive examples with React components.
+I wanted to use this blog post as a way to learn how to implement some of the simpler cryptography methods in JavaScript, and create interactive examples with React components. Let's get started 🎉
 
-## Ceasar Cipher
-The first technique I'll cover is the Ceasar cipher, named after Julius Ceasar. It is one of the simplest ones. The Ceasar cipher, also known as the Ceasar shift, is a type of substitution cipher where every letter in your message is replaced by another letter that is some offset number of spots in the same alphabet. So if your offset is -3 the letter D would become the letter A.
+## Caesar Cipher
 
-While this may have been a suitable level of encryption 2000 years ago, the same did not hold true for the 20th century.  Russians attempted to use the Ceasar Cipher during World War I in lieu of more sophisticated methods. This was largely because it was easier for their troops to decode messages in the field, but the same was true for German and Austrian cryptanalysts that got a hold of those "secret" messages.
+### History
+The first technique I'll cover is the Caesar cipher, named after Julius Caesar, one of the simplest. The Caesar cipher, also known as the Caesar shift, is a type of substitution cipher where every letter in your message is replaced by another letter that is some offset number of spots in the same alphabet. So if your offset is -3 the letter D would become the letter A.
 
-Take a look at this example. Use the slider to increase the offset and encrypt the text.
-<CeasarCipher />
+While this may have been a suitable level of encryption 2000 years ago, the same did not hold true for the 20th century.  Russians attempted to use the Caesar Cipher during World War I in lieu of more sophisticated methods. This was largely because it was easier for their troops to decode messages in the field, but the same was true for German and Austrian cryptanalysts that got a hold of those "secret" messages.
+
+### Example
+
+Use the slider in the example below to alter the offset and encrypt the sample text.
+<CaesarCipher />
+
+What makes the Caesar cipher fun is its simplicity. You can easily encrypt and decrypt messages with pencil and paper, so long as you know what the offset is. Keep it secret! 😂
 
 ## Playfair Cipher
-Now we take it up a level. The Playfair Cipher uses a symmetric-key algorithm. These are algorithms for cryptography that use the same cryptographic keys for both the encryption of plaintext and the decryption of ciphertext. It was used during the first and second World Wars by the British.
 
-There are a number of rules that make this cipher interesting. First, one must create a key table with which your message will be encrypted (as you can see an example of below). This key is create following a set of simple rules; come up with a short phrase are your starter key and place each letter in a square from left to right, but skip duplicate letters. Fill the rest of the grid with the alphabet, also skipping any letters already on the grid.
+Now we take it up a level. The Playfair Cipher uses a symmetric-key algorithm. These are algorithms for cryptography that use the same cryptographic keys for both the encryption of plaintext and the decryption of ciphertext.
 
-Using this table you can now encrypt pairs of letters from your message following another set of simple rules.
+### History
+
+Invented in 1854 by Charles Wheatstone, it was used during the first and second World Wars by the British. While this cipher can still easily be decrypted with pencil and paper, it is a bit more involved. Thus, this was used in battle to pass along important (albeit not top secret) messages. These messages usually were relevant for a short period of time and were irrelevant by the time the enemy was able to decrypt them.
+
+### Encryption Rules
+
+There are a number of factors that make this cipher interesting. It uses a key phrase and a key table to encrypt pairs of letters in a message.
+
+Start by coming up with a short phrase as your key and place each letter, from left to right (or another chosen pattern) on a 5x5 grid. Make sure to skip duplicate letters. Fill the rest of the grid with the alphabet, also skipping any letters already on the grid. We now have our key table ready to encrypt our super secret message 🕵️
+
+Next, you take your super secret message and break it down to digrams (pairs of letters), so a phrase like "Hello world" would become "HE LL OW OR LD". You then use the key table to substitute the digrams with their encrypted counterparts.
+
+Using this table you can now encrypt pairs of letters from your message following another set of rules:
+* If the letters appear on the same row, replace them with the letters to their right and loop back around if they're at the edge.
+* If the letters appear on the same column, replace them with the letters below and loop back to the top if they're at the bottom.
+* If the letters are not on the same row or column, replace each one with the letters on the same row but at the column of the other (forming a square or rectangle).
+
+There's a couple of caveats that also come into play to make sure you can effectively encrypt a message. Your message has to have an even number of letters, and your digrams can't consist of repeating letters. Repeating letters are broken up by inserting an X, and a message with an uneven number of letters can get a Q appended to it (or some other non frequent letter).
+
+To see this in action hover over the pairs of letters below to see their encrypted counterparts highlighted.
 <PlayfairExample />
-
-<PlayfairCipher />

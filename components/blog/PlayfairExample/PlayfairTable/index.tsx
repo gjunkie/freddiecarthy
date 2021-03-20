@@ -22,13 +22,13 @@ const PlayfairTable = ({
       {table.map((row) => (
         <Row key={row.toString()}>
           {row.map((letter) => (
-          <PlayfairSquare
-            isActiveEncrypted={letter === activeEncryptedDigram.charAt(0) || letter === activeEncryptedDigram.charAt(1)}
-            isActiveKey={keyIsActive && cipherKey.includes(letter)}
-            isActivePlaintext={letter === activePlaintextDigram.charAt(0) || letter === activePlaintextDigram.charAt(1)}
-            key={letter}
-            letter={letter}
-          />
+            <PlayfairSquare
+              isActiveEncrypted={letter === activeEncryptedDigram.charAt(0) || letter === activeEncryptedDigram.charAt(1)}
+              isActiveKey={keyIsActive && cipherKey.toUpperCase().includes(letter)}
+              isActivePlaintext={letter === activePlaintextDigram.charAt(0) || letter === activePlaintextDigram.charAt(1)}
+              key={letter}
+              letter={letter}
+            />
           ))}
         </Row>
       ))}

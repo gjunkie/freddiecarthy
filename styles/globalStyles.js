@@ -168,6 +168,15 @@ const GlobalStyle = createGlobalStyle`
     font-size: 18px;
   }
 
+  article ul, article ol {
+    list-style-type: initial;
+    padding-left: 20px;
+  }
+
+  article li {
+    margin-bottom: 5px;
+  }
+
   .prism-code {
     background-color: transparent;
     font-size: 1.2rem;

@@ -3,7 +3,9 @@ import styled from 'styled-components'
 export const Alphabet = styled.ul`
   display: flex;
   justify-content: space-between;
+  list-style-type: none;
   margin: 20px 0;
+  padding: 0;
 `
 
 export const Letter = styled.li`

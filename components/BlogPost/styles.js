@@ -42,15 +42,15 @@ export const Article = styled.article`
     flex-direction: column;
   }
 `
-export const OrderedListStyles = styled.ol`
+export const Ol = styled.ol`
   list-style-type: decimal;
   padding-left: 20px;
 `
-export const UnorderedListStyles = styled.ul`
+export const Ul = styled.ul`
   list-style-type: initial;
   padding-left: 20px;
 `
-export const DividerStyles = styled.div`
+export const Divider = styled.div`
   margin: 30px 0;
   text-align: center;
 `

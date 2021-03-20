@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const CeasarBox = styled.div`
+export const CaesarBox = styled.div`
   background-color: #1d1d1d;
   color: #ffffff;
   display: flex;

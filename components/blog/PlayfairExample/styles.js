@@ -14,6 +14,10 @@ export const PlayfairBox = styled.div`
 export const Key = styled.div`
   font-size: 1.4rem;
   text-align: center;
+
+  &:hover {
+    cursor: default;
+  }
 `
 
 export const Message = styled.div`

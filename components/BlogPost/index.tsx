@@ -7,7 +7,7 @@ import {
   Article,
   HeadingStyles,
   HeroImage,
-  DividerStyles,
+  Divider,
   ReadingTimeStyles,
 } from './styles'
 
@@ -58,7 +58,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
 
       <div>{content}</div>
 
-      <DividerStyles>...</DividerStyles>
+      <Divider>...</Divider>
 
       <TweetCTA title={title} />
     </Article>

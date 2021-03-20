@@ -29,7 +29,7 @@ export const Square = styled.div`
   }
 
   &.activeKey {
-    background: #ff3864;
+    outline: 1px solid #ffffff;
   }
 
   &.activePlaintext {

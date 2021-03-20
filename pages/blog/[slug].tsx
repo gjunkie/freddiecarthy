@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import CeasarCipher from  '../../components/blog/CeasarCipher'
+import CaesarCipher from  '../../components/blog/CaesarCipher'
 import PlayfairCipher from  '../../components/blog/PlayfairCipher'
 import PlayfairExample from  '../../components/blog/PlayfairExample'
 import renderToString from "next-mdx-remote/render-to-string"
@@ -31,7 +31,7 @@ type PostProps = {
   },
 }
 
-const components = { CeasarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample }
+const components = { CaesarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample }
 
 // export default function Post({ source, meta }) {
 const Home: React.FC<PostProps> = ({source, meta}) => {
