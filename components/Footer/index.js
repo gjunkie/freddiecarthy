@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <footer className={`${styles.footer} ${styles[theme]}`}>
       <div className={styles.contents}>
-        <div className={styles.copyright}>Freddie Carthy © 2020</div>
+        <div className={styles.copyright}>Freddie Carthy © 2021</div>
         <div>
           <a
             className={styles.link}
