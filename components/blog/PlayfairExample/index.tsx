@@ -1,6 +1,4 @@
 import * as React from 'react'
-import Link from 'next/link'
-
 import PlayfairTable from './PlayfairTable'
 import { DigramsList } from './DigramsList'
 import {
@@ -50,7 +48,7 @@ const PlayfairExample: React.FC = () => {
       <DigramsList digrams={encryptedDigrams} activeDigramIndex={activeDigramIndex} />
       <Message>{encryptedMessage}</Message>
       <LinkWrapper>
-        <Link href="http://gooogle.com">See the code 🧑‍💻</Link>
+        <a href="https://github.com/gjunkie/freddiecarthy/tree/main/components/blog/PlayfairExample" target="_blank" rel="nofollow">See the code 🧑‍💻</a>
       </LinkWrapper>
     </PlayfairBox>  
   )
