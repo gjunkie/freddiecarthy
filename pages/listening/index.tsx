@@ -32,7 +32,7 @@ const Listening: React.FC = () => {
           <>
             <YearHeading>{year}</YearHeading>
             <AlbumList>
-              { Object.values(albumData.favorites[year]).map(album => (
+              { Object.values(albumData.favorites[year]).map((album: { artist: string, coverUrl: string, name: string, releaseYear: number }) => (
                 <AlbumListItem key={album.name}>
                   <Album
                     artist={album.artist}
