@@ -1,24 +1,19 @@
 import styled from 'styled-components';
 
-export const AlbumWrapper = styled.div`
-
-`
-
-export const Cover = styled.div`
-  background: black;
-  height: 250px;  
-  margin-bottom: 10px;
-  width: 250px;  
-`
-
 export const Artist = styled.h3`
   margin-top: 0;  
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+  }
 `
 
 export const AlbumName = styled.h4`
-  
+  @media (max-width: 800px) {
+    font-size: 12px;
+  }
 `
 
 export const Year = styled.h5`
-  
+  font-weight: normal;
 `
