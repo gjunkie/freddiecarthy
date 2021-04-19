@@ -28,7 +28,7 @@ const Listening: React.FC = () => {
 
       <h2>Favorite Albums by Year</h2>
       <p>The albums that have made the biggest impact on me, ordered by the year I discovered them.</p>
-      { Object.keys(albumData.favorites).sort((a, b) => b - a).map((year) => (
+      { Object.keys(albumData.favorites).sort((a, b) => Number(b) - Number(a)).map(year => (
           <>
             <YearHeading>{year}</YearHeading>
             <AlbumList>

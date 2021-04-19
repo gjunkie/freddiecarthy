@@ -4,7 +4,7 @@ export const AlbumList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   @media (max-width: 800px) {
     justify-content: space-between;
