@@ -123,11 +123,6 @@ const GlobalStyle = createGlobalStyle`
     margin-top: 50px;
   }
 
-  h4 {
-    font-size: 22px;
-    margin-top: 40px;
-  }
-
   ol,
   ul {
     font-size: 18px;
@@ -160,7 +155,7 @@ const GlobalStyle = createGlobalStyle`
 
   main {
     margin: 0 auto;
-    width: 800px;
+    width: 1040px;
   }
 
   main p {

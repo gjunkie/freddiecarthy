@@ -53,7 +53,7 @@ const Home: React.FC<PostProps> = ({source, meta}) => {
         {/* Open Graph */}
         <meta property="og:url" content={`https://freddiecarthy.com/blog/${meta.slug}`} key="ogurl" />
         <meta property="og:image" content={`https://freddiecarthy.com/blog-images/${meta.image}.jpg`} key="ogimage" />
-        <meta property="og:site_name" content="Freddie Carthy Blog" key="ogsitename" />
+        <meta property="og:site_name" content="Freddie Carthy - Blog" key="ogsitename" />
         <meta property="og:title" content={meta.title} key="ogtitle" />
         <meta property="og:description" content={meta.excerpt} key="ogdesc" />
       </Head>

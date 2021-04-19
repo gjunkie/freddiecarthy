@@ -1,67 +1,88 @@
 import * as React from 'react'
+import { Album } from '../../components/Album'
+import {
+  AlbumList,
+  AlbumListItem,
+  YearHeading
+} from '../../styles/listeningStyles'
 
 const Listening: React.FC = () => {
 
   return (
     <main>
-      <h3>2021</h3>
-      <ul>
-        <li>Full Circle by Hælos</li>
-      </ul>
+      <h2>Hall of Fame</h2>
+      <p>This is the music that I could listen to day in and day out. If I was gonna die tomorrow and I had to choose what to listen to these albums would be it.</p>
+      <AlbumList>
+        <AlbumListItem><Album name="High Violet" artist="The National" year={2010} /></AlbumListItem>
+        <AlbumListItem><Album name="Tamer Animals" artist="Other Lives" year={2011} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2020</h3>
-      <ul>
-        <li>Warrior Lord by Poliça</li>
-        <li>Warpaint</li>
-      </ul>
+      <h2>Favorite Albums by Year</h2>
+      <p>The albums that have made the biggest impact on me, ordered by the year I discovered them.</p>
+      <YearHeading>2021</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Full Circle" artist="Hælos" year={2016} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2019</h3>
-      <ul>
-        <li>Otero War by Caveman</li>
-      </ul>
+      <YearHeading>2020</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Warrior Lord" artist="Poliça" year={2013} /></AlbumListItem>
+        <AlbumListItem><Album name="Warpaint" artist="Warpaint" year={2014} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2018</h3>
-      <ul>
-        <li>Painting of a Panic Attack by Frightened Rabbit</li>
-      </ul>
+      <YearHeading>2019</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Otero War" artist="Caveman" year={2016} /></AlbumListItem>
+        <AlbumListItem><Album name="Passerby" artist="Luluc" year={2014} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2017</h3>
-      <ul>
-        <li>Soon It Will Be Cold Enough by Emancipator</li>
-        <li>Woodstock by Portugal. The man</li>
-      </ul>
+      <YearHeading>2018</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Painting of a Panic Attack" artist="Frightened Rabbit" year={2016} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2016</h3>
-      <ul>
-        <li>Faded by RIVKA (EP)</li>
-      </ul>
+      <YearHeading>2017</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Woodstock" artist="Portugal. The Man" year={2017} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2012</h3>
-      <ul>
-        <li>Making Mirrors by Gotye</li>
-      </ul>
+      <YearHeading>2016</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Carrie & Lowell" artist="Sufjan Stevens" year={2015} /></AlbumListItem>
+        <AlbumListItem><Album name="Faded (EP)" artist="RIVKA" year={2013} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2011</h3>
-      <ul>
-        <li>Tamer Animals by Other Lives</li>
-      </ul>
+      <YearHeading>2015</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Soon It Will Be Cold Enough" artist="Emancipator" year={2006} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2010</h3>
-      <ul>
-        <li>High Violet by The National</li>
-        <li>For Emma, Forever Ago by Bon Iver</li>
-        <li>LP4 by Ratatat</li>
-      </ul>
+      <YearHeading>2012</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Making Mirrors" artist="Gotye" year={2011} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2009</h3>
-      <ul>
-        <li>Fever Ray debut</li>
-      </ul>
+      <YearHeading>2011</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Tamer Animals" artist="Other Lives" year={2011} /></AlbumListItem>
+      </AlbumList>
 
-      <h3>2003</h3>
-      <ul>
-        <li>Sing the Sorrow by AFI</li>
-      </ul>
+      <YearHeading>2010</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="High Violet" artist="The National" year={2010} /></AlbumListItem>
+        <AlbumListItem><Album name="For Emma, Forever Ago" artist="Bon Iver" year={2007} /></AlbumListItem>
+        <AlbumListItem><Album name="LP4" artist="Ratatat" year={2010} /></AlbumListItem>
+      </AlbumList>
+
+      <YearHeading>2009</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Fever Ray" artist="Fever Ray" year={2009} /></AlbumListItem>
+      </AlbumList>
+
+      <YearHeading>2003</YearHeading>
+      <AlbumList>
+        <AlbumListItem><Album name="Sing the Sorrow" artist="AFI" year={2003} /></AlbumListItem>
+      </AlbumList>
 
     </main>
   )
