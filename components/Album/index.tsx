@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {
+  AlbumArt,
   AlbumName,
   Artist,
   Year
@@ -19,7 +20,9 @@ export const Album: React.FC<AlbumProps> = ({
   year
 }) => (
   <>
-    <img src={coverUrl} alt={`${name} by ${artist}`} />
+    <AlbumArt>
+      <img src={coverUrl} alt={`${name} by ${artist}`} />
+    </AlbumArt>
     <Artist>{artist}</Artist>
     <AlbumName>{name}</AlbumName>
     <Year>Released {year}</Year>
