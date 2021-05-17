@@ -2,7 +2,7 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import ReactGA from 'react-ga';
 
-const trackingId = "G-38448G0QKN";
+const trackingId = "UA-184799671-1";
 ReactGA.initialize(trackingId);
 // ReactGA.set({
 //   userId: auth.currentUserId(),
