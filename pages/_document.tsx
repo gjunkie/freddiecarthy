@@ -38,6 +38,7 @@ class MyDocument extends Document {
             rel="apple-touch-icon"
             sizes="512x512"
             href="/favicons/android-chrome-192x192.png" />
+          <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
           <Main />

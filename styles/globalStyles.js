@@ -20,7 +20,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: Larsseit, sans-serif;
     transition-property: background-color;
-    transition-duration: 250ms;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -79,11 +78,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .light-mode a {
-    color: #ff3864;
+    color: #e80033;
   }
 
   .light-mode a:hover {
-    color: #2de2e6;
+    color: #01a5a9;
   }
 
   h1,
@@ -159,8 +158,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main p {
-    line-height: 28px;
-    font-size: 18px;
+    line-height: 40px;
+    font-size: 22px;
   }
 
   article ul, article ol {

@@ -30,7 +30,7 @@ const Home: React.FC<HomeProps> = ({allPostsData}) => (
 
     <main>
       <Paragraph>
-        Hi, I&apos;m Freddie. My pronouns are he/him. I&apos;m a human living in the Pacific Northwest with my wife and two amazing kids. I&apos;ve been working as a Software Engineer since 2010. <strong>I&apos;m currently working as a Senior Software Engineer</strong>. Previously I&apos;ve worked at Discovery Networks, Nike, and Opal Labs.
+        Hi, I&apos;m Freddie. My pronouns are he/him. I&apos;m a human living in the Pacific Northwest with my wife and two amazing kids. I&apos;ve been working as a Software Engineer since 2010. <strong>I&apos;m currently working as a Senior Software Engineer @Twitter</strong>. Previously I&apos;ve worked at Discovery Networks, Nike, and Opal Labs.
       </Paragraph>
 
       <Paragraph>

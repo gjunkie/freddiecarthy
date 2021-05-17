@@ -25,17 +25,13 @@ export const Header = () => {
                 <li>
                   <Link href="/listening">Listening</Link>
                 </li>
-                <li>
-                  <Link href="/about">About</Link>
-                </li>
               </ul>
             </nav>
             <ThemeToggle onClick={toggleTheme} />
           </div>
           <div className={styles.me}>
-            <img src="/profile-pictures/freddie-carthy-small.jpg" />
             <div className={styles.name}><Link href="/">Freddie Carthy</Link></div>
-            <div className={styles.blurb}>I write things in a terminal and they show up on the web</div>
+            <div className={styles.blurb}>Digital musings of a software engineer</div>
           </div>
         </div>
         {/* <div className={styles.sky}></div> */}
