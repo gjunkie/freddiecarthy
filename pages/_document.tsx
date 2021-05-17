@@ -1,5 +1,15 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import ReactGA from 'react-ga';
+
+const trackingId = "G-38448G0QKN";
+ReactGA.initialize(trackingId);
+// ReactGA.set({
+//   userId: auth.currentUserId(),
+//   // any data that is relevant to the user session
+//   // that you would like to track with google analytics
+// })
+
 class MyDocument extends Document {
   render() {
     return (
