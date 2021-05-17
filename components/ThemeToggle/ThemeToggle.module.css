@@ -41,9 +41,6 @@
 @media (max-width: 800px) {
   .themeToggle {
     height: 30px;
-    position: absolute;
-    right: 15px;
-    top: -45px;
     width: 30px;
   }
 
