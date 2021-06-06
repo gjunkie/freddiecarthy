@@ -5,6 +5,12 @@ export const Table = styled.div`
   display: flex;
   flex-direction: column;
   margin: 50px 0;
+
+  @media (max-width: 800px) {
+    & {
+      margin: 20px 0;
+    }
+  }
 `
 
 export const Row = styled.div`
@@ -34,5 +40,12 @@ export const Square = styled.div`
 
   &.activePlaintext {
     background: #ff3864;
+  }
+
+  @media (max-width: 800px) {
+    & {
+      height: 48px;
+      width: 48px;
+    }
   }
 `

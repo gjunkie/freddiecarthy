@@ -9,6 +9,12 @@ export const PlayfairBox = styled.div`
   a {
     font-size: 1rem;
   }
+
+  @media (max-width: 800px) {
+    & {
+      padding: 30px;
+    }
+  }
 `
 
 export const Key = styled.div`
@@ -21,9 +27,9 @@ export const Key = styled.div`
 `
 
 export const Message = styled.div`
-  font-size: 2rem;
   margin: 30px 0;
   text-align: center;
+  overflow-wrap: anywhere;
 `
 
 export const LinkWrapper = styled.div`

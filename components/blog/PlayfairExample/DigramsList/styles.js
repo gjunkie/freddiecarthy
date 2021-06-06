@@ -5,6 +5,12 @@ export const Digrams = styled.ul`
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
+
+  @media (max-width: 800px) {
+    & {
+      flex-wrap: wrap;
+    }
+  }
 `
 
 export const Digram = styled.li`
@@ -25,5 +31,12 @@ export const Digram = styled.li`
     background: #ff3864;
     color: #ffffff;
     cursor: default;
+  }
+
+  @media (max-width: 800px) {
+    & {
+      height: 65px;
+      width: 65px;
+    }
   }
 `

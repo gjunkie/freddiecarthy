@@ -20,6 +20,11 @@ export const Letter = styled.li`
   &.emphasisize {
     transform: scale(1.7)
   }
+  @media (max-width: 800px) {
+    &:nth-child(n+9) {
+      display: none;
+    }
+  }
 `
 
 export const KeyLetter = styled.li`
@@ -34,5 +39,10 @@ export const KeyLetter = styled.li`
   width: 27px;
   &.emphasisize {
     transform: scale(1.7)
+  }
+  @media (max-width: 800px) {
+    &:nth-child(n+9) {
+      display: none;
+    }
   }
 `

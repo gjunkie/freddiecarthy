@@ -14,6 +14,12 @@ export const CaesarBox = styled.div`
   a {
     font-size: 1rem;
   }
+
+  @media (max-width: 800px) {
+    & {
+      height: 665px;
+    }
+  }
 `
 
 export const Icon = styled.div`
@@ -41,6 +47,12 @@ export const Text = styled.p`
   font-size: 1.05em;
   line-height: 1.5;
   margin-bottom: 0;
+
+  @media (max-width: 800px) {
+    & {
+      font-size: .8em;
+    }
+  }
 `
 
 export const LinkWrapper = styled.div`
