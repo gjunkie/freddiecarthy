@@ -29,7 +29,7 @@ export const Key = styled.div`
 export const Message = styled.div`
   margin: 30px 0;
   text-align: center;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 `
 
 export const LinkWrapper = styled.div`
