@@ -17,7 +17,7 @@ export const CaesarBox = styled.div`
 
   @media (max-width: 800px) {
     & {
-      height: 665px;
+      height: 635px;
     }
   }
 `
