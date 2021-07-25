@@ -11,12 +11,13 @@ const Reading: React.FC = () => (
     <h2>Currently Reading</h2>
     <p>A list of books I&apos;m currently reading</p>
     <ul>
-      <li>Authority: A Novel (The Southern Reach Trilogy, 2)- Jeff VanderMeer</li>
+      <li>A Promised Land - Barack Obama</li>
     </ul>
 
     <h2>2021</h2>
     <ul>
       <li>Annihilation: A Novel (The Southern Reach Trilogy, 1) - Jeff VanderMeer (<Link href="blog/annihilation-book-review">review</Link>)</li>
+      <li>Authority: A Novel (The Southern Reach Trilogy, 2)- Jeff VanderMeer (<Link href="blog/authority-book-review">review</Link>)</li>
     </ul>
 
     <h2>2016</h2>
@@ -56,14 +57,13 @@ const Reading: React.FC = () => (
     <h2>On my list</h2>
     <p>Books I plan on picking up next.</p>
     <ul>
-      <li>Becoming - Michelle Obama</li>
+      <li>Zen and the Art of Motorcycle Maintenance - Robert M. Pirsig</li>
       <li>Acceptance - Jeff VanderMeer</li>
-      <li>A Promised Land - Barack Obama</li>
+      <li>Becoming - Michelle Obama</li>
       <li>Permanent Record - Edward Snowden</li>
+      <li>Legacy of Ashes: The History of the CIA - Time Weiner</li>
       <li>Technically Wrong - Sara Wachter-Boettcher</li>
       <li>White Fragility: Why It&apos;s So Hard for White People to Talk About Racism - Robin DiAngelo</li>
-      <li>Legacy of Ashes: The History of the CIA - Time Weiner</li>
-      <li>Dune - Frank Herbert</li>
     </ul>
   </Main>
 )
