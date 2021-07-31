@@ -56,7 +56,7 @@ const Home: React.FC<HomeProps> = ({allPostsData}) => (
       <ul>
         {allPostsData.map(({ slug, title, description }) => (
           <ListItem key={slug}>
-            <h4><Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link></h4>
+            <h2><Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link></h2>
             <p>{description}</p>
           </ListItem>
         ))}
