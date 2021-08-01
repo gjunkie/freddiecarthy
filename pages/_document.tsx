@@ -39,6 +39,22 @@ class MyDocument extends Document {
             sizes="512x512"
             href="/favicons/android-chrome-192x192.png" />
           <meta name="theme-color" content="#ffffff" />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=UA-184799671-1`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-184799671-1', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
         <body>
           <Main />
