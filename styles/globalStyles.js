@@ -159,7 +159,7 @@ const GlobalStyle = createGlobalStyle`
 
   main p {
     line-height: 40px;
-    font-size: 22px;
+    font-size: 18px;
   }
 
   article ul, article ol {
