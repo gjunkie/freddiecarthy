@@ -1,6 +1,6 @@
-import * as React from 'react'
-import Link from "next/link"
-import { getSortedPosts } from "../../lib/posts"
+import * as React from 'react';
+import Link from 'next/link';
+import { getSortedPosts } from '../../lib/posts';
 
 import { HeadingStyles } from '../../styles/blogIndexStyles'
 
@@ -10,7 +10,7 @@ type HomeProps = {
     slug: string,
     title: string,
   }[],
-}
+};
 
 const BlogIndex: React.FC<HomeProps> = ({allPostsData}) => (
   <main>
@@ -23,9 +23,9 @@ const BlogIndex: React.FC<HomeProps> = ({allPostsData}) => (
       ))}
     </ul>
   </main>
-)
+);
 
-export default BlogIndex
+export default BlogIndex;
 
 export async function getStaticProps() {
   const allPostsData = getSortedPosts();
@@ -34,4 +34,4 @@ export async function getStaticProps() {
       allPostsData,
     },
   };
-}
+};

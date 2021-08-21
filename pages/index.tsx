@@ -1,15 +1,16 @@
-import * as React from 'react'
-import { GetStaticProps } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import { getSortedPosts } from "../lib/posts"
+import * as React from 'react';
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import { getSortedPosts } from '../lib/posts';
+import { generateRSSFeed } from '../lib/rss';
 
 import {
   Paragraph,
   ListItem,
   HotList,
   Divider
-} from '../styles/homeStyles'
+} from '../styles/homeStyles';
 
 type HomeProps = {
   allPostsData: {
@@ -17,7 +18,7 @@ type HomeProps = {
     slug: string,
     title: string,
   }[],
-}
+};
 
 const Home: React.FC<HomeProps> = ({allPostsData}) => (
   <>
@@ -65,14 +66,19 @@ const Home: React.FC<HomeProps> = ({allPostsData}) => (
       <Divider>...</Divider>
     </main>
   </>
-)
+);
+
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPosts();
+  const articles = getSortedPosts();
+  // articles.sort((a, b) => (a.date < b.date ? 1 : -1));
+
+  generateRSSFeed(articles);
+
   return {
     props: {
-      allPostsData,
+      allPostsData: articles,
     },
   };
 }
