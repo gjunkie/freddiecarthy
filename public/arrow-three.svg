@@ -1,0 +1,5 @@
+<svg width="399" height="202" viewBox="0 0 399 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="arrow-three" d="M254 2C429.923 121.517 415.5 2.00001 360 2C304.5 1.99999 351.556 32.335 321.5 80.4999C291.444 128.665 392.951 250.762 188 176.03C-16.9517 101.298 30.5 135.456 8 164.964" stroke="white" stroke-width="3"/>
+<path class="arrow-three-tail-1" d="M8.06931 165.697C4.97688 162.511 3.72777 158.573 1.83252 154.783" stroke="white" stroke-width="3" stroke-linecap="round"/>
+<path class="arrow-three-tail-2" d="M8.06934 164.918C12.9538 164.918 16.2361 164.794 20.5429 163.358" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,6 +1,30 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: PaytoneOne;
+    src: url(/fonts/paytone/PaytoneOne.woff),
+         url(/fonts/paytone/PaytoneOne.otf),
+         url(/fonts/paytone/PaytoneOne.ttf),
+         url(/fonts/paytone/PaytoneOne.svg);
+  }
+
+  @font-face {
+    font-family: Asap;
+    src: url(/fonts/asap/Asap-VariableFont.woff),
+         url(/fonts/asap/Asap-VariableFont.otf),
+         url(/fonts/asap/Asap-VariableFont.ttf),
+         url(/fonts/asap/Asap-VariableFont.svg);
+  }
+
+  @font-face {
+    font-family: AsapItalic;
+    src: url(/fonts/asap/Asap-Italic-VariableFont.woff),
+         url(/fonts/asap/Asap-Italic-VariableFont.otf),
+         url(/fonts/asap/Asap-Italic-VariableFont.ttf),
+         url(/fonts/asap/Asap-Italic-VariableFont.svg);
+  }
+
   html,
   body {
     padding: 0;
@@ -10,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    border-bottom: 1px solid #FFFFFF;
     color: inherit;
     text-decoration: none;
   }
@@ -18,15 +43,16 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: Larsseit, sans-serif;
+    background: linear-gradient(90deg, #161616 21px, transparent 1%) center, linear-gradient(#161616 21px, transparent 1%) center, #5e4faf;
+	  background-size: 22px 22px;
+    color: #ffffff;
+    font-family: AsapItalic, Larsseit, sans-serif;
     transition-property: background-color;
     -webkit-font-smoothing: antialiased;
   }
 
   /* Dark Mode */
   .dark-mode {
-    background-color: #151515;
-    color: #ffffff;
   }
 
   .dark-mode blockquote {
@@ -48,18 +74,11 @@ const GlobalStyle = createGlobalStyle`
     /* color: #2de2e6; */
   }
 
-  .dark-mode a {
-    color: #2de2e6;
-  }
-
   .dark-mode a:hover {
-    color: #ff3864;
   }
 
   /* Light Mode */
   .light-mode {
-    background-color: #ffffff;
-    color: #000000;
   }
 
   .light-mode blockquote {
@@ -78,11 +97,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .light-mode a {
-    color: #e80033;
   }
 
   .light-mode a:hover {
-    color: #01a5a9;
   }
 
   h1,
@@ -91,13 +108,11 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
+    font-family: PaytoneOne;
     margin: 0;
   }
 
   h1 {
-    font-size: 35px;
-    font-weight: 700;
-    margin-top: 15px;
   }
 
   h2 {
@@ -118,8 +133,7 @@ const GlobalStyle = createGlobalStyle`
 
   h3 {
     font-weight: lighter;
-    font-size: 22px;
-    margin-top: 50px;
+    font-size: 24px;
   }
 
   ol,
@@ -154,12 +168,7 @@ const GlobalStyle = createGlobalStyle`
 
   main {
     margin: 0 auto;
-    width: 1040px;
-  }
-
-  main p {
-    line-height: 40px;
-    font-size: 18px;
+    width: 800px;
   }
 
   article ul, article ol {
