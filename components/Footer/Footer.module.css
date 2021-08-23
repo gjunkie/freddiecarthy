@@ -1,6 +1,4 @@
 .footer {
-  border-top-width: 1px;
-  border-top-style: solid;
   display: flex;
   justify-content: center;
   margin: 50px 0;
@@ -16,28 +14,25 @@
 }
 
 .footer a {
+  border-bottom: none;
   margin: 0 5px;
 }
 
-.footer.light-mode svg {
-  fill: #000000;
-}
-
-.footer.light-mode svg:hover {
-  fill: #2de2e6;
-}
-
-.footer.dark-mode svg {
+.footer svg {
   fill: #ffffff;
 }
 
-.footer.dark-mode svg:hover {
-  fill: #ff3864;
+.footer .twitter svg:hover {
+  fill: #1D9BF0;
+}
+
+.footer .github svg:hover {
+  fill: #A394FF;
 }
 
 .contents {
   display: flex;
-  width: 1040px;
+  width: 800px;
   z-index: 1;
 }
 

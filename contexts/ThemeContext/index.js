@@ -8,8 +8,9 @@ const ThemeProvider = ({children, systemMode}) => {
   const [theme, setTheme] = React.useState(systemMode)
 
   const onToggleTheme = () => {
-    const nextTheme = theme === 'light-mode' ? 'dark-mode' : 'light-mode'
-    setTheme(nextTheme)
+    // const nextTheme = theme === 'light-mode' ? 'dark-mode' : 'light-mode';
+    const nextTheme = 'dark-mode';
+    setTheme(nextTheme);
   }
 
   React.useEffect(() => {

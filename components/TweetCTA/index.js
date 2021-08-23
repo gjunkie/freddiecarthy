@@ -15,9 +15,9 @@ export const TweetCTA = ({
   }
 
   return (
-    <div onClick={share} role="button" className={`${styles.tweetcta} ${styles[theme]}`}>
+    <div className={`${styles.tweetcta} ${styles[theme]}`}>
       <h3>
-        Thanks for reading! <span>Share this post on Twitter</span> if you enjoyed it!
+        Thanks for reading! <span onClick={share} role="button">Share this post on Twitter</span> if you enjoyed it!
       </h3>
     </div>
   )

@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const PageTitle = styled.h2`
+  font-size: 50px;
+  margin: 100px 0 25px;
+  text-align: center;
+`
+
 export const HeadingStyles = styled.h3`
   margin-bottom: 10px;
   @media (max-width: 800px) {
@@ -20,6 +26,7 @@ export const ReadingTimeStyles = styled.div`
     }
     return `
       color: #adadad;
+      text-align: center;
     `
   }}
 `

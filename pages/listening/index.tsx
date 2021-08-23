@@ -4,6 +4,7 @@ import { albumData } from '../../lib/albumData'
 import {
   AlbumList,
   AlbumListItem,
+  PageTitle,
   YearHeading
 } from '../../styles/listeningStyles'
 
@@ -11,6 +12,7 @@ const Listening: React.FC = () => {
 
   return (
     <main>
+      <PageTitle>Freddie&apos;s Music List</PageTitle>
       <h2>Hall of Fame</h2>
       <p>This is the music that I could listen to day in and day out. If I was gonna die tomorrow and I had to choose what to listen to these albums would be it.</p>
       <AlbumList>

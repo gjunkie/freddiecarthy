@@ -1,41 +1,39 @@
-import * as React from 'react'
-import Link from 'next/link'
-import { useTheme, useThemeToggle } from '../../contexts/ThemeContext'
-import { ThemeToggle } from '../ThemeToggle'
+import * as React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import styles from './Header.module.css'
+import {
+  HeaderElem,
+  Item,
+  List,
+  Nav
+} from './styles';
+
+const menu = [
+  { title: 'Home', path: '/' },
+  { title: 'Blog', path: '/blog' },
+  { title: 'Reading', path: '/reading' },
+  { title: 'Listening', path: '/listening' },
+]
 
 export const Header = () => {
-  const theme = useTheme()
-  const toggleTheme = useThemeToggle()
+  const router = useRouter();
 
   return (
     <>
-      <header className={`${styles.header} ${styles[theme]}`}>
-        <div className={styles.contents}>
-          <div className={styles.group}>
-            <nav className={`${styles.nav} ${styles[theme]}`}>
-              <ul>
-                <li>
-                  <Link href="/blog">Blog</Link>
-                </li>
-                <li>
-                  <Link href="/reading">Reading</Link>
-                </li>
-                <li>
-                  <Link href="/listening">Listening</Link>
-                </li>
-              </ul>
-            </nav>
-            <ThemeToggle onClick={toggleTheme} />
-          </div>
-          <div className={styles.me}>
-            <div className={styles.name}><Link href="/">Freddie Carthy</Link></div>
-            <div className={styles.blurb}>Digital musings of a software engineer</div>
-          </div>
-        </div>
-        {/* <div className={styles.sky}></div> */}
-      </header>
+      <HeaderElem>
+        <Nav>
+          <List>
+            {menu.map((item, index) => (
+            <Item key={index}>
+              <Link href={item.path}>
+                <a className={router.pathname == item.path ? "active" : ""}>{item.title}</a>
+              </Link>
+            </Item>
+            ))}
+          </List>
+        </Nav>
+      </HeaderElem>
     </>
   )
 }

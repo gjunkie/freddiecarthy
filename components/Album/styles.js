@@ -8,13 +8,13 @@ export const Artist = styled.h3`
   }
 `
 
-export const AlbumName = styled.h4`
+export const AlbumName = styled.div`
   @media (max-width: 800px) {
     font-size: 14px;
   }
 `
 
-export const Year = styled.h5`
+export const Year = styled.span`
   font-weight: normal;
 
   @media (max-width: 800px) {

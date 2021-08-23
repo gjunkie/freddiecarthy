@@ -120,20 +120,26 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     margin-top: 70px;
     position: relative;
-
-    ::before {
-      background: #ff3864;
-      content: "";
-      height: 2px;
-      position: absolute;
-      top: -10px;
-      width: 25px;
-    }
+// 
+//     ::before {
+//       background: #ff3864;
+//       content: "";
+//       height: 2px;
+//       position: absolute;
+//       top: -10px;
+//       width: 25px;
+//     }
   }
 
   h3 {
     font-weight: lighter;
     font-size: 24px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 32px;
+    margin: 40px 0;
   }
 
   ol,

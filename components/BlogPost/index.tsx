@@ -1,13 +1,12 @@
 import * as React from 'react'
-import { PageTitle } from '../PageTitle'
 import { useTheme } from '../../contexts/ThemeContext'
 import { TweetCTA } from '../TweetCTA'
 
 import {
   Article,
-  HeadingStyles,
-  HeroImage,
   Divider,
+  HeroImage,
+  PageTitle,
   ReadingTimeStyles,
 } from './styles'
 
@@ -17,6 +16,7 @@ const getWordCount = (text: string) => (text.match(/\w+/g) || '').length
 
 type BlogPostProps = {
   content: object,
+  date: string,
   image: string,
   imageAttribution: string,
   imageLink: string,
@@ -25,6 +25,7 @@ type BlogPostProps = {
 
 export const BlogPost: React.FC<BlogPostProps> = ({
   content,
+  date,
   image,
   imageAttribution,
   imageLink,
@@ -46,15 +47,11 @@ export const BlogPost: React.FC<BlogPostProps> = ({
 
   return (
     <Article ref={articleRef}>
-      <PageTitle title={title} />
+      <PageTitle>{title}</PageTitle>
 
       <ReadingTimeStyles theme={theme}>
-        <span>{readingTime} min read</span>
+        <span>Posted on {date}</span> - <span>{readingTime} min read</span>
       </ReadingTimeStyles>
-
-      <HeroImage src={`/blog-images/${image}.jpg`} alt="" />
-
-      <small><a href={imageLink} target="_blank" rel="noreferrer">{imageAttribution}</a></small>
 
       <div>{content}</div>
 

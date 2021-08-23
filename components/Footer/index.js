@@ -14,7 +14,7 @@ export const Footer = () => {
         <div className={styles.copyright}>Freddie Carthy © 2021</div>
         <div>
           <a
-            className={styles.link}
+            className={`${styles.link} ${styles.twitter}`}
             href="https://twitter.com/freddiecarthy"
             rel="noreferrer"
             target="_blank"
@@ -22,7 +22,7 @@ export const Footer = () => {
             <TwitterIcon />
           </a>
           <a
-            className={styles.link}
+            className={`${styles.link} ${styles.github}`}
             href="https://github.com/gjunkie"
             rel="noreferrer"
             target="_blank"

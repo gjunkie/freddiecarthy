@@ -60,6 +60,7 @@ const Home: React.FC<PostProps> = ({source, meta}) => {
       <main>
         <BlogPost
           content={content}
+          date={meta.date}
           image={meta.image}
           imageAttribution={meta.attribution}
           imageLink={meta.attributionLink}

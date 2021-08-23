@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const PageTitle = styled.h2`
+  font-size: 50px;
+  margin: 100px 0 25px;
+  text-align: center;
+`
+
 export const AlbumList = styled.ul`
   display: flex;
   flex-wrap: wrap;

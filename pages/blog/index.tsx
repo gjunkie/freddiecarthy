@@ -2,7 +2,13 @@ import * as React from 'react';
 import Link from 'next/link';
 import { getSortedPosts } from '../../lib/posts';
 
-import { HeadingStyles } from '../../styles/blogIndexStyles'
+import {
+  Article,
+  ArticleList,
+  ArticleTitle,
+  Excerpt,
+  PageTitle,
+} from '../../styles/blogIndex';
 
 type HomeProps = {
   allPostsData: {
@@ -14,14 +20,16 @@ type HomeProps = {
 
 const BlogIndex: React.FC<HomeProps> = ({allPostsData}) => (
   <main>
-    <ul>
+    <PageTitle>Freddie&apos;s Blog</PageTitle>
+
+    <ArticleList>
       {allPostsData.map(({ slug, title, description }) => (
-        <li key={slug}>
-          <HeadingStyles><Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link></HeadingStyles>
-          <p>{description}</p>
-        </li>
+        <Article key={slug}>
+          <ArticleTitle><Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link></ArticleTitle>
+          <Excerpt>{description}</Excerpt>
+        </Article>
       ))}
-    </ul>
+    </ArticleList>
   </main>
 );
 

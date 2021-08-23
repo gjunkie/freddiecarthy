@@ -1,17 +1,22 @@
 import * as React from 'react'
 import Link from 'next/link'
 
-import { Main } from '../../styles/readingStyles'
+import {
+  Main,
+  PageTitle,
+  Subheader
+} from '../../styles/readingStyles'
 
 const Reading: React.FC = () => (
   <Main>
-    <h1>Reading</h1>
-    <p>These are the books I&apos;ve been reading.</p>
+    <PageTitle>Freddie&apos;s Reading List</PageTitle>
+    <Subheader>These are the books I&apos;ve been reading.</Subheader>
 
     <h2>Currently Reading</h2>
     <p>A list of books I&apos;m currently reading</p>
     <ul>
       <li>A Promised Land - Barack Obama</li>
+      <li>Zen and the Art of Motorcycle Maintenance - Robert M. Pirsig</li>
     </ul>
 
     <h2>2021</h2>
@@ -57,7 +62,6 @@ const Reading: React.FC = () => (
     <h2>On my list</h2>
     <p>Books I plan on picking up next.</p>
     <ul>
-      <li>Zen and the Art of Motorcycle Maintenance - Robert M. Pirsig</li>
       <li>Acceptance - Jeff VanderMeer</li>
       <li>Becoming - Michelle Obama</li>
       <li>Permanent Record - Edward Snowden</li>

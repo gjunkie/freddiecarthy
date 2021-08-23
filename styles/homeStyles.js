@@ -205,10 +205,10 @@ export const HighlighSix = styled.span`
 `
 
 export const HighlighSeven = styled.span`
-  color: #D9752C;
+  color: #BB5B14;
 
   a {
-    border-bottom-color: #D9752C;
+    border-bottom-color: #BB5B14;
   }
 `
 

@@ -1,22 +1,11 @@
 .header {
   align-items: center;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
   display: flex;
   flex-direction: column;
-  height: 300px;
   justify-content: center;
   margin-bottom: 50px;
   overflow: hidden;
   position: relative;
-}
-
-.header.light-mode {
-  border-bottom-color: #cacaca;
-}
-
-.header.dark-mode {
-  border-bottom-color: #292929;
 }
 
 .header img {
@@ -44,8 +33,9 @@
 
 .nav ul {
   display: flex;
+  font-family: Asap;
   justify-content: flex-end;
-  width: 1040px;
+  width: 800px;
 }
 
 .nav li {
@@ -75,7 +65,7 @@
   flex-grow: 1;
   justify-content: center;
   position: relative;
-  width: 1040px;
+  width: 800px;
   z-index: 1;
 }
 
@@ -85,6 +75,7 @@
   flex-grow: 1;
   justify-content: flex-end;
   padding-bottom: 60px;
+  text-align: center;
 }
 
 .me .name {
