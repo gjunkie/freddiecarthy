@@ -65,6 +65,11 @@ export const ArrowOne = styled.div`
     animation-fill-mode: forwards;
     animation-delay: 2.5s;
   }
+
+  @media (max-width: 800px) {
+    width: 160px;
+    height: 130px;
+  }
 `
 
 export const ArrowTwo = styled.div`
@@ -99,6 +104,10 @@ export const ArrowTwo = styled.div`
     animation: ${drawTail} 1.5s ease-in-out reverse;
     animation-fill-mode: forwards;
     animation-delay: 6s;
+  }
+
+  @media (max-width: 800px) {
+    left: initial;
   }
 `
 
@@ -135,6 +144,11 @@ export const ArrowThree = styled.div`
     animation-fill-mode: forwards;
     animation-delay: 10s;
   }
+
+  @media (max-width: 800px) {
+    right: 0;
+    width: auto;
+  }
 `
 
 export const CopyGroup = styled.div`
@@ -153,6 +167,12 @@ export const Header = styled.div`
 
   h1 {
     font-size: 68px;
+  }
+
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 30px;
+    }
   }
 `
 
@@ -214,6 +234,10 @@ export const HighlighSeven = styled.span`
 
 export const Main = styled.main`
   margin-top: 150px;
+
+  @media (max-width: 800px) {
+    margin-top: 70px;
+  }
 `
 
 export const Subheader = styled.div`
@@ -223,6 +247,12 @@ export const Subheader = styled.div`
   text-align: center;
   margin-top: 100px;
   width: 590px;
+
+  @media (max-width: 800px) {
+    font-size: 18px;
+    margin-top: 60px;
+    width: auto;
+  }
 `
 
 export const ParagraphContainer = styled.div`
@@ -245,6 +275,33 @@ export const ParagraphContainer = styled.div`
       width: 440px;
     }
   }
+
+  @media (max-width: 800px) {
+    &:nth-child(1) {
+      svg {
+        width: 160px;
+        height: 130px;
+      }
+    }
+    &:nth-child(2) {
+      svg {
+        width: 160px;
+        height: 130px;
+      }
+    }
+    &:nth-child(3) {
+      height: 90px;
+
+      svg {
+        width: 160px;
+        height: 90px;
+      }
+
+      p {
+        width: auto;
+      }
+    }
+  }
 `
 
 export const Paragraph = styled.p`
@@ -253,10 +310,24 @@ export const Paragraph = styled.p`
   line-height: 28px;
   margin: 0;
   width: 390px;
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+    line-height: 24px;
+
+    &:nth-child(1) {
+      margin-top: 25px;
+      width: auto;
+    }
+  }
 `
 
 export const SquareList = styled.ul`
   display: flex;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `
 
 export const Square = styled.li`
@@ -273,5 +344,10 @@ export const Square = styled.li`
 
   p {
     margin: 5px 0;
+  }
+
+  @media (max-width: 800px) {
+    margin-bottom: 20px;
+    width: 100%;
   }
 `

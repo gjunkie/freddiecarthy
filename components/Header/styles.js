@@ -32,4 +32,8 @@ export const Nav = styled.nav`
   align-self: center;
   margin: 10px 10px 10px 0;
   width: 800px;
+
+  @media (max-width: 800px) {
+    width: auto;
+  }
 `

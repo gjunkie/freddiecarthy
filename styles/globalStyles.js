@@ -252,7 +252,6 @@ const GlobalStyle = createGlobalStyle`
 
     main {
       padding: 0 50px;
-      width: auto;
     }
 
     .prism-code {
@@ -273,6 +272,7 @@ const GlobalStyle = createGlobalStyle`
 
     main {
       padding: 0 20px;
+      width: auto;
     }
 
     main p {

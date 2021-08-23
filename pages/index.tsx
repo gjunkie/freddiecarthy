@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { getSortedPosts } from '../lib/posts';
 import { generateRSSFeed } from '../lib/rss';
 
@@ -102,7 +102,7 @@ const Home: React.FC<HomeProps> = () => (
         </Square>
         <Square>
           <h3>Kit</h3>
-          <p>I take pride in my workspace and my software development tools. I’m a Vim addict and love to tinker with my setup to get it just right. <HighlighSeven>Take a peek at how I work</HighlighSeven>!</p>
+          <p>I take pride in my workspace and my software development tools. I’m a Vim addict and love to tinker with my setup to get it just right. <HighlighSeven><Link href="/how-i-work">Take a peek at how I work</Link></HighlighSeven>!</p>
         </Square>
       </SquareList>
     </Main>
