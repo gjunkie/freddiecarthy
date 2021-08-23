@@ -17,6 +17,26 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
+            href="/fonts/paytone/PaytoneOne.woff"
+            as="font"
+            crossOrigin="" />
+          <link
+            rel="preload"
+            href="/fonts/paytone/PaytoneOne.svg"
+            as="font"
+            crossOrigin="" />
+          <link
+            rel="preload"
+            href="/fonts/paytone/PaytoneOne.ttf"
+            as="font"
+            crossOrigin="" />
+          <link
+            rel="preload"
+            href="/fonts/paytone/PaytoneOne.otf"
+            as="font"
+            crossOrigin="" />
+          <link
+            rel="preload"
             href="/fonts/Larsseit.woff2"
             as="font"
             crossOrigin="" />
