@@ -108,6 +108,7 @@ export const ArrowTwo = styled.div`
 
   @media (max-width: 800px) {
     left: initial;
+    margin-bottom: 20px;
   }
 `
 
@@ -291,6 +292,7 @@ export const ParagraphContainer = styled.div`
     }
     &:nth-child(3) {
       height: 90px;
+      margin-top: 20px;
 
       svg {
         width: 160px;
@@ -312,7 +314,7 @@ export const Paragraph = styled.p`
   width: 390px;
 
   @media (max-width: 800px) {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
 
     &:nth-child(1) {

@@ -17,6 +17,7 @@ const Kit: React.FC = () => {
         <link rel="canonical" href="https://freddiecarthy.com/how-i-work" />
         <meta name="description" content="Freddie Carthy is a Software Engineer living in the Pacific Northwest" />
         <title>Freddie Carthy - Software Engineer</title>
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" key="twcard" />
         <meta name="twitter:title" content="Freddie Carthy - Sofware Engineer" key="twtitle" />
