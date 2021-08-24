@@ -314,9 +314,10 @@ export const Paragraph = styled.p`
   @media (max-width: 800px) {
     font-size: 16px;
     line-height: 24px;
+    margin-top: 30px;
 
     &:nth-child(1) {
-      margin-top: 25px;
+      margin-top: 55px;
       width: auto;
     }
   }
