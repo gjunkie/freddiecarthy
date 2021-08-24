@@ -41,12 +41,12 @@ const BlogIndex: React.FC<HomeProps> = ({allPostsData}) => (
       <meta property="og:description" content="Writes about career development, tech, and more!" key="ogdesc" />
     </Head>
     <Main>
-      <PageTitle>Freddie&apos;s Blog</PageTitle>
+      <PageTitle>The Blog</PageTitle>
 
       <ArticleList>
         {allPostsData.map(({ slug, title, description }) => (
           <Article key={slug}>
-            <ArticleTitle><Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>{title}</Link></ArticleTitle>
+            <ArticleTitle>{title}</ArticleTitle>
             <Excerpt>{description}</Excerpt>
             <Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>Read article</Link>
           </Article>

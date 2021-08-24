@@ -16,10 +16,19 @@ export const PageTitle = styled.h1`
 
 export const Excerpt = styled.p`
   margin: 0;
+
+  @media (max-width: 800px) {
+    margin-bottom: 15px;
+  }
 `
 
 export const Article = styled.li`
   margin-bottom: 50px;
+
+  a {
+    color: #2DE2E6;
+    border-bottom-color: #2DE2E6;
+  }
 `
 
 export const ArticleList = styled.ul`
