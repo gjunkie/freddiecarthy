@@ -1,9 +1,17 @@
 import styled from 'styled-components';
 
-export const PageTitle = styled.h2`
+export const Main = styled.main`
+  margin-top: 70px;
+`
+
+export const PageTitle = styled.h1`
   font-size: 50px;
-  margin: 100px 0 25px;
+  margin: 10px 0 25px;
   text-align: center;
+
+  @media (max-width: 800px) {
+    font-size: 30px;
+  }
 `
 
 export const Excerpt = styled.p`

@@ -37,8 +37,25 @@ type HomeProps = {
 const Home: React.FC<HomeProps> = () => (
   <>
     <Head>
+    </Head>
+
+    <Head>
+      <link rel="canonical" href="https://freddiecarthy.com/" />
       <meta name="description" content="Freddie Carthy is a Software Engineer living in the Pacific Northwest" />
       <title>Freddie Carthy - Software Engineer</title>
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" key="twcard" />
+      <meta name="twitter:title" content="Freddie Carthy - Sofware Engineer" key="twtitle" />
+      <meta name="twitter:description" content="Freddie Carthy is a Software Engineer living in the Pacific Northwest" key="twtitle" />
+      <meta name="twitter:creator" content="@freddiecarthy" key="twhandle" />
+      <meta name="twitter:image" content="https://freddiecarthy.com/social-images/website-image.jpg" key="twimage" />
+
+      {/* Open Graph */}
+      <meta property="og:url" content="https://freddiecarthy.com/" key="ogurl" />
+      <meta property="og:image" content="https://freddiecarthy.com/social-cards/website-image.jpg" key="ogimage" />
+      <meta property="og:site_name" content="Freddie Carthy" key="ogsitename" />
+      <meta property="og:title" content="Freddie Carthy - Software Engineer" key="ogtitle" />
+      <meta property="og:description" content="Freddie Carthy is a Software Engineer living in the Pacific Northwest" key="ogdesc" />
     </Head>
 
     <Main>

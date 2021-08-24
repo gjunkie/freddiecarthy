@@ -140,6 +140,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 18px;
     line-height: 32px;
     margin: 40px 0;
+
+    @media (max-width: 800px) {
+      margin: 20px 0;
+    }
   }
 
   ol,
@@ -175,6 +179,10 @@ const GlobalStyle = createGlobalStyle`
   main {
     margin: 0 auto;
     width: 800px;
+
+    @media (max-width: 800px) {
+      margin-top: 70px;
+    }
   }
 
   article ul, article ol {

@@ -17,6 +17,7 @@
 
 @media (max-width: 800px) {
   .tweetcta h3 {
+    font-size: 18px;
     text-align: center;
   }
 }
