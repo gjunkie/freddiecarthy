@@ -12,7 +12,7 @@ import {
 const Reading: React.FC = () => (
   <Main>
     <PageTitle>The Books</PageTitle>
-    <Subheader>These are the books I&apos;ve been reading.</Subheader>
+    <Subheader>These are the books I&apos;ve been reading</Subheader>
 
     <Heading>Currently Reading</Heading>
     <p>A list of books I&apos;m currently reading</p>

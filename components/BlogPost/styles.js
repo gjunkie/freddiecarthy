@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const PageTitle = styled.h1`
   font-size: 50px;
-  margin: 10px 0 25px;
+  margin: 100px 0 25px;
   text-align: center;
 
   @media (max-width: 800px) {
     font-size: 30px;
+    margin: 10px 0 25px;
   }
 `
 

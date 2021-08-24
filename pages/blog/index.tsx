@@ -10,6 +10,7 @@ import {
   Excerpt,
   Main,
   PageTitle,
+  Subheader
 } from '../../styles/blogIndex';
 
 type HomeProps = {
@@ -42,6 +43,7 @@ const BlogIndex: React.FC<HomeProps> = ({allPostsData}) => (
     </Head>
     <Main>
       <PageTitle>The Blog</PageTitle>
+      <Subheader>These are the things I've been writing</Subheader>
 
       <ArticleList>
         {allPostsData.map(({ slug, title, description }) => (
