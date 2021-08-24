@@ -31,7 +31,7 @@ const BlogIndex: React.FC<HomeProps> = ({allPostsData}) => (
       <meta name="twitter:title" content="Freddie Carthy's Blog" key="twtitle" />
       <meta name="twitter:description" content="Writes about career development, tech, and more!" key="twtitle" />
       <meta name="twitter:creator" content="@freddiecarthy" key="twhandle" />
-      <meta name="twitter:image" content="https://freddiecarthy.com/social-images/blog.jpg" key="twimage" />
+      <meta name="twitter:image" content="https://freddiecarthy.com/social-cards/blog.jpg" key="twimage" />
 
       {/* Open Graph */}
       <meta property="og:url" content="https://freddiecarthy.com/blog/" key="ogurl" />
