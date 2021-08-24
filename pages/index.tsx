@@ -48,11 +48,11 @@ const Home: React.FC<HomeProps> = () => (
       <meta name="twitter:title" content="Freddie Carthy - Sofware Engineer" key="twtitle" />
       <meta name="twitter:description" content="Freddie Carthy is a Software Engineer living in the Pacific Northwest" key="twtitle" />
       <meta name="twitter:creator" content="@freddiecarthy" key="twhandle" />
-      <meta name="twitter:image" content="https://freddiecarthy.com/social-images/website-image.jpg" key="twimage" />
+      <meta name="twitter:image" content="https://freddiecarthy.com/social-images/website.jpg" key="twimage" />
 
       {/* Open Graph */}
       <meta property="og:url" content="https://freddiecarthy.com/" key="ogurl" />
-      <meta property="og:image" content="https://freddiecarthy.com/social-cards/website-image.jpg" key="ogimage" />
+      <meta property="og:image" content="https://freddiecarthy.com/social-cards/website.jpg" key="ogimage" />
       <meta property="og:site_name" content="Freddie Carthy" key="ogsitename" />
       <meta property="og:title" content="Freddie Carthy - Software Engineer" key="ogtitle" />
       <meta property="og:description" content="Freddie Carthy is a Software Engineer living in the Pacific Northwest" key="ogdesc" />
