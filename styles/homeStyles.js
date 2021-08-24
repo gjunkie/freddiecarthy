@@ -73,7 +73,6 @@ export const ArrowOne = styled.div`
 `
 
 export const ArrowTwo = styled.div`
-  height: 322px;
   position: relative;
   left: -35px;
   top: 20px;
@@ -107,8 +106,9 @@ export const ArrowTwo = styled.div`
   }
 
   @media (max-width: 800px) {
-    left: initial;
-    margin-bottom: 20px;
+    left: -15px;
+    transform: rotate(20deg);
+    width: auto;
   }
 `
 
@@ -125,7 +125,7 @@ export const ArrowThree = styled.div`
     stroke-dashoffset: 0;
     animation: ${drawLineTwo} 1.5s ease-in-out reverse;
     animation-fill-mode: forwards;
-    animation-delay: 8s;
+    animation-delay: 7s;
   }
 
   .arrow-three-tail-1 {
@@ -134,7 +134,7 @@ export const ArrowThree = styled.div`
     stroke-dashoffset: 0;
     animation: ${drawTail} 1.5s ease-in-out reverse;
     animation-fill-mode: forwards;
-    animation-delay: 9.5s;
+    animation-delay: 8.5s;
   }
 
   .arrow-three-tail-2 {
@@ -143,7 +143,7 @@ export const ArrowThree = styled.div`
     stroke-dashoffset: 0;
     animation: ${drawTail} 1.5s ease-in-out reverse;
     animation-fill-mode: forwards;
-    animation-delay: 10s;
+    animation-delay: 9s;
   }
 
   @media (max-width: 800px) {
@@ -261,14 +261,12 @@ export const ParagraphContainer = styled.div`
 
   &:nth-child(2) {
     p {
-      margin-bottom: 50px;
     }
   }
 
   &:nth-child(3) {
     flex-direction: column;
     position: relative;
-    top: -45px;
 
     p {
       align-self: center;

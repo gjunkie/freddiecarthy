@@ -107,7 +107,7 @@ const Home: React.FC<HomeProps> = () => (
 
           <Paragraph>
             <div>Connect with me on <HighlighFour><a href="https://twitter.com/freddiecarthy" target="_blank">Twitter</a></HighlighFour> and <HighlighFive><a href="https://www.polywork.com/fcarthy" target="_blank">Polywork</a></HighlighFive>!</div>
-            <div>You can also reach me at <a href="mailto:contact@freddiecarthy.com">contact@freddiecarthy.com</a></div>
+            <div>I can be reached at <a href="mailto:contact@freddiecarthy.com">contact@freddiecarthy.com</a></div>
           </Paragraph>
         </ParagraphContainer>
       </CopyGroup>
@@ -119,7 +119,7 @@ const Home: React.FC<HomeProps> = () => (
         </Square>
         <Square>
           <h3>Kit</h3>
-          <p>I take pride in my workspace and my software development tools. I’m a Vim addict and love to tinker with my setup to get it just right. <HighlighSeven><Link href="/how-i-work">Take a peek at how I work</Link></HighlighSeven>!</p>
+          <p>I take pride in my workspace and my software development tools. I use a varity of tools to get my work done. <HighlighSeven><Link href="/how-i-work">Take a peek at how I work</Link></HighlighSeven>!</p>
         </Square>
       </SquareList>
     </Main>
