@@ -317,7 +317,7 @@ export const Paragraph = styled.p`
     margin-top: 30px;
 
     &:nth-child(1) {
-      margin-top: 55px;
+      margin-top: 75px;
       width: auto;
     }
   }
