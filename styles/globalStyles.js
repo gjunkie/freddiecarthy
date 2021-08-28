@@ -258,10 +258,6 @@ const GlobalStyle = createGlobalStyle`
       font-size: 30px;
     }
 
-    main {
-      padding: 0 50px;
-    }
-
     .prism-code {
       font-size: 1.1rem;
     }
