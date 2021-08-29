@@ -12,7 +12,7 @@ ReactGA.initialize(trackingId);
 // })
 
 class MyDocument extends Document {
-  static async geetInitialProps(page) {
+  static async getInitialProps(page) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = page.renderPage;
 
