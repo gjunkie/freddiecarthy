@@ -18,6 +18,12 @@ export const Subheader = styled.div`
   margin-top: 100px;
 `
 
+export const Quote = styled.div`
+  p {
+    text-align: center;
+  }
+`
+
 export const Heading = styled.h3`
   margin: 40px 0;
 `
@@ -36,6 +42,8 @@ export const DefinitionList = styled.dl`
 `
 
 export const Image = styled.img`
+  margin-bottom: 40px;
+
   @media (max-width: 800px) {
     width: 100%;
   }
