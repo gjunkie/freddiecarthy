@@ -9,15 +9,21 @@ attribution: "Photo by Laura Lefurgey-Smith"
 attributionLink: "https://unsplash.com/@lauralefurgeysmith"
 ---
 
+<p>
 If you followed <Link href="/blog/how-to-sync-your-dotfiles-across-systems">part one</Link> of this series you should now have a simple repo with your dotfiles and an `install` script you can run from any machine, even if you don't have Git installed locally. However this is fairly limited. <RandomHighlight>When starting from zero on a new machine there's a plethora of tooling you'll typically want to install</RandomHighlight>; things like Git, Yarn, npm, Homebrew, etc. Additionally you'll have to set up your Git authorship. Let's expand our simple `install` script so that it handles all of our tooling!
+</p>
 
 > I've set up a [sample repo here](https://github.com/gjunkie/dotfiles-starter-kit) if you just want to get going. 
 
 ## 1. Install Your Basic Package Managers
 
+<p>
 <RandomHighlight>This script assumes you're using a Mac and that you've gone through the first part of the tutorial</RandomHighlight>. Much like in part one of this tutorial where we added a list of files we want to take with us from system to system, we'll add a list of our preferred tooling we carry with us wherever we go. In this section we'll have our `install` script install Git, Homebrew, and npm.
+</p>
 
+<p>
 First, let's write a function that will install Homebrew. We'll subsequently use it to install Git:
+</p>
 
 ```bash
 # /install
@@ -32,9 +38,13 @@ install_homebrew() {
 }
 ```
 
+<p>
 Here we define a function called `install_homebrew` which will install Homebrew from their repository in much the same way we're setting up our `install` script here. It will also run `brew doctor` to ensure everything is going smoothly ([docs](https://docs.brew.sh/Manpage#doctor-options)).
+</p>
 
+<p>
 Alright, now let's write a simple function to install npm using Homebrew:
+</p>
 
 ```bash
 # /install
@@ -50,7 +60,9 @@ install_node() {
 }
 ```
 
+<p>
 Now we'll run both of these functions in our `install` function at the bottom of the file. The function should now look like this:
+</p>
 
 ```bash {5-6}
 # /install
@@ -63,9 +75,13 @@ install() {
 ```
 
 ## 2. Install Your Tooling
+<p>
 OK, we've got a great little script here that will link our dotfiles and install our package managers. <RandomHighlight>At this point you've got a pretty great setup ready for you to use and install the tools you use every day</RandomHighlight>. However we can also have this script do a lot of that for us for tools we use regardless of the system we're using. Now that we've got these package managers installed this should be straightforward.
+</p>
 
+<p>
 Create another file in your `/opt` folder called `homebrew`. In here list out all Homebrew packages you wish to install in any given computer, like so:
+</p>
 
 ```
 # /opt/homebrew
@@ -78,7 +94,9 @@ yarn
 vim
 ```
 
+<p>
 This is how things should look now:
+</p>
 
 ```bash
 /dotfiles
@@ -93,7 +111,9 @@ This is how things should look now:
     .vimrc
 ```
 
+<p>
 Back in our `install` script we'll want to write a function that loops through each of these packages and installs them with Homebrew:
+</p>
 
 ```bash {9,25-36}
 # /install
@@ -143,9 +163,13 @@ install_formulae() {
 }
 ```
 
+<p>
 This is pretty well documented, but let's recap. It will first ensure that Homebrew is installed on our system. It sets a variable for our `ops/homebrew` file with the packages we want. Further down we loop through each line in the file and installs those packages.
+</p>
 
+<p>
 And now we'll call this function at the end of our `install` function:
+</p>
 
 ```bash {7}
 # /install
@@ -158,10 +182,14 @@ install() {
 }
 ```
 
+<p>
 Since we also have `npm` installed we could easily set up a file called `opt/npm` and list any packages available via npm there. We'd then just have to define a function similar to `install_formulae`, perhaps called `install_npm_packages`, and have similar logic.
+</p>
 
 ## 3. Final Touches
+<p>
 <RandomHighlight>We now have all of our tooling installed and ready to use!</RandomHighlight> There's just one more thing we can add to make this truly plug-and-play. We'll want to make sure that Git is ready for use with our email and username. In case you forgot, you have to tell Git who you are in order to start making commits and pushing code! At the top of the `install` script let's add a couple of additional variables we'll need:
+</p>
 
 ```bash
 # /install
@@ -169,7 +197,9 @@ USER_GIT_AUTHOR_NAME: <your github user name>
 USER_GIT_AUTHOR_EMAIL: <your github email>
 ```
 
+<p>
 Let's add another helper function to show us a warning in the event that something goes wrong. Add this near the other helpers we added in part one.
+</p>
 
 ```bash
 _warning() {
@@ -178,7 +208,9 @@ _warning() {
 }
 ```
 
+<p>
 Now let's write a function to automatically set your GitHub authorship:
+</p>
 
 ```bash {3-4,11-12,19-20,22}
 # /install
@@ -210,9 +242,13 @@ setup_git_authorship() {
 }
 ```
 
+<p>
 This is checking for a couple of things. First it checks to see if your global `.gitconfig` file already has the author name set. If it does there's nothing else to do here. If it _isn't_ set it will use the username and email we defined at the top of the file. If you haven't set those either it gives you a warning that you'll need to add GitHub authorship on your own.
+</p>
 
+<p>
 And of course we'll have to call this function after everything else is done:
+</p>
 
 ```bash {8}
 # /install
@@ -226,7 +262,9 @@ install() {
 }
 ```
 
+<p>
 That's it! I hope you found this useful. In the next article we'll explore creating an update script that will pull the latest changes to your dotfiles form GitHub, install any new packages, and source your `.bash_profile`.
+</p>
 
 - <Link href="/blog/make-your-dotfiles-portable-with-git-and-a-simple-bash-script">Part 1: Make Your dotfiles Portable With Git and a Simple Bash Script</Link>
 - Part 2: Use Git and Bash to Automate Your Developer Tooling
