@@ -9,13 +9,13 @@ attribution: "Photo by Laura Lefurgey-Smith"
 attributionLink: "https://unsplash.com/@lauralefurgeysmith"
 ---
 
-If you followed <Link href="/blog/how-to-sync-your-dotfiles-across-systems">part one</Link> of this series you should now have a simple repo with your dotfiles and an `install` script you can run from any machine, even if you don't have Git installed locally. However this is fairly limited. **When starting from zero on a new machine there's a plethora of tooling you'll typically want to install**; things like Git, Yarn, npm, Homebrew, etc. Additionally you'll have to set up your Git authorship. Let's expand our simple `install` script so that it handles all of our tooling!
+If you followed <Link href="/blog/how-to-sync-your-dotfiles-across-systems">part one</Link> of this series you should now have a simple repo with your dotfiles and an `install` script you can run from any machine, even if you don't have Git installed locally. However this is fairly limited. <RandomHighlight>When starting from zero on a new machine there's a plethora of tooling you'll typically want to install</RandomHighlight>; things like Git, Yarn, npm, Homebrew, etc. Additionally you'll have to set up your Git authorship. Let's expand our simple `install` script so that it handles all of our tooling!
 
 > I've set up a [sample repo here](https://github.com/gjunkie/dotfiles-starter-kit) if you just want to get going. 
 
 ## 1. Install Your Basic Package Managers
 
-**This script assumes you're using a Mac and that you've gone through the first part of the tutorial**. Much like in part one of this tutorial where we added a list of files we want to take with us from system to system, we'll add a list of our preferred tooling we carry with us wherever we go. In this section we'll have our `install` script install Git, Homebrew, and npm.
+<RandomHighlight>This script assumes you're using a Mac and that you've gone through the first part of the tutorial</RandomHighlight>. Much like in part one of this tutorial where we added a list of files we want to take with us from system to system, we'll add a list of our preferred tooling we carry with us wherever we go. In this section we'll have our `install` script install Git, Homebrew, and npm.
 
 First, let's write a function that will install Homebrew. We'll subsequently use it to install Git:
 
@@ -63,7 +63,7 @@ install() {
 ```
 
 ## 2. Install Your Tooling
-OK, we've got a great little script here that will link our dotfiles and install our package managers. **At this point you've got a pretty great setup ready for you to use and install the tools you use every day**. However we can also have this script do a lot of that for us for tools we use regardless of the system we're using. Now that we've got these package managers installed this should be straightforward.
+OK, we've got a great little script here that will link our dotfiles and install our package managers. <RandomHighlight>At this point you've got a pretty great setup ready for you to use and install the tools you use every day</RandomHighlight>. However we can also have this script do a lot of that for us for tools we use regardless of the system we're using. Now that we've got these package managers installed this should be straightforward.
 
 Create another file in your `/opt` folder called `homebrew`. In here list out all Homebrew packages you wish to install in any given computer, like so:
 
@@ -161,7 +161,7 @@ install() {
 Since we also have `npm` installed we could easily set up a file called `opt/npm` and list any packages available via npm there. We'd then just have to define a function similar to `install_formulae`, perhaps called `install_npm_packages`, and have similar logic.
 
 ## 3. Final Touches
-**We now have all of our tooling installed and ready to use!** There's just one more thing we can add to make this truly plug-and-play. We'll want to make sure that Git is ready for use with our email and username. In case you forgot, you have to tell Git who you are in order to start making commits and pushing code! At the top of the `install` script let's add a couple of additional variables we'll need:
+<RandomHighlight>We now have all of our tooling installed and ready to use!</RandomHighlight> There's just one more thing we can add to make this truly plug-and-play. We'll want to make sure that Git is ready for use with our email and username. In case you forgot, you have to tell Git who you are in order to start making commits and pushing code! At the top of the `install` script let's add a couple of additional variables we'll need:
 
 ```bash
 # /install
