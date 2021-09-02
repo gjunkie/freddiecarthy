@@ -9,9 +9,10 @@ import hydrate from "next-mdx-remote/hydrate"
 import matter from "gray-matter"
 import { format, parseISO } from 'date-fns'
 
-import { getAllPostSlugs, getPostdata } from "../../lib/posts"
-import { BlogPost } from '../../components/BlogPost'
-import { CodeBlock } from '../../components/CodeBlock'
+import { getAllPostSlugs, getPostdata } from '../../lib/posts';
+import { BlogPost } from '../../components/BlogPost';
+import { CodeBlock } from '../../components/CodeBlock';
+import { RandomHighlight } from '../../components/RandomHighlight';
 
 type PostProps = {
   source: {
@@ -31,7 +32,7 @@ type PostProps = {
   },
 }
 
-const components = { CaesarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample }
+const components = { CaesarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample, RandomHighlight }
 
 // export default function Post({ source, meta }) {
 const Home: React.FC<PostProps> = ({source, meta}) => {
@@ -57,6 +58,7 @@ const Home: React.FC<PostProps> = ({source, meta}) => {
         <meta property="og:title" content={meta.title} key="ogtitle" />
         <meta property="og:description" content={meta.excerpt} key="ogdesc" />
       </Head>
+
       <main>
         <BlogPost
           content={content}
