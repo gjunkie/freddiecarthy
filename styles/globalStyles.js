@@ -151,7 +151,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 18px;
     line-height: 28px;
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 40px;
     padding: 0;
   }
 
