@@ -1,8 +1,8 @@
 import * as React from "react";
 
 type Props = {
-  height: number,
-  width: number
+  height?: number,
+  width?: number
 };
 
 export const TwitterIcon: React.FC<Props> = ({
