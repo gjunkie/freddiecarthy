@@ -1,9 +1,13 @@
 import React from "react";
-import PropTypes from 'prop-types'
 
-export const Moon = ({
-  width = 30,
+type Props = {
+  height: number,
+  width: number
+};
+
+export const Moon: React.FC<Props> = ({
   height = 30,
+  width = 30
 }) => {
   return (
     <svg width={width} height={height} viewBox="24 22 55 55">
@@ -17,9 +21,4 @@ export const Moon = ({
     </g>
     </svg>
   );
-}
-
-Moon.propTypes = {
-  height: PropTypes.number,
-  width: PropTypes.number,
 }

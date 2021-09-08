@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Head from 'next/head'
-import { PageTitle } from '../components/PageTitle'
 
 const About = () => {
   return (
@@ -9,7 +8,7 @@ const About = () => {
         <title>Freddie Carthy - About</title>
       </Head>
       <main>
-        <PageTitle title="About Me"></PageTitle>
+        <h1 title="About Me"></h1>
         <p>
           Hi, I&apos;m Freddie. I live in Portland, OR with my wife and two amazing kids. We&apos;re originally from Southern California and moved up here in 2014. We absolutely love it!
         </p>

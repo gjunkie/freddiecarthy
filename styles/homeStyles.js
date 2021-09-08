@@ -233,14 +233,6 @@ export const HighlighSeven = styled.span`
   }
 `
 
-export const Main = styled.main`
-  margin-top: 150px;
-
-  @media (max-width: 800px) {
-    margin-top: 70px;
-  }
-`
-
 export const Subheader = styled.div`
   align-self: center;
   font-family: AsapItalic;

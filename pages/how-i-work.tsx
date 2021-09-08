@@ -4,13 +4,16 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import {
+  Main,
+  PageTitle,
+  Subheader
+} from '../styles/globalStyledComponents';
+
+import {
   DefinitionList,
   Heading,
   Image,
-  Main,
-  PageTitle,
-  Quote,
-  Subheader
+  Quote
 } from '../styles/kit';
 
 

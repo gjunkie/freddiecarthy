@@ -10,18 +10,18 @@ type Props = {
   table: Array<Array<string>>
 }
 
-const PlayfairTable = ({
+const PlayfairTable: React.FC<Props> = ({
   activeEncryptedDigram,
   activePlaintextDigram,
   cipherKey,
   keyIsActive,
   table
-}: Props) => {
+}): JSX.Element => {
   return (
     <Table>
-      {table.map((row) => (
+      {table.map((row: Array<string>) => (
         <Row key={row.toString()}>
-          {row.map((letter) => (
+          {row.map((letter: string) => (
             <PlayfairSquare
               isActiveEncrypted={letter === activeEncryptedDigram.charAt(0) || letter === activeEncryptedDigram.charAt(1)}
               isActiveKey={keyIsActive && cipherKey.toUpperCase().includes(letter)}

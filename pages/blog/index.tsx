@@ -4,13 +4,16 @@ import Link from 'next/link';
 import { getSortedPosts } from '../../lib/posts';
 
 import {
-  Article,
-  ArticleList,
-  ArticleTitle,
-  Excerpt,
   Main,
   PageTitle,
   Subheader
+} from '../../styles/globalStyledComponents';
+
+import {
+  Article,
+  ArticleList,
+  ArticleTitle,
+  Excerpt
 } from '../../styles/blogIndex';
 
 type HomeProps = {

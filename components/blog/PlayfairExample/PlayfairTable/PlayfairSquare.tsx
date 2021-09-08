@@ -8,12 +8,12 @@ type Props = {
   letter: string
 }
 
-export const PlayfairSquare = ({
+export const PlayfairSquare: React.FC<Props> = ({
   isActiveEncrypted,
   isActiveKey,
   isActivePlaintext,
   letter
-}: Props) => {
+}) => {
   const getActiveClass = ():string => {
     if (isActiveEncrypted) {
       return 'activeEncrypted'

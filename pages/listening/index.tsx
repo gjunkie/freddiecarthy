@@ -1,21 +1,28 @@
 import * as React from 'react'
 import { Album } from '../../components/Album'
 import { albumData } from '../../lib/albumData'
+
+import {
+  Main,
+  PageTitle,
+  Subheader
+} from '../../styles/globalStyledComponents';
+
 import {
   AlbumList,
   AlbumListItem,
-  PageTitle,
-  Subheader,
   YearHeading
 } from '../../styles/listeningStyles'
 
 const Listening: React.FC = () => {
 
   return (
-    <main>
+    <Main>
       <PageTitle>The Music</PageTitle>
       <Subheader>This is the music that has influenced me</Subheader>
+
       <h2>Hall of Fame</h2>
+
       <p>This is the music that I could listen to day in and day out. If I was gonna die tomorrow and I had to choose what to listen to these albums would be it.</p>
       <AlbumList>
         { Object.values(albumData.hallOfFame).map(album => (
@@ -49,7 +56,7 @@ const Listening: React.FC = () => {
             </AlbumList>
           </>
         )) }
-    </main>
+    </Main>
   )
 }
 

@@ -3,18 +3,21 @@ import { useTheme } from '../../contexts/ThemeContext'
 import { GitHubIcon } from '../icons/GitHub'
 import { TwitterIcon } from '../icons/Twitter'
 
-import styles from './Footer.module.css'
+import {
+  StyledContents,
+  StyledFooter
+} from './styles';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   const theme = useTheme()
 
   return (
-    <footer className={`${styles.footer} ${styles[theme]}`}>
-      <div className={styles.contents}>
-        <div className={styles.copyright}>Freddie Carthy © 2021</div>
+    <StyledFooter className={theme}>
+      <StyledContents>
+        <div className="copyright">Freddie Carthy © 2021</div>
         <div>
           <a
-            className={`${styles.link} ${styles.twitter}`}
+            className="link twitter"
             href="https://twitter.com/freddiecarthy"
             rel="noreferrer"
             target="_blank"
@@ -22,7 +25,7 @@ export const Footer = () => {
             <TwitterIcon />
           </a>
           <a
-            className={`${styles.link} ${styles.github}`}
+            className="link github"
             href="https://github.com/gjunkie"
             rel="noreferrer"
             target="_blank"
@@ -30,7 +33,7 @@ export const Footer = () => {
             <GitHubIcon />
           </a>
         </div>
-      </div>
-    </footer>
+      </StyledContents>
+    </StyledFooter>
   )
 }

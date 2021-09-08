@@ -1,21 +1,21 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import { CaesarBox, Slider } from './styles'
+import { CaesarBox, Slider } from './styles';
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '!']
 
-const Caesar = () => {
-  const [originalText, setOriginalText] = React.useState('It is better to create than to learn! Creating is the essence of life.')
-  const [encodedText, setEncodedText] = React.useState('m')
-  const [rot, setRot] = React.useState(3)
+const Caesar: React.FC = () => {
+  const originalText = 'It is better to create than to learn! Creating is the essence of life.';
+  const [encodedText, setEncodedText] = React.useState('m');
+  const [rot, setRot] = React.useState(3);
 
   const encodeLetter = (letter: string) => {
-    const index = alphabet.indexOf(letter)
-    let newIndex = index - rot
+    const index = alphabet.indexOf(letter);
+    let newIndex = index - rot;
     if (newIndex < 0) {
-      newIndex = alphabet.length - 1 + newIndex
+      newIndex = alphabet.length - 1 + newIndex;
     }
-    return alphabet[newIndex]
-  }
+    return alphabet[newIndex];
+  };
 
   const encodeArray = (letters: Array<string>) => {
     const encodedLetters: Array<string> = []
@@ -27,17 +27,17 @@ const Caesar = () => {
       encodedLetters.push(encodeLetter(letter))
     })
     return encodedLetters
-  }
+  };
 
   React.useEffect(() => {
     const textArray = originalText.split('')
     const nextArray = encodeArray(textArray)
     setEncodedText(nextArray.join(''))
-  }, [rot])
+  }, [rot]);
 
   const onROTChange = (e: React.FormEvent<HTMLInputElement>) => {
-    setRot(parseInt(e.currentTarget.value, 10))
-  }
+    setRot(parseInt(e.currentTarget.value, 10));
+  };
 
   return (
     <CaesarBox>
@@ -54,7 +54,7 @@ const Caesar = () => {
         {encodedText}
       </div>
     </CaesarBox>
-  )
+  );
 }
 
-export default Caesar
+export default Caesar;

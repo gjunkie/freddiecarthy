@@ -6,7 +6,7 @@ type Props = {
   table: Array<Array<string>>
 }
 
-const PlayfairTable = ({ table }: Props) => {
+const PlayfairTable: React.ReactNode = ({ table }: Props) => {
   return (
     <Table>
       {table.map((row) => (

@@ -101,4 +101,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default Home
+export default Home;

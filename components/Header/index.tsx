@@ -16,7 +16,7 @@ const menu = [
   { title: 'Listening', path: '/listening' },
 ]
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const router = useRouter();
 
   return (

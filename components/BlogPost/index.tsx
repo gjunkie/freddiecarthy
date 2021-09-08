@@ -5,7 +5,6 @@ import { TweetCTA } from '../TweetCTA'
 import {
   Article,
   Divider,
-  HeroImage,
   PageTitle,
   ReadingTimeStyles,
 } from './styles'
@@ -26,9 +25,6 @@ type BlogPostProps = {
 export const BlogPost: React.FC<BlogPostProps> = ({
   content,
   date,
-  image,
-  imageAttribution,
-  imageLink,
   title,
 }) => {
   const theme = useTheme()
@@ -40,7 +36,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
       return
     }
 
-    const count = getWordCount(articleRef.current.innerText)
+    const count: number = getWordCount(articleRef.current.innerText)
     setReadingTime(Math.ceil(count / avgWordsPerMin))
   }, [articleRef])
 

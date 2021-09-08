@@ -2,9 +2,15 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import { useTheme } from '../../contexts/ThemeContext'
 
-import styles from './TweetCTA.module.css'
+type Props = {
+  title: string,
+};
 
-export const TweetCTA = ({
+import {
+  StyledContainer
+} from './styles';
+
+export const TweetCTA: React.FC<Props> = ({
   title,
 }) => {
   const theme = useTheme()
@@ -15,11 +21,11 @@ export const TweetCTA = ({
   }
 
   return (
-    <div className={`${styles.tweetcta} ${styles[theme]}`}>
+    <StyledContainer className={theme}>
       <h3>
         Thanks for reading! <span onClick={share} role="button">Share this post on Twitter</span> if you enjoyed it!
       </h3>
-    </div>
+    </StyledContainer>
   )
 }
 

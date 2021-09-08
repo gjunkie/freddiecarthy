@@ -1,7 +1,11 @@
 import React from "react";
-import PropTypes from 'prop-types'
 
-export const Sun = ({
+type Props = {
+  height: number,
+  width: number
+};
+
+export const Sun: React.FC<Props> = ({
   height = 30,
   width = 30,
 }) => {
@@ -48,9 +52,4 @@ export const Sun = ({
     </g>
     </svg>
   );
-}
-
-Sun.propTypes = {
-  height: PropTypes.number,
-  width: PropTypes.number,
 }
