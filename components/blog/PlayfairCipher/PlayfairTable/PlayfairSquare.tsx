@@ -5,7 +5,7 @@ type Props = {
   letter: string
 }
 
-const PlayfairSquare: React.ReactNode = ({ letter }: Props) => (
+const PlayfairSquare = ({ letter }: Props): React.ReactElement => (
   <Square>{letter}</Square>
 )
 
