@@ -35,7 +35,7 @@ type PostProps = {
 const components = { CaesarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample, RandomHighlight }
 
 // export default function Post({ source, meta }) {
-const Home: React.FC<PostProps> = ({source, meta}) => {
+const PostPage: React.FC<PostProps> = ({source, meta}) => {
   const content = hydrate(source, { components });
 
   return (
@@ -101,4 +101,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default Home;
+export default PostPage;

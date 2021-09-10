@@ -13,10 +13,6 @@ const ThemeProvider = ({children, systemMode}) => {
     setTheme(nextTheme);
   }
 
-  React.useEffect(() => {
-    setTheme(systemMode)
-  }, [systemMode])
-
   return (
     <ThemeContext.Provider value={theme}>
       <ThemeToggleContext.Provider value={onToggleTheme}>

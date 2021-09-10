@@ -20,31 +20,9 @@ const components = {
 }
 
 function MyApp({ Component, pageProps }) {
-  let initialMode = 'light-mode'
-  const [mode, setMode] = React.useState(initialMode);
-
-  const handleSystemModeChange = e => {
-    const newColorScheme = e.matches ? 'dark-mode' : 'light-mode';
-    setMode(newColorScheme)
-  }
-
-  React.useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTimeout(() => {
-        setMode('dark-mode')
-      }, 1000)
-    }
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', handleSystemModeChange)
-    return () => window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', handleSystemModeChange)
-  }, [])
-
-  React.useEffect(() => {
-    document.body.classList.remove('dark-mode', 'light-mode')
-    document.body.classList.add(mode)
-  }, [mode])
 
   return (
-    <ThemeProvider systemMode={mode}>
+    <ThemeProvider systemMode={'dark-mode'}>
       <MDXProvider components={components}>
         <>
           <GlobalStyle />
