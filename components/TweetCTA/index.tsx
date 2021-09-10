@@ -15,7 +15,7 @@ export const TweetCTA: React.FC<Props> = ({
 }) => {
   const theme = useTheme()
   const share = () => {
-    var url ="https://twitter.com/share?url=" + encodeURIComponent(document.location);
+    var url ="https://twitter.com/share?url=" + encodeURIComponent(document.location.href);
     var text = encodeURIComponent(`${title} by @freddiecarthy`);
     window.open(url + "&text=" + text);
   }
