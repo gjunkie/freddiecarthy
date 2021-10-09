@@ -1,0 +1,107 @@
+---
+title: "Why and How I Use Vim"
+date: "2021-10-03"
+author: "Freddie Carthy"
+excerpt: "A recap on my career, what I've learned, and my hopes for the next decade."
+description: "It has now been 10 years since I've been working as a Software Engineer and I wanted to take some time to do a little self reflection on how I got to where I am today."
+image: "jake-blucker-OJX7gIU3E6U-unsplash"
+attribution: "Photo by Jake Blucker"
+attributionLink: "https://unsplash.com/@jakeblucker"
+---
+
+<p>
+Over the past few months I've heard several comments and misconceptions about Vim, largely surrounding supposed missing features that make the editor a non-viable tool to work effectively as a developer. Things like code completion, go-to-definition, syntax highlighting for various languages, file navigation, etc. <RandomHighlight>So I thought I would put together a post that tries to debunk some of those myths and showcase how you can have an incredibly powerful workflow using this classic text editor</RandomHighlight>.
+</p>
+
+<p>
+Before we get started let's start off by answering a very basic question; <RandomHighlight>why do I use Vim?</RandomHighlight> There are a multitude of IDEs out there, VS Code being the gold standard these days, all of them incredibly feature-rich right out of the box. So... why??
+</p>
+
+<p>
+There are a few things that I look for in my developer workflow:
+</p>
+
+* I need to have an excellent editing experience; code completion, moving text around quickly, indentation, etc.
+* I need to have great syntax highlighting support for whatever languages I may be working on on any given day.
+* I need to be able to find files, terms, function, and type definitions easily and frictionless.
+* I need to be able to do these things better than in other environments. Otherwise, why even bother?
+* I need to be able to tinker with my environment to my heart's content.
+
+<p>
+The last point here is really at the core of why I choose to stick with Vim year after year. Out of the box, Vim comes with a powerful set of core features to work with and manipulate text, but that's basically it. It's a text editor. Everything else you have to build on top of it. And I absolutely love that. <RandomHighlight>So let's cover each of the points above to showcase how quickly and easily you can make Vim an incredibly powerful code editor</RandomHighlight>. One that you can tweak and customize to seemingly no end.
+</p>
+
+## File search and navigation
+<p>
+<RandomHighlight>I consider this to be the price of admission for any code editor</RandomHighlight>. If you can't get this right it is effectively useless. So how can Vim, a basic terminal text editor, not just provide this basic capability but actually excel at it?
+</p>
+
+<p>
+There are two things I leverage here dozens of times a minute; Netrw for file tree navigation and FZF for file name and codebase-wide term searches. Here's an example of each.
+</p>
+
+### Netrw, the "built-in" file tree
+<p>
+There are a number of file tree solutions out there, but my needs here are pretty basic. <RandomHighlight>I need to quickly be able to see the files in the current director I'm working in</RandomHighlight>, and I need to be able to easily step out of that directory and navigate "sibling" directories. Netrw is technically a plug-in, but comes bundled with Vim. Here's what that looks like in my set up.
+</p>
+
+<img src="/videos/blog/why-i-use-vim/netrw.gif" />
+
+### FZF, the incredibly power fuzzy finder
+<p>
+If you're already a Vim user you've likely come across dozens of posts about <a href="https://github.com/junegunn/fzf.vim" target="_blank">FZF</a>. If you're not, you're about to be amazed at this ridiculously powerful tool. What can it do? Well, the possibilities seem rather endless, but I use it for a few key tasks:
+</p>
+
+* Find a specific file in my repository
+* Search for a specific term in all files in my repository
+* Search for the term under my cursor in all files in my repository
+* Effortlessly filter down the results to find what I need
+
+<p>
+Let's take a look at each one of these cases with examples, and incorporate the last bullet point. First up is finding a specific file in my repository. I've mapped `ff` (my mapping for "find files") to open up FZF and show me all files in my repository.
+</p>
+
+<img src="/videos/blog/why-i-use-vim/fzf-files.gif" />
+
+<p>
+There's a few things happening here. First, a file list opens up showing me every file in my repo (respecting custom ignore rules that I've set). I can navigate that list with my keyboard and choose to open any one of them (or multiple!). If I need to search for a specific file I can just type what I'm looking for. That term will be a fuzzy search. If I'd like to search for an exact match I type `'` before my term, and if I'd like to omit a term I type `!` before the term. <RandomHighlight>Quite easy, incredibly fast</RandomHighlight>. As you can see, I also get live previous of the file above. All of this, including the layout, is highly configurable.
+</p>
+
+<p>
+But what if I need to search for a specific term, or a term that my cursor is currently over?
+</p>
+
+<img src="/videos/blog/why-i-use-vim/fzf-search.gif" />
+
+<p>
+Again, a few key things are happening here. First I put my cursor over the word "ThemeProvider" and press `fw` (my mapping for "find word"). This does a repo-wide search for this term and shows me all files that contain that word. After that, I can use the same strategies as before to filter down my list further. Finally, I press `fs` (my mapping for "find search") to look for the word "props".
+</p>
+
+<p>
+<RandomHighlight>As you can see, with just a few keystrokes I can get anywhere instantly</RandomHighlight>. This entire flow is also highly configurable to suit your needs, and it is something I like to tinker with from time to time.
+</p>
+
+## Syntax highlighting support
+<p>
+Syntax highlighting is another feature that's considered basic. I was surprised to see that so many of the folks I talk to about Vim have this idea that Vim is this ugly, unstyled mess that makes it impossible to read code in. The truth is that Vim can support syntax highlighting for effectively any programming language. Paired with a good color scheme it can be a dream. At work I frequently work with JavaScript, HTML, JSX, CSS, Scala, Java, Python, GraphQL, markdown, JSON, SQL, and more. At home I also mess with vimscript, bash... All of these are easily supported.
+</p>
+
+<p>
+One of the more populate syntax highlighting plugins out there is <a href="https://github.com/sheerun/vim-polyglot" target="_blank">vim-polyglot</a>, but there are many more out there.
+</p>
+
+## Code completion and navigation
+<p>
+Up until this point we've really only just paid the price of admission; opening a codebase and navigating it in a sane, consistent, and predictable way. But a huge piece of writing code in our editors is powerful tooling around code completion and navigation. We can't keep every method name and location in our heads, so we use our editors to assist us. Rumor has it a lot of folks think this is an impossibility in Vim.
+</p>
+
+<p>
+Again, there are a number of solutions here, from the very basic to the feature-rich. I've chosen to use a plugin called <a href="https://github.com/neoclide/coc.nvim" target="_blank">Conquer of Completion</a>. It is a code completion plugin that comes with support for LSPs (Language Service Providers). So, if you work with JavaScript, Scala, or whatever other language, you can install the language servers for those and get "plug and play" code navigation, code completion, and more.
+</p>
+
+<img src="/videos/blog/why-i-use-vim/coc-definition.gif" />
+
+## Wrapping up
+<p>
+In conclusion, what I've shown here is really less than the tip of the iceberg. Vim is nearly infinitely configurable and can be adjusted to work for any environment. But it does take time to tune things to the way you want them.
+</p>

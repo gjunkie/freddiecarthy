@@ -134,6 +134,7 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-weight: lighter;
     font-size: 24px;
+    margin-top: 20px;
   }
 
   p {
@@ -282,6 +283,10 @@ const GlobalStyle = createGlobalStyle`
     main p {
       line-height: 26px;
       font-size: 16px;
+    }
+
+    img {
+      width: 100%;
     }
 
     .prism-code {
