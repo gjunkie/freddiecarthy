@@ -37,7 +37,7 @@ The last point here is really at the core of why I choose to stick with Vim year
 </p>
 
 <p>
-There are two things I leverage here dozens of times a minute; Netrw for file tree navigation and FZF for file name and codebase-wide term searches. Here's an example of each.
+There are two plug-ins I leverage here dozens of times a minute; Netrw for file tree navigation and FZF for file name and codebase-wide term searches. Here's an example of each.
 </p>
 
 ### Netrw, the "built-in" file tree
@@ -47,9 +47,13 @@ There are a number of file tree solutions out there, but my needs here are prett
 
 <img src="/videos/blog/why-i-use-vim/netrw.gif" />
 
+<p>
+I can quickly see the directory for the file I'm currently working with, navigate around, etc. I can also quickly rename files and folders, jump to the root of the project, and more.
+</p>
+
 ### FZF, the incredibly power fuzzy finder
 <p>
-If you're already a Vim user you've likely come across dozens of posts about <a href="https://github.com/junegunn/fzf.vim" target="_blank">FZF</a>. If you're not, you're about to be amazed at this ridiculously powerful tool. What can it do? Well, the possibilities seem rather endless, but I use it for a few key tasks:
+If you're already a Vim user you've likely come across dozens of posts about <a href="https://github.com/junegunn/fzf.vim" target="_blank">FZF</a>. If you're not, you're about to be amazed at this ridiculously powerful tool. <RandomHighlight>What can it do? Well, the possibilities seem rather endless</RandomHighlight>, but I use it for a few key tasks:
 </p>
 
 * Find a specific file in my repository
@@ -58,13 +62,13 @@ If you're already a Vim user you've likely come across dozens of posts about <a 
 * Effortlessly filter down the results to find what I need
 
 <p>
-Let's take a look at each one of these cases with examples, and incorporate the last bullet point. First up is finding a specific file in my repository. I've mapped `ff` (my mapping for "find files") to open up FZF and show me all files in my repository.
+Let's take a look at each one of these cases with examples, and incorporate the last bullet point. First up is finding a specific file in my repository. I've mapped <code>ff</code> (my mapping for "find files") to open up FZF and show me all files in my repository.
 </p>
 
 <img src="/videos/blog/why-i-use-vim/fzf-files.gif" />
 
 <p>
-There's a few things happening here. First, a file list opens up showing me every file in my repo (respecting custom ignore rules that I've set). I can navigate that list with my keyboard and choose to open any one of them (or multiple!). If I need to search for a specific file I can just type what I'm looking for. That term will be a fuzzy search. If I'd like to search for an exact match I type `'` before my term, and if I'd like to omit a term I type `!` before the term. <RandomHighlight>Quite easy, incredibly fast</RandomHighlight>. As you can see, I also get live a preview of the selected file above. All of this, including the layout, is highly configurable.
+There's a few things happening here. First, a file list opens up showing me every file in my repo (respecting custom ignore rules that I've set). I can navigate that list with my keyboard and choose to open any one of them (or multiple!). If I need to search for a specific file I can just type what I'm looking for. That term will be a fuzzy search. If I'd like to search for an exact match I type <code>'</code> before my term, and if I'd like to omit a term I type <code>!</code> before the term. <RandomHighlight>Quite easy, incredibly fast</RandomHighlight>. As you can see, I also get a live preview of the selected file above. All of this, including the layout, is highly configurable.
 </p>
 
 <p>
@@ -74,25 +78,25 @@ But what if I need to search for a specific term, or a term that my cursor is cu
 <img src="/videos/blog/why-i-use-vim/fzf-search.gif" />
 
 <p>
-Again, a few key things are happening here. First I put my cursor over the word "ThemeProvider" and press `fw` (my mapping for "find word"). This does a repo-wide search for this term and shows me all files that contain that word. After that, I can use the same strategies as before to filter down my list further. Finally, I press `fs` (my mapping for "find search") to look for the word "props".
+Again, a few key things are happening here. First I put my cursor over the word "ThemeProvider" and press <code>fw</code> (my mapping for "find word"). This does a repo-wide search for this term and shows me all files that contain that word. After that, I can use <code>'</code> before my term to filter down matches that also contain an exact term, and if I'd like to omit a term I type <code>!</code> to filter down my list further. Finally, I press <code>fs</code>(my mapping for "find search") to search for the word "props".
 </p>
 
 <p>
-<RandomHighlight>As you can see, with just a few keystrokes I can get anywhere instantly</RandomHighlight>. This entire flow is also highly configurable to suit your needs, and it is something I like to tinker with from time to time.
+<RandomHighlight>As you can see, with just a few keystrokes I can get anywhere instantly</RandomHighlight>. This entire flow is also highly configurable to suit your needs, and it is something I like to tinker with from time to time. FZF is incredibly fast and supports a number of search tools. It also supports a vast array of configurations and is an awesome plug-in to play with.
 </p>
 
 ## Syntax highlighting support
 <p>
-Syntax highlighting is another feature that's considered basic. I was surprised to see that so many of the folks I talk to about Vim have this idea that Vim is this ugly, unstyled mess that makes it impossible to read code in. The truth is that Vim can support syntax highlighting for effectively any programming language. Paired with a good color scheme it can be a dream. At work I frequently work with JavaScript, HTML, JSX, CSS, Scala, Java, Python, GraphQL, markdown, JSON, SQL, and more. At home I also mess with vimscript, bash... All of these are easily supported.
+Syntax highlighting is another feature that's considered part of the price of admission for code editors. I was surprised to see that so many of the folks I talk to about Vim have this idea that Vim is this ugly, unstyled mess that makes it impossible to read code in. The truth is that Vim can support syntax highlighting for effectively any programming language. Paired with a good color scheme it can be a dream. At work I frequently work with JavaScript, HTML, JSX, CSS, Scala, Java, Python, GraphQL, markdown, JSON, SQL, and more. At home I also mess with vimscript, bash... All of these are easily supported.
 </p>
 
 <p>
-One of the more populate syntax highlighting plugins out there is <a href="https://github.com/sheerun/vim-polyglot" target="_blank">vim-polyglot</a>, but there are many more out there.
+One of the more popular syntax highlighting plugins out there is <a href="https://github.com/sheerun/vim-polyglot" target="_blank">vim-polyglot</a>, but there are many more out there. I'm currently loving the <a href="https://www.nordtheme.com/" target="_blank">Nord color scheme</a>.
 </p>
 
 ## Code completion and navigation
 <p>
-Up until this point we've really only just paid the price of admission; opening a codebase and navigating it in a sane, consistent, and predictable way. But a huge piece of writing code in our editors is powerful tooling around code completion and navigation. We can't keep every method name and location in our heads, so we use our editors to assist us. Rumor has it a lot of folks think this is an impossibility in Vim.
+Up until this point we've really only just paid the price of admission; opening a codebase and navigating it in a sane, consistent, and predictable way. <RandomHighlight>But a huge piece of writing code in our editors is powerful tooling around code completion and navigation</RandomHighlight>. We can't keep every method name and location in our heads, so we use our editors to assist us. Rumor has it a lot of folks think this is an impossibility in Vim.
 </p>
 
 <p>
@@ -101,7 +105,23 @@ Again, there are a number of solutions here, from the very basic to the feature-
 
 <img src="/videos/blog/why-i-use-vim/coc-definition.gif" />
 
+<p>
+In this example we see pop-ups with TypeScript warnings, go-to-definition, and code completion with method descriptions. For this I'm using the <code>coc-tsserver</code> language server for <code>coc-nvim</code>.
+</p>
+
 ## Wrapping up
 <p>
 In conclusion, what I've shown here is really less than the tip of the iceberg. Vim is nearly infinitely configurable and can be adjusted to work for any environment. But it does take time to tune things to the way you want them. If you'd like to take a look at my dotfiles, please do!
 </p>
+
+<p>
+Some plug-ins I use often:
+</p>
+
+* <a href="https://github.com/dense-analysis/ale" target="_blank">ALE</a> for code linting
+* <a href="https://github.com/vimwiki/vimwiki" target="_blank">Vimwiki</a> for personal notes
+* <a href="https://github.com/scalameta/nvim-metals" target="_blank">nvim-metals</a> for Scala development
+* <a href="https://github.com/Raimondi/delimitMate" target="_blank">delimitMate</a> for auto closing of brackets, etc
+* <a href="https://github.com/neoclide/coc-git" target="_blank">coc-git</a> for git status support in-file
+
+You can take a look at my <a href="https://github.com/gjunkie/dotfiles/tree/main/configs/vim" target="_blank">dotfiles on GitHub</a> and see what other nifty tricks I've added.

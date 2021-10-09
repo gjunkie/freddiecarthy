@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .dark-mode code {
-    background: rgb(41 41 41);
+    background: rgb(50 50 50);
     color: rgb(243 243 243);
   }
 
@@ -208,7 +208,7 @@ const GlobalStyle = createGlobalStyle`
 
   p > code,
   li > code {
-    background: rgb(1, 22, 39);
+    background: rgb(50 50 50);
     color: rgb(214, 222, 235);
   }
 
