@@ -29,7 +29,7 @@ There are a few things that I look for in my developer workflow:
 The last point here is really at the core of why I choose to stick with Vim year after year. Out of the box, Vim comes with a powerful set of core features to work with and manipulate text, but that's basically it. It's a text editor. Everything else you have to build on top of it. And I absolutely love that. <RandomHighlight>So let's cover each of the points above to showcase how quickly and easily you can make Vim an incredibly powerful code editor</RandomHighlight>. One that you can tweak and customize to seemingly no end.
 </p>
 
-## File search and navigation
+### File search and navigation
 <p>
 <RandomHighlight>I consider this to be the price of admission for any code editor</RandomHighlight>. If you can't get this right it is effectively useless. So how can Vim, a basic terminal text editor, not just provide this basic capability but actually excel at it?
 </p>
@@ -38,7 +38,7 @@ The last point here is really at the core of why I choose to stick with Vim year
 There are two plug-ins I leverage here dozens of times a minute; Netrw for file tree navigation and FZF for file name and codebase-wide term searches. Here's an example of each.
 </p>
 
-### Netrw, the "built-in" file tree
+#### Netrw, the "built-in" file tree
 <p>
 There are a number of file tree solutions out there, but my needs here are pretty basic. <RandomHighlight>I need to quickly be able to see the files in the current director I'm working in</RandomHighlight>, and I need to be able to easily step out of that directory and navigate "sibling" directories. Netrw is technically a plug-in, but comes bundled with Vim. Here's what that looks like in my set up.
 </p>
@@ -49,7 +49,7 @@ There are a number of file tree solutions out there, but my needs here are prett
 I can quickly see the directory for the file I'm currently working with, navigate around, etc. I can also quickly rename files and folders, jump to the root of the project, and more.
 </p>
 
-### FZF, the incredibly power fuzzy finder
+#### FZF, the incredibly power fuzzy finder
 <p>
 If you're already a Vim user you've likely come across dozens of posts about <a href="https://github.com/junegunn/fzf.vim" target="_blank">FZF</a>. If you're not, you're about to be amazed at this ridiculously powerful tool. <RandomHighlight>What can it do? Well, the possibilities seem rather endless</RandomHighlight>, but I use it for a few key tasks:
 </p>
@@ -83,7 +83,7 @@ Again, a few key things are happening here. First I put my cursor over the word 
 <RandomHighlight>As you can see, with just a few keystrokes I can get anywhere instantly</RandomHighlight>. This entire flow is also highly configurable to suit your needs, and it is something I like to tinker with from time to time. FZF is incredibly fast and supports a number of search tools. It also supports a vast array of configurations and is an awesome plug-in to play with.
 </p>
 
-## Syntax highlighting support
+### Syntax highlighting support
 <p>
 Syntax highlighting is another feature that's considered part of the price of admission for code editors. I was surprised to see that so many of the folks I talk to about Vim have this idea that Vim is this ugly, unstyled mess that makes it impossible to read code in. The truth is that Vim can support syntax highlighting for effectively any programming language. Paired with a good color scheme it can be a dream. At work I frequently work with JavaScript, HTML, JSX, CSS, Scala, Java, Python, GraphQL, markdown, JSON, SQL, and more. At home I also mess with vimscript, bash... All of these are easily supported.
 </p>
@@ -92,7 +92,7 @@ Syntax highlighting is another feature that's considered part of the price of ad
 One of the more popular syntax highlighting plugins out there is <a href="https://github.com/sheerun/vim-polyglot" target="_blank">vim-polyglot</a>, but there are many more out there. I'm currently loving the <a href="https://www.nordtheme.com/" target="_blank">Nord color scheme</a>.
 </p>
 
-## Code completion and navigation
+### Code completion and navigation
 <p>
 Up until this point we've really only just paid the price of admission; opening a codebase and navigating it in a sane, consistent, and predictable way. <RandomHighlight>But a huge piece of writing code in our editors is powerful tooling around code completion and navigation</RandomHighlight>. We can't keep every method name and location in our heads, so we use our editors to assist us. Rumor has it a lot of folks think this is an impossibility in Vim.
 </p>
@@ -107,7 +107,7 @@ Again, there are a number of solutions here, from the very basic to the feature-
 In this example we see pop-ups with TypeScript warnings, go-to-definition, and code completion with method descriptions. For this I'm using the <code>coc-tsserver</code> language server for <code>coc-nvim</code>.
 </p>
 
-## Wrapping up
+### Wrapping up
 <p>
 In conclusion, what I've shown here is really less than the tip of the iceberg. Vim is nearly infinitely configurable and can be adjusted to work for any environment. But it does take time to tune things to the way you want them. If you'd like to take a look at my dotfiles, please do!
 </p>
