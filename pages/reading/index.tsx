@@ -16,67 +16,71 @@ const Reading: React.FC = () => (
     <Subheader>These are the books I&apos;ve been reading</Subheader>
 
     <Heading>Currently Reading</Heading>
-    <p>A list of books I&apos;m currently reading</p>
+    <p>I used to read only one book at a time. I would avoid starting a new one until I finished whatever I was currently reading. If I was slow to finish, or lost interest, I would never pick up another book. I&apos;ve recently flipped that on it&apos;s head and instead started reading anything that I&apos;m interested in.</p>
     <List>
-      <li>Acceptance - Jeff VanderMeer</li>
-      <li>Staff Engineer - Will Larson</li>
-      <li>A Promised Land - Barack Obama</li>
-      <li>Zen and the Art of Motorcycle Maintenance - Robert M. Pirsig</li>
+      <li><strong>Acceptance: A Novel (The Southern Reach Trilogy, 3)</strong> - Jeff VanderMeer</li>
+      <li><strong>Staff Engineer: Leadership Beyond the Management Track</strong> - Will Larson</li>
+      <li><strong>A Promised Land</strong> - Barack Obama</li>
+      <li><strong>Zen and the Art of Motorcycle Maintenance</strong> - Robert M. Pirsig</li>
     </List>
 
     <Heading>2021</Heading>
     <List>
-      <li>Annihilation: A Novel (The Southern Reach Trilogy, 1) - Jeff VanderMeer (<Link href="blog/annihilation-book-review">review</Link>)</li>
-      <li>Authority: A Novel (The Southern Reach Trilogy, 2)- Jeff VanderMeer (<Link href="blog/authority-book-review">review</Link>)</li>
+      <li><strong>Annihilation: A Novel (The Southern Reach Trilogy, 1)</strong> - Jeff VanderMeer (<Link href="blog/annihilation-book-review">review</Link>)</li>
+      <li><strong>Authority: A Novel (The Southern Reach Trilogy, 2)</strong>- Jeff VanderMeer (<Link href="blog/authority-book-review">review</Link>)</li>
     </List>
 
     <Heading>2016</Heading>
     <List>
-      <li>A Game of Thrones - George R. R. Martin</li>
-      <li>The Expectant Father: The Ultimate Guide for Dads-to-Be - Armin A. Brott</li>
+      <li><strong>A Game of Thrones</strong> - George R. R. Martin</li>
+      <li><strong>The Expectant Father: The Ultimate Guide for Dads-to-Be</strong> - Armin A. Brott</li>
     </List>
 
     <Heading>2011</Heading>
     <List>
-      <li>The Elephan Vanishes - Haruki Murakami</li>
+      <li><strong>The Elephan Vanishes</strong> - Haruki Murakami</li>
     </List>
 
     <Heading>2010</Heading>
     <List>
-      <li>A Wild Sheep Chase - Haruki Murakami</li>
-      <li>The Time Traveler&apos;s Wife - Audrey Niffenegger</li>
+      <li><strong>A Wild Sheep Chase</strong> - Haruki Murakami</li>
+      <li><strong>The Time Traveler&apos;s Wife</strong> - Audrey Niffenegger</li>
     </List>
 
     <Heading>2007</Heading>
     <List>
-      <li>The Alchemist - PaListo Coelho</li>
+      <li><strong>The Alchemist</strong> - PaListo Coelho</li>
     </List>
 
     <Heading>2006</Heading>
     <List>
-      <li>Kafka on the Shore - Haruki Murakami</li>
-      <li>Angels & Demons - Dan Brown</li>
-      <li>Da Vinci Code - Dan Brown</li>
+      <li><strong>Kafka on the Shore</strong> - Haruki Murakami</li>
+      <li><strong>Angels & Demons</strong> - Dan Brown</li>
+      <li><strong>Da Vinci Code</strong> - Dan Brown</li>
     </List>
 
     <Heading>Books to finish</Heading>
     <p>Books I started reading but didn&apos;t quite get arround to finishing.</p>
     <List>
-      <li>The Most Human Human: What Talking with Computers Teaches Us About What It Means to Be Alive - Brian Christian</li>
-      <li>The Design of Everyday Things - Don Norman</li>
+      <li><strong>The Most Human Human: What Talking with Computers Teaches Us About What It Means to Be Alive</strong> - Brian Christian</li>
+      <li><strong>The Design of Everyday Things</strong> - Don Norman</li>
     </List>
 
     <Heading>On my list</Heading>
     <p>Books I plan on picking up next.</p>
     <List>
-      <li>Atomic Habits - James Clear</li>
-      <li>Becoming - Michelle Obama</li>
-      <li>Four Thousand Weeks: Time Management for Mortals - Oliver Burkeman</li>
-      <li>Permanent Record - Edward Snowden</li>
-      <li>Legacy of Ashes: The History of the CIA - Time Weiner</li>
-      <li>Technically Wrong - Sara Wachter-Boettcher</li>
-      <li>Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy - Cathy O'Neil</li>
-      <li>White Fragility: Why It&apos;s So Hard for White People to Talk About Racism - Robin DiAngelo</li>
+      <li><strong>An Elegant Puzzle: Systems of Engineering Management</strong> - Will Larson</li>
+      <li><strong>Atomic Habits</strong> - James Clear</li>
+      <li><strong>Becoming</strong> - Michelle Obama</li>
+      <li><strong>For Small Creatures Such as We: Rituals for Finding Meaning in Our Unlikely World</strong> - Sasha Sagan</li>
+      <li><strong>Four Thousand Weeks: Time Management for Mortals</strong> - Oliver Burkeman</li>
+      <li><strong>Permanent Record</strong> - Edward Snowden</li>
+      <li><strong>Legacy of Ashes: The History of the CIA</strong> - Time Weiner</li>
+      <li><strong>Leviathan Wakes (The Expanse Book 1)</strong> - James S. A. Corey</li>
+      <li><strong>Sea of Tranquility: A novel</strong> - Emiliy St. John Mandel</li>
+      <li><strong>Technically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech</strong> - Sara Wachter-Boettcher</li>
+      <li><strong>Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy</strong> - Cathy O'Neil</li>
+      <li><strong>White Fragility: Why It&apos;s So Hard for White People to Talk About Racism</strong> - Robin DiAngelo</li>
     </List>
   </Main>
 )
