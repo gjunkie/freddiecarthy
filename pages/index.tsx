@@ -2,7 +2,6 @@ import * as React from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { getSortedPosts } from '../lib/posts';
 import { generateRSSFeed } from '../lib/rss';
 
 import { Main } from '../styles/globalStyledComponents';
@@ -128,16 +127,3 @@ const Home: React.FC<HomeProps> = () => (
 );
 
 export default Home
-
-export const getStaticProps: GetStaticProps = async () => {
-  const articles = getSortedPosts();
-  // articles.sort((a, b) => (a.date < b.date ? 1 : -1));
-
-  generateRSSFeed(articles);
-
-  return {
-    props: {
-      allPostsData: articles,
-    },
-  };
-}
