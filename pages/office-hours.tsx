@@ -6,7 +6,7 @@ import {
   Subheader
 } from '../styles/globalStyledComponents';
 
-const OfficeHours:React.FC = () => {
+const OfficeHours = () => {
 
   return (
     <Main>

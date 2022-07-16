@@ -8,7 +8,8 @@ type Props = {
 
 const alphabet: Array<string> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-const CipherKey: React.FC<Props> = ({rot}) => {
+const CipherKey = (props: Props) => {
+  const { rot } = props;
 
   const renderAlphabet = () => (
     alphabet.map((letter: string, index: number) => {

@@ -16,7 +16,7 @@ import {
 } from '../styles/kit';
 
 
-const Kit: React.FC = () => {
+const Kit = () => {
   return (
     <>
       <Head>

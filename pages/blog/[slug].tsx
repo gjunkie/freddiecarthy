@@ -34,8 +34,8 @@ type PostProps = {
 
 const components = { CaesarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample, RandomHighlight }
 
-// export default function Post({ source, meta }) {
-const PostPage: React.FC<PostProps> = ({source, meta}) => {
+const PostPage = (props: PostProps) => {
+  const { meta, source } = props;
   const content = hydrate(source, { components });
 
   return (

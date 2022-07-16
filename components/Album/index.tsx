@@ -13,18 +13,17 @@ type AlbumProps = {
   year: number,
 }
 
-export const Album: React.FC<AlbumProps> = ({
-  artist,
-  coverUrl,
-  name,
-  year
-}) => (
-  <>
-    <AlbumArt>
-      <img src={coverUrl} alt={`${name} by ${artist}`} />
-    </AlbumArt>
-    <Artist>{artist}</Artist>
-    <AlbumName>{name}</AlbumName>
-    <Year>Released {year}</Year>
-  </>
-)
+export const Album = (props: AlbumProps) => {
+  const { artist, coverUrl, name, year } = props;
+
+  return (
+    <>
+      <AlbumArt>
+        <img src={coverUrl} alt={`${name} by ${artist}`} />
+      </AlbumArt>
+      <Artist>{artist}</Artist>
+      <AlbumName>{name}</AlbumName>
+      <Year>Released {year}</Year>
+    </>
+  )
+}

@@ -8,6 +8,11 @@ import { CodeBlock } from '../components/CodeBlock/'
 
 import GlobalStyle from '../styles/globalStyles'
 
+type Props = {
+  Component: React.Component,
+  pageProps: {},
+}
+
 const components = {
   pre: preProps => {
     const props = preToCodeBlock(preProps)
@@ -19,7 +24,8 @@ const components = {
   },
 }
 
-function MyApp({ Component, pageProps }) {
+function MyApp(props: Props) {
+  const { Component, pageProps } = props;
 
   return (
     <ThemeProvider systemMode={'dark-mode'}>

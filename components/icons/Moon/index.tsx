@@ -5,10 +5,10 @@ type Props = {
   width: number
 };
 
-export const Moon: React.FC<Props> = ({
+export const Moon = ({
   height = 30,
   width = 30
-}) => {
+}: Props) => {
   return (
     <svg width={width} height={height} viewBox="24 22 55 55">
     <g>

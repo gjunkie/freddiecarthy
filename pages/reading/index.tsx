@@ -9,8 +9,7 @@ import {
   Subheader
 } from '../../styles/readingStyles'
 
-// this is a test
-const Reading: React.FC = () => (
+const Reading = () => (
   <Main>
     <PageTitle>The Books</PageTitle>
     <Subheader>These are the books I&apos;ve been reading</Subheader>

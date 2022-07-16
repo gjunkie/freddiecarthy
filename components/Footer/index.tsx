@@ -8,7 +8,7 @@ import {
   StyledFooter
 } from './styles';
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
   const theme = useTheme()
   const currentYear = new Date().getFullYear();
 

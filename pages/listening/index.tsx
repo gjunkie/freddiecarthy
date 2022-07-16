@@ -14,7 +14,7 @@ import {
   YearHeading
 } from '../../styles/listeningStyles'
 
-const Listening: React.FC = () => {
+const Listening = () => {
 
   return (
     <Main>
