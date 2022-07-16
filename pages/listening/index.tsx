@@ -26,7 +26,7 @@ const Listening: React.FC = () => {
       <p>This is the music that I could listen to day in and day out. If I was gonna die tomorrow and I had to choose what to listen to these albums would be it.</p>
       <AlbumList>
         { Object.values(albumData.hallOfFame).map(album => (
-          <AlbumListItem>
+          <AlbumListItem key={album.coverUrl}>
             <Album
               artist={album.artist}
               coverUrl={album.coverUrl}
@@ -40,7 +40,7 @@ const Listening: React.FC = () => {
       <h2>Favorite Albums by Year</h2>
       <p>The albums that have made the biggest impact on me, ordered by the year I discovered them.</p>
       { Object.keys(albumData.favorites).sort((a, b) => Number(b) - Number(a)).map(year => (
-          <>
+          <div key={year}>
             <YearHeading>{year}</YearHeading>
             <AlbumList>
               { Object.values(albumData.favorites[year]).map((album: { artist: string, coverUrl: string, name: string, releaseYear: number }) => (
@@ -54,7 +54,7 @@ const Listening: React.FC = () => {
                 </AlbumListItem>
               )) }
             </AlbumList>
-          </>
+          </div>
         )) }
     </Main>
   )
