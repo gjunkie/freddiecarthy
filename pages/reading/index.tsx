@@ -9,6 +9,7 @@ import {
   Subheader
 } from '../../styles/readingStyles'
 
+// this is a test
 const Reading: React.FC = () => (
   <Main>
     <PageTitle>The Books</PageTitle>
@@ -17,6 +18,8 @@ const Reading: React.FC = () => (
     <Heading>Currently Reading</Heading>
     <p>A list of books I&apos;m currently reading</p>
     <List>
+      <li>Acceptance - Jeff VanderMeer</li>
+      <li>Staff Engineer - Will Larson</li>
       <li>A Promised Land - Barack Obama</li>
       <li>Zen and the Art of Motorcycle Maintenance - Robert M. Pirsig</li>
     </List>
@@ -52,6 +55,8 @@ const Reading: React.FC = () => (
     <Heading>2006</Heading>
     <List>
       <li>Kafka on the Shore - Haruki Murakami</li>
+      <li>Angels & Demons - Dan Brown</li>
+      <li>Da Vinci Code - Dan Brown</li>
     </List>
 
     <Heading>Books to finish</Heading>
@@ -64,11 +69,13 @@ const Reading: React.FC = () => (
     <Heading>On my list</Heading>
     <p>Books I plan on picking up next.</p>
     <List>
-      <li>Acceptance - Jeff VanderMeer</li>
+      <li>Atomic Habits - James Clear</li>
       <li>Becoming - Michelle Obama</li>
+      <li>Four Thousand Weeks: Time Management for Mortals - Oliver Burkeman</li>
       <li>Permanent Record - Edward Snowden</li>
       <li>Legacy of Ashes: The History of the CIA - Time Weiner</li>
       <li>Technically Wrong - Sara Wachter-Boettcher</li>
+      <li>Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy - Cathy O'Neil</li>
       <li>White Fragility: Why It&apos;s So Hard for White People to Talk About Racism - Robin DiAngelo</li>
     </List>
   </Main>

@@ -10,11 +10,12 @@ import {
 
 export const Footer: React.FC = () => {
   const theme = useTheme()
+  const currentYear = new Date().getFullYear();
 
   return (
     <StyledFooter className={theme}>
       <StyledContents>
-        <div className="copyright">Freddie Carthy © 2021</div>
+        <div className="copyright">Freddie Carthy © {currentYear}</div>
         <div>
           <a
             className="link twitter"
