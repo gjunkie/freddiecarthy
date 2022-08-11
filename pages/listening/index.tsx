@@ -14,7 +14,29 @@ import {
   YearHeading
 } from '../../styles/listeningStyles'
 
+type SingleAlbum = {
+  artist: string,
+  coverUrl: string,
+  name: string,
+  yearDiscovered: number,
+  yearReleased: number
+}
+
 const Listening = () => {
+
+  const renderAlbum = (album: SingleAlbum) => (
+    <AlbumListItem key={album.name}>
+      <Album
+        artist={album.artist}
+        coverUrl={album.coverUrl}
+        name={album.name}
+        year={album.yearReleased}
+      />
+    </AlbumListItem>
+  );
+
+  const sortedFavorites = albumData.favorites
+    .sort((a: Array<SingleAlbum>, b: Array<SingleAlbum>) => Number(b[0].yearDiscovered) - Number(a[0].yearDiscovered))
 
   return (
     <Main>
@@ -31,7 +53,7 @@ const Listening = () => {
               artist={album.artist}
               coverUrl={album.coverUrl}
               name={album.name}
-              year={album.releaseYear}
+              year={album.yearReleased}
             />
           </AlbumListItem>
         )) }
@@ -39,23 +61,20 @@ const Listening = () => {
 
       <h2>Favorite Albums by Year</h2>
       <p>The albums that have made the biggest impact on me, ordered by the year I discovered them.</p>
-      { Object.keys(albumData.favorites).sort((a, b) => Number(b) - Number(a)).map(year => (
-          <div key={year}>
-            <YearHeading>{year}</YearHeading>
-            <AlbumList>
-              { Object.values(albumData.favorites[year]).map((album: { artist: string, coverUrl: string, name: string, releaseYear: number }) => (
-                <AlbumListItem key={album.name}>
-                  <Album
-                    artist={album.artist}
-                    coverUrl={album.coverUrl}
-                    name={album.name}
-                    year={album.releaseYear}
-                  />
-                </AlbumListItem>
-              )) }
-            </AlbumList>
-          </div>
-        )) }
+
+        { sortedFavorites.map((list) => (
+            <>
+              <YearHeading>{list[0].yearDiscovered}</YearHeading>
+              <AlbumList>
+                {list.map(album => (
+                  <div key={album.name}>
+                    { renderAlbum(album) }
+                  </div>
+                ))}
+              </AlbumList>
+            </>
+          ))
+        }
     </Main>
   )
 }

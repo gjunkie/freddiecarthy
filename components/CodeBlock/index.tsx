@@ -35,24 +35,25 @@ const calculateLinesToHighlight = (meta: string) => {
   }
 }
 
-export const CodeBlock: React.FC<Props> = ({ codeString, language, metastring, ...props }) => {
+export const CodeBlock = (props: Props) => {
+  const { codeString, language, metastring } = props;
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
   const theme = useTheme()
 
   const codeTheme = theme === 'light-mode' ? darkTheme : lightTheme
 
   return (
+    // @ts-ignore:next-line
     <Highlight
       {...defaultProps}
       code={codeString}
-      language={language}
       theme={codeTheme}
       {...props}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div className="code-highlight" data-language={language}>
           <pre className={className} style={style}>
-            {tokens.map((line, i) => {
+            {tokens.map((line, i: number) => {
               const lineProps = getLineProps({ line, key: i })
 
               if (shouldHighlightLine(i)) {

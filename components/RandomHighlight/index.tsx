@@ -5,10 +5,11 @@ import {
 } from './styles'
 
 type RandomHighlightProps = {
+  children: React.ReactNode,
   color: string,
 };
 
-export const RandomHighlight: React.FC<RandomHighlightProps> = (props) => {
+export const RandomHighlight = (props: RandomHighlightProps): React.ReactNode => {
   const colors = [
     '#2DE2E6',
     '#E6862D',

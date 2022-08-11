@@ -5,38 +5,8 @@ import ReactGA from 'react-ga';
 
 const trackingId = "UA-184799671-1";
 ReactGA.initialize(trackingId);
-// ReactGA.set({
-//   userId: auth.currentUserId(),
-//   // any data that is relevant to the user session
-//   // that you would like to track with google analytics
-// })
 
 class MyDocument extends Document {
-  static async getInitialProps(page) {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = page.renderPage;
-
-    try {
-      page.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        });
-
-      const initialProps = await Document.getInitialProps(page);
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      };
-    } finally {
-      sheet.seal();
-    }
-  }
 
   render() {
     return (

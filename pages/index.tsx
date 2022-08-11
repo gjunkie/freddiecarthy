@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { generateRSSFeed } from '../lib/rss';
 
 import { Main } from '../styles/globalStyledComponents';
 
@@ -26,15 +24,7 @@ import {
   SquareList
 } from '../styles/homeStyles';
 
-type HomeProps = {
-  allPostsData: {
-    description: string
-    slug: string,
-    title: string,
-  }[],
-};
-
-const Home: React.FC<HomeProps> = () => (
+const Home = () => (
   <>
     <Head>
     </Head>
@@ -105,10 +95,10 @@ const Home: React.FC<HomeProps> = () => (
             </svg>
           </ArrowThree>
 
-          <Paragraph>
-            <div>Connect with me on <HighlighFour><a href="https://twitter.com/freddiecarthy" target="_blank">Twitter</a></HighlighFour> and <HighlighFive><a href="https://www.polywork.com/fcarthy" target="_blank">Polywork</a></HighlighFive>!</div>
-            <div>I can be reached at <a href="mailto:contact@freddiecarthy.com">contact@freddiecarthy.com</a></div>
-          </Paragraph>
+          <div>
+            <Paragraph>Connect with me on <HighlighFour><a href="https://twitter.com/freddiecarthy" target="_blank">Twitter</a></HighlighFour> and <HighlighFive><a href="https://www.polywork.com/fcarthy" target="_blank">Polywork</a></HighlighFive>!</Paragraph>
+            <Paragraph>I can be reached at <a href="mailto:contact@freddiecarthy.com">contact@freddiecarthy.com</a></Paragraph>
+          </div>
         </ParagraphContainer>
       </CopyGroup>
 

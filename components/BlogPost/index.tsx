@@ -14,7 +14,7 @@ const avgWordsPerMin = 250;
 const getWordCount = (text: string) => (text.match(/\w+/g) || '').length
 
 type BlogPostProps = {
-  content: object,
+  content: React.ReactNode,
   date: string,
   image: string,
   imageAttribution: string,
@@ -22,11 +22,8 @@ type BlogPostProps = {
   title: string,
 }
 
-export const BlogPost: React.FC<BlogPostProps> = ({
-  content,
-  date,
-  title,
-}) => {
+export const BlogPost = (props: BlogPostProps) => {
+  const { content, date, title } = props;
   const theme = useTheme()
   const articleRef = React.useRef<HTMLDivElement>(null)
   const [readingTime, setReadingTime] = React.useState(0)

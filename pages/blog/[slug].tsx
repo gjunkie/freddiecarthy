@@ -4,7 +4,9 @@ import Link from 'next/link'
 import CaesarCipher from  '../../components/blog/CaesarCipher'
 import PlayfairCipher from  '../../components/blog/PlayfairCipher'
 import PlayfairExample from  '../../components/blog/PlayfairExample'
+// @ts-ignore:next-line
 import renderToString from "next-mdx-remote/render-to-string"
+// @ts-ignore:next-line
 import hydrate from "next-mdx-remote/hydrate"
 import matter from "gray-matter"
 import { format, parseISO } from 'date-fns'
@@ -80,6 +82,7 @@ export async function getStaticPaths() {
   }
 }
 
+// @ts-ignore:next-line
 export async function getStaticProps({ params }) {
   const postContent = await getPostdata(params.slug);
   const { data, content } = matter(postContent);
