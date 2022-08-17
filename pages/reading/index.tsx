@@ -17,9 +17,8 @@ const Reading = () => (
     <Heading>Currently Reading</Heading>
     <p>I used to read only one book at a time. I would avoid starting a new one until I finished whatever I was currently reading. If I was slow to finish, or lost interest, I would never pick up another book. I&apos;ve recently flipped that on it&apos;s head and instead started reading anything that I&apos;m interested in.</p>
     <List>
-      <li><strong>Permanent Record</strong> - Edward Snowden</li>
+      <li><strong>What If? Serious Scientific Answers to Absurd Hypothetical Questions</strong> - Randall Munroe</li>
       <li><strong>Leviathan Wakes (The Expanse Book 1)</strong> - James S. A. Corey</li>
-      <li><strong>Staff Engineer: Leadership Beyond the Management Track</strong> - Will Larson</li>
       <li><strong>A Promised Land</strong> - Barack Obama</li>
       <li><strong>Zen and the Art of Motorcycle Maintenance</strong> - Robert M. Pirsig</li>
     </List>
@@ -39,6 +38,8 @@ const Reading = () => (
       <li><strong>Digital Minimalism: Choosing a Focused Life in a Noisy World</strong> - Cal Newport</li>
       <li><strong>Reality Is Not What It Seems: The Elusive Structure of the Universe and the Journey to Quantum Gravity</strong> - Carlo Rovelli</li>
       <li><strong>No-Drama Discipline</strong> - Daniel J. Siegel &amp; Tina Payne Bryson</li>
+      <li><strong>Permanent Record</strong> - Edward Snowden</li>
+      <li><strong>Staff Engineer: Leadership Beyond the Management Track</strong> - Will Larson</li>
     </List>
 
     <Heading>2021</Heading>
