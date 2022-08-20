@@ -39,7 +39,7 @@ const Reading = () => (
       <li><strong>Reality Is Not What It Seems: The Elusive Structure of the Universe and the Journey to Quantum Gravity</strong> - Carlo Rovelli</li>
       <li><strong>No-Drama Discipline</strong> - Daniel J. Siegel &amp; Tina Payne Bryson</li>
       <li><strong>Permanent Record</strong> - Edward Snowden</li>
-      <li><strong>Staff Engineer: Leadership Beyond the Management Track</strong> - Will Larson</li>
+      <li><strong>Staff Engineer: Leadership Beyond the Management Track</strong> - Will Larson (<Link href="blog/staff-engineer-book-review">review</Link>)</li>
     </List>
 
     <Heading>2021</Heading>

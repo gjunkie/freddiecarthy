@@ -50,6 +50,12 @@ export const DateStyles = styled.div`
 export const Article = styled.article`
   display: flex;
   flex-direction: column;
+
+  a {
+    border-bottom-color: #2DE2E6;
+    color: #2DE2E6;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
