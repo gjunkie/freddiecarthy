@@ -11,7 +11,7 @@ import {
 
 const menu = [
   { title: 'Home', path: '/' },
-  { title: 'Blog', path: '/blog' },
+  { title: 'Writing', path: '/blog' },
   { title: 'Reading', path: '/reading' },
   { title: 'Listening', path: '/listening' },
 ]
