@@ -1,0 +1,335 @@
+@keyframes drawLineOne {
+  from {
+    stroke-dashoffset: 2000;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 1000;
+    opacity: 1;
+  }
+}
+
+@keyframes drawLineTwo {
+  from {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 1110;
+    opacity: 1;
+  }
+}
+
+@keyframes drawTail {
+  from {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 1000;
+    opacity: 1;
+  }
+}
+
+.firstArrow {
+  height: 317px;
+  right: 0;
+  top: -15px;
+  width: 407px;
+}
+
+.firstArrowLine {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: drawLineOne 1.3s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+}
+
+.firstArrowTailOne {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: drawTail 1.5s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.firstArrowTailTwo {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: drawTail 1.5s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+.secondArrow {
+  position: relative;
+  left: -35px;
+  top: 20px;
+  width: 413px;
+}
+
+.secondArrowLine {
+  opacity: 0;
+  stroke-dasharray: 1110;
+  stroke-dashoffset: 0;
+  animation: drawLineTwo 1.3s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 3.5s;
+}
+
+.secondArrowTailOne {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: drawTail 1.5s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 5.5s;
+}
+
+.secondArrowTailTwo {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: drawTail 1.5s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 6s;
+}
+
+.thirdArrow {
+  align-self: flex-end;
+  height: 202px;
+  position: relative;
+  right: -40px;
+  width: 399px;
+}
+
+.thirdArrowLine {
+  opacity: 0;
+  stroke-dasharray: 1110;
+  stroke-dashoffset: 0;
+  animation: drawLineTwo 1.5s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+}
+
+.thirdArrowTailOne {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: drawTail 1.5s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 8.5s;
+}
+
+.thirdArrowTailTwo {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: drawTail 1.5s ease-in-out reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 9s;
+}
+
+.copyGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  font-family: PaytoneOne;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 68px;
+}
+
+.subHeader {
+  align-self: center;
+  font-family: AsapItalic;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 100px;
+  width: 590px;
+}
+
+.highlightOne {
+  color: #2DE2E6;
+}
+
+.highlightOne a {
+  border-bottom-color: #1D9BF0;
+}
+
+.highlightTwo {
+  color: #E6862D;
+}
+
+.highlightTwo a {
+  border-bottom-color: #E6862D;
+}
+
+.highlightThree {
+  color: #E62DD3;
+}
+
+.highlightThree a {
+  border-bottom-color: #E62DD3;
+}
+
+.highlightFour {
+  color: #1D9BF0;
+}
+
+.highlightFour a {
+  border-bottom-color: #1D9BF0;
+}
+
+.highlightFive {
+  color: #A394FF;
+}
+
+.highlightFive a {
+  border-bottom-color: #A394FF;
+}
+
+.highlightSix {
+  color: #2CD95C;
+}
+
+.highlightSix a {
+  border-bottom-color: #2CD95C;
+}
+
+.highlightSeven {
+  color: #BB5B14;
+}
+
+.highlightSeven a {
+  border-bottom-color: #BB5B14;
+}
+
+
+.paragraphContainer {
+  display: flex;
+}
+
+.paragraphContainer:nth-child(3) {
+  flex-direction: column;
+  position: relative;
+}
+
+.paragraphContainer:nth-child(3) p {
+  align-self: center;
+  text-align: center;
+  width: 440px;
+}
+
+.copy {
+  align-self: flex-end;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+  width: 390px;
+}
+
+.squareList {
+  display: flex;
+}
+
+.square {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 16px;
+  padding: 20px 23px 15px 23px;
+  width:  380px;
+}
+
+.square:nth-child(1) {
+    margin-right: 40px;
+  }
+
+.square p {
+  margin: 5px 0;
+}
+
+@media (max-width: 800px) {
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .subHeader {
+    font-size: 18px;
+    margin-top: 60px;
+    width: auto;
+  }
+
+  .firstArrow {
+    width: 160px;
+    height: 130px;
+  }
+
+  .secondArrow {
+    left: -15px;
+    transform: rotate(20deg);
+    width: auto;
+  }
+
+  .thirdArrow {
+    right: 0;
+    width: auto;
+  }
+
+  .paragraphContainer:nth-child(1) svg {
+    width: 160px;
+    height: 130px;
+  }
+
+  .paragraphContainer:nth-child(2) svg {
+    width: 160px;
+    height: 130px;
+  }
+  .paragraphContainer:nth-child(3) {
+    height: 90px;
+    margin-top: 20px;
+  }
+
+  .paragraphContainer:nth-child(3) svg {
+    width: 160px;
+    height: 90px;
+  }
+
+  .paragraphContainer:nth-child(3) p {
+    width: auto;
+  }
+
+  .copy {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 30px;
+  }
+
+  .copy:nth-child(1) {
+    margin-top: 100px;
+    width: auto;
+  }
+
+  .squareList {
+    flex-direction: column;
+  }
+
+  .square {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
