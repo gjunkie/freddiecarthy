@@ -11,6 +11,11 @@ export const Main = styled.main`
     color: #2DE2E6;
   }
 
+  a:hover {
+    color: #ff3864;
+    border-bottom: 1px solid #ff3864;
+  }
+
   @media (max-width: 800px) {
     margin-top: 70px;
   }

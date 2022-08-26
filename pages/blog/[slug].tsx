@@ -30,6 +30,7 @@ type PostProps = {
     attribution: string,
     attributionLink: string,
     slug: string,
+    tags: string,
     title: string,
   },
 }
@@ -68,6 +69,7 @@ const PostPage = (props: PostProps) => {
           image={meta.image}
           imageAttribution={meta.attribution}
           imageLink={meta.attributionLink}
+          tags={meta.tags}
           title={meta.title} />
       </main>
     </>

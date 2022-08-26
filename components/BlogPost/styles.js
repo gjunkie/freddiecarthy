@@ -56,6 +56,21 @@ export const Article = styled.article`
     color: #2DE2E6;
   }
 
+  a:hover {
+    color: #ff3864;
+    border-bottom: 1px solid #ff3864;
+  }
+
+  ol {
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ol li {
+    display: inline;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
   }

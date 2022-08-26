@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link';
 import { useTheme } from '../../contexts/ThemeContext'
 import { TweetCTA } from '../TweetCTA'
 
@@ -19,11 +20,12 @@ type BlogPostProps = {
   image: string,
   imageAttribution: string,
   imageLink: string,
+  tags: string,
   title: string,
 }
 
 export const BlogPost = (props: BlogPostProps) => {
-  const { content, date, title } = props;
+  const { content, date, tags, title } = props;
   const theme = useTheme()
   const articleRef = React.useRef<HTMLDivElement>(null)
   const [readingTime, setReadingTime] = React.useState(0)
@@ -38,6 +40,8 @@ export const BlogPost = (props: BlogPostProps) => {
   }, [articleRef])
 
 
+  const splitTags = tags.split(' ')
+
   return (
     <Article ref={articleRef}>
       <PageTitle>{title}</PageTitle>
@@ -47,6 +51,19 @@ export const BlogPost = (props: BlogPostProps) => {
       </ReadingTimeStyles>
 
       <div>{content}</div>
+
+
+      {tags && (
+        <>
+          <ol>
+            {splitTags.map(tag => (
+              <li>
+                <Link key={tag} href="tags/[tag]" as={`/blog/tags/${tag}`}>{`#${tag}${splitTags.length > 1 ? ', ' : ''}`}</Link>
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
 
       <Divider>...</Divider>
 

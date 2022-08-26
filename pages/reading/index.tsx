@@ -17,7 +17,7 @@ const Reading = () => (
     <Heading>Currently Reading</Heading>
     <p>I used to read only one book at a time. I would avoid starting a new one until I finished whatever I was currently reading. If I was slow to finish, or lost interest, I would never pick up another book. I&apos;ve recently flipped that on it&apos;s head and instead started reading anything that I&apos;m interested in.</p>
     <List>
-      <li><strong>What If? Serious Scientific Answers to Absurd Hypothetical Questions</strong> - Randall Munroe</li>
+      <li><strong>Animal Farm</strong> - George Orwell</li>
       <li><strong>Leviathan Wakes (The Expanse Book 1)</strong> - James S. A. Corey</li>
       <li><strong>A Promised Land</strong> - Barack Obama</li>
       <li><strong>Zen and the Art of Motorcycle Maintenance</strong> - Robert M. Pirsig</li>
@@ -40,6 +40,9 @@ const Reading = () => (
       <li><strong>No-Drama Discipline</strong> - Daniel J. Siegel &amp; Tina Payne Bryson</li>
       <li><strong>Permanent Record</strong> - Edward Snowden</li>
       <li><strong>Staff Engineer: Leadership Beyond the Management Track</strong> - Will Larson (<Link href="blog/staff-engineer-book-review">review</Link>)</li>
+      <li><strong>Four Thousand Weeks: Time Management for Mortals</strong> - Oliver Burkeman</li>
+      <li><strong>What If? Serious Scientific Answers to Absurd Hypothetical Questions</strong> - Randall Munroe</li>
+      <li><strong>Seven Brief Lessons on Physics</strong> - Carlo Rovelli</li>
     </List>
 
     <Heading>2021</Heading>
@@ -90,7 +93,6 @@ const Reading = () => (
       <li><strong>An Elegant Puzzle: Systems of Engineering Management</strong> - Will Larson</li>
       <li><strong>Becoming</strong> - Michelle Obama</li>
       <li><strong>For Small Creatures Such as We: Rituals for Finding Meaning in Our Unlikely World</strong> - Sasha Sagan</li>
-      <li><strong>Four Thousand Weeks: Time Management for Mortals</strong> - Oliver Burkeman</li>
       <li><strong>Legacy of Ashes: The History of the CIA</strong> - Time Weiner</li>
       <li><strong>Technically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech</strong> - Sara Wachter-Boettcher</li>
       <li><strong>White Fragility: Why It&apos;s So Hard for White People to Talk About Racism</strong> - Robin DiAngelo</li>

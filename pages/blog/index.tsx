@@ -20,6 +20,7 @@ type HomeProps = {
   allPostsData: {
     description: string
     slug: string,
+    tags: string,
     title: string,
   }[],
 };
@@ -52,13 +53,17 @@ const BlogIndex = (props: HomeProps) => {
         <Subheader>These are the things I've been writing</Subheader>
 
         <ArticleList>
-          {allPostsData.map(({ slug, title, description }) => (
-            <Article key={slug}>
-              <ArticleTitle>{title}</ArticleTitle>
-              <Excerpt>{description}</Excerpt>
-              <Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>Read article</Link>
-            </Article>
-          ))}
+          {allPostsData.map(({ slug, tags, title, description }) => {
+            const splitTags = tags.split(' ')
+
+            return (
+              <Article key={slug}>
+                <ArticleTitle>{title}</ArticleTitle>
+                <Excerpt>{description}</Excerpt>
+                <Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>Read</Link>
+              </Article>
+            )
+          })}
         </ArticleList>
       </Main>
     </>
@@ -68,7 +73,7 @@ const BlogIndex = (props: HomeProps) => {
 export default BlogIndex;
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPosts();
+  const allPostsData = getSortedPosts('blog');
   return {
     props: {
       allPostsData,

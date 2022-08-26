@@ -43,6 +43,24 @@ export const Article = styled.li`
     color: #2DE2E6;
     border-bottom-color: #2DE2E6;
   }
+
+  a:hover {
+    color: #ff3864;
+    border-bottom: 1px solid #ff3864;
+  }
+  
+  li {
+    display: inline;
+    font-size: 13px;
+
+    a {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: none;
+      }
+    }
+  }
 `
 
 export const ArticleList = styled.ul`
