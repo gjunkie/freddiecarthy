@@ -27,7 +27,7 @@ const Reading = () => (
     <List>
       <li><strong>Acceptance: A Novel (The Southern Reach Trilogy, 3)</strong> - Jeff VanderMeer</li>
       <li><strong>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</strong> - James Clear</li>
-      <li><strong>Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy</strong> - Cathy O'Neil</li>
+      <li><strong>Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy</strong> - Cathy O'Neil (<Link href="blog/weapons-of-math-destruction-book-review">review</Link>)</li>
       <li><strong>The Almanack of Naval Ravikant: A Guide to Wealth and Happiness</strong> - Eric Jorgenson</li>
       <li><strong>Hell Yeah or No</strong> - Derek Sivers</li>
       <li><strong>The Courage to Be Disliked</strong> - Ichiro Kishimi</li>
@@ -38,7 +38,7 @@ const Reading = () => (
       <li><strong>Digital Minimalism: Choosing a Focused Life in a Noisy World</strong> - Cal Newport</li>
       <li><strong>Reality Is Not What It Seems: The Elusive Structure of the Universe and the Journey to Quantum Gravity</strong> - Carlo Rovelli</li>
       <li><strong>No-Drama Discipline</strong> - Daniel J. Siegel &amp; Tina Payne Bryson</li>
-      <li><strong>Permanent Record</strong> - Edward Snowden</li>
+      <li><strong>Permanent Record</strong> - Edward Snowden (<Link href="blog/permanent-record-book-review">review</Link>)</li>
       <li><strong>Staff Engineer: Leadership Beyond the Management Track</strong> - Will Larson (<Link href="blog/staff-engineer-book-review">review</Link>)</li>
       <li><strong>Four Thousand Weeks: Time Management for Mortals</strong> - Oliver Burkeman</li>
       <li><strong>What If? Serious Scientific Answers to Absurd Hypothetical Questions</strong> - Randall Munroe</li>
