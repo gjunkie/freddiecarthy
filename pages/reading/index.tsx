@@ -90,8 +90,11 @@ const Reading = () => (
     <Heading>On my list</Heading>
     <p>Books I plan on picking up next.</p>
     <List>
+      <li><strong>Together: Why Social Connection Holds the Key to Better Health, Higher Performance, and Greater Happiness</strong> - Vivek Murthy</li>
+      <li><strong>Foundation</strong> - Isaac Asimov</li>
       <li><strong>An Elegant Puzzle: Systems of Engineering Management</strong> - Will Larson</li>
       <li><strong>Becoming</strong> - Michelle Obama</li>
+      <li><strong>Deep Work</strong> - Cal Newport</li>
       <li><strong>For Small Creatures Such as We: Rituals for Finding Meaning in Our Unlikely World</strong> - Sasha Sagan</li>
       <li><strong>Legacy of Ashes: The History of the CIA</strong> - Time Weiner</li>
       <li><strong>Technically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech</strong> - Sara Wachter-Boettcher</li>
