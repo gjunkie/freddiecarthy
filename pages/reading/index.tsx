@@ -17,7 +17,7 @@ const Reading = () => (
     <Heading>Currently Reading</Heading>
     <p>I used to read only one book at a time. I would avoid starting a new one until I finished whatever I was currently reading. If I was slow to finish, or lost interest, I would never pick up another book. I&apos;ve recently flipped that on it&apos;s head and instead started reading anything that I&apos;m interested in.</p>
     <List>
-      <li><strong>Animal Farm</strong> - George Orwell</li>
+      <li><strong>Foundation</strong> - Isaac Asimov</li>
       <li><strong>A Promised Land</strong> - Barack Obama</li>
       <li><strong>Zen and the Art of Motorcycle Maintenance</strong> - Robert M. Pirsig</li>
     </List>
@@ -34,7 +34,7 @@ const Reading = () => (
       <li><strong>Astrophysics for People in a Hurry</strong> - Neil deGrasse Tyson</li>
       <li><strong>Sea of Tranquility: A novel</strong> - Emiliy St. John Mandel</li>
       <li><strong>1984</strong> - George Orwell</li>
-      <li><strong>Digital Minimalism: Choosing a Focused Life in a Noisy World</strong> - Cal Newport</li>
+      <li><strong>Digital Minimalism: Choosing a Focused Life in a Noisy World</strong> - Cal Newport (<Link href="blog/digital-minimalism-book-review">review</Link>)</li>
       <li><strong>Reality Is Not What It Seems: The Elusive Structure of the Universe and the Journey to Quantum Gravity</strong> - Carlo Rovelli</li>
       <li><strong>No-Drama Discipline</strong> - Daniel J. Siegel &amp; Tina Payne Bryson</li>
       <li><strong>Permanent Record</strong> - Edward Snowden (<Link href="blog/permanent-record-book-review">review</Link>)</li>
@@ -43,6 +43,7 @@ const Reading = () => (
       <li><strong>What If? Serious Scientific Answers to Absurd Hypothetical Questions</strong> - Randall Munroe</li>
       <li><strong>Seven Brief Lessons on Physics</strong> - Carlo Rovelli</li>
       <li><strong>Leviathan Wakes (The Expanse Book 1)</strong> - James S. A. Corey (<Link href="blog/leviathan-wakes-the-expanse-book-review">review</Link>)</li>
+      <li><strong>Animal Farm</strong> - George Orwell</li>
     </List>
 
     <Heading>2021</Heading>
@@ -91,7 +92,6 @@ const Reading = () => (
     <p>Books I plan on picking up next.</p>
     <List>
       <li><strong>Together: Why Social Connection Holds the Key to Better Health, Higher Performance, and Greater Happiness</strong> - Vivek Murthy</li>
-      <li><strong>Foundation</strong> - Isaac Asimov</li>
       <li><strong>An Elegant Puzzle: Systems of Engineering Management</strong> - Will Larson</li>
       <li><strong>Becoming</strong> - Michelle Obama</li>
       <li><strong>Deep Work</strong> - Cal Newport</li>
