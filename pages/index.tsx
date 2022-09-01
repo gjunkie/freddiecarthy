@@ -40,7 +40,7 @@ const Home = () => (
       <div className={styles.copyGroup}>
 
         <div className={styles.paragraphContainer}>
-          <p className={styles.copy}>I've been working as a Software Engineer since 2010. I'm currently working as a <span className={styles.highlightOne}>Senior Software Engineer @Twitter</span>. Previously I've worked at Discovery Networks, Nike, and Opal Labs.</p>
+          <p className={styles.copy}>I&apos;ve been working as a Software Engineer since 2010. I&apos;m currently working as a <span className={styles.highlightOne}>Senior Software Engineer @Twitter</span>. Previously I&apos;ve worked at Discovery Networks, Nike, and Opal Labs.</p>
 
           <div className={styles.firstArrow}>
             <svg width="407" height="317" viewBox="0 0 407 317" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +134,7 @@ const Home = () => (
           </div>
 
           <div>
-            <p className={styles.copy}>Connect with me on <span className={styles.highlightFour}><a href="https://twitter.com/freddiecarthy" target="_blank">Twitter</a></span> and <span className={styles.highlightFive}><a href="https://www.polywork.com/fcarthy" target="_blank">Polywork</a></span>!</p>
+            <p className={styles.copy}>Connect with me on <span className={styles.highlightFour}><a href="https://twitter.com/freddiecarthy" target="_blank" rel="noreferrer">Twitter</a></span> and <span className={styles.highlightFive}><a href="https://www.polywork.com/fcarthy" target="_blank" rel="noreferrer">Polywork</a></span>!</p>
             <p className={styles.copy}>I can be reached at <a href="mailto:contact@freddiecarthy.com">contact@freddiecarthy.com</a></p>
           </div>
         </div>
@@ -143,7 +143,7 @@ const Home = () => (
       <ul className={styles.squareList}>
         <li className={styles.square}>
           <h3>Office Hours</h3>
-          <p>One of my absolute favorite things to do is help others grow. If you’re looking for career advice, code reviews, interview prep help, or anything of the sort feel free to book some time with me during my <span className={styles.highlightSix}><a href="https://calendly.com/freddiecarthy" target="_blank">Office Hours</a></span>.</p>
+          <p>One of my absolute favorite things to do is help others grow. If you’re looking for career advice, code reviews, interview prep help, or anything of the sort feel free to book some time with me during my <span className={styles.highlightSix}><a href="https://calendly.com/freddiecarthy" target="_blank" rel="noreferrer">Office Hours</a></span>.</p>
         </li>
         <li className={styles.square}>
           <h3>How I Work</h3>

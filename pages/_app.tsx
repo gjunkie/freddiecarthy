@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { AppProps } from 'next/app';
+import type { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
 // @ts-ignore:next-line
 import { preToCodeBlock } from "mdx-utils"
