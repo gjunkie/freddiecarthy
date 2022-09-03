@@ -24,6 +24,19 @@ export const HeaderElem = styled.header`
     flex-grow: 1;
     margin: 10px 10px 10px 0;
   }
+
+  @media (max-width: 1050px) {
+    .wrapper {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    .title {
+      display: none;
+    }
+  }
 `
 
 export const Item = styled.li`
