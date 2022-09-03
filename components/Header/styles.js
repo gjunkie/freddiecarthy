@@ -1,8 +1,29 @@
 import styled from 'styled-components'
 
 export const HeaderElem = styled.header`
+  align-items: center;
   display: flex;
   flex-direction: column;
+
+  .wrapper {
+    display: flex;
+    width: 1000px;
+  }
+
+  .titleWrapper {
+    flex-grow: 1;
+
+    a {
+      border-bottom: none;
+    }
+  }
+
+  .title {
+    font-family: PaytoneOne;
+    font-size: 23px;
+    flex-grow: 1;
+    margin: 10px 10px 10px 0;
+  }
 `
 
 export const Item = styled.li`
@@ -31,7 +52,6 @@ export const List = styled.ul`
 export const Nav = styled.nav`
   align-self: center;
   margin: 10px 10px 10px 0;
-  width: 800px;
 
   @media (max-width: 800px) {
     width: auto;

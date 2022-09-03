@@ -113,6 +113,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
+    font-size: 42px;
   }
 
   h2 {
@@ -134,12 +135,13 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-weight: lighter;
     font-size: 24px;
+    line-height: 36px;
     margin-top: 20px;
   }
 
   p {
     font-size: 18px;
-    line-height: 32px;
+    line-height: 36px;
     margin: 40px 0;
 
     @media (max-width: 800px) {
@@ -179,7 +181,7 @@ const GlobalStyle = createGlobalStyle`
 
   main {
     margin: 0 auto;
-    width: 800px;
+    width: 1000px;
 
     @media (max-width: 800px) {
       margin-top: 70px;
@@ -255,16 +257,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @media (max-width: 1270px) {
-    h1 {
-      font-size: 30px;
-    }
-
     .prism-code {
       font-size: 1.1rem;
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1050px) {
     h1 {
       font-size: 32px;
     }

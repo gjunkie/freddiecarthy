@@ -22,17 +22,22 @@ export const Header = () => {
   return (
     <>
       <HeaderElem>
-        <Nav>
-          <List>
-            {menu.map((item, index) => (
-            <Item key={index}>
-              <Link href={item.path}>
-                <a className={router.pathname == item.path ? "active" : ""}>{item.title}</a>
-              </Link>
-            </Item>
-            ))}
-          </List>
-        </Nav>
+        <div className="wrapper">
+          <div className="titleWrapper">
+            <Link href="/"><a className="title">Freddie Carthy</a></Link>
+          </div>
+          <Nav>
+            <List>
+              {menu.map((item, index) => (
+              <Item key={index}>
+                <Link href={item.path}>
+                  <a className={router.pathname == item.path ? "active" : ""}>{item.title}</a>
+                </Link>
+              </Item>
+              ))}
+            </List>
+          </Nav>
+        </div>
       </HeaderElem>
     </>
   )
