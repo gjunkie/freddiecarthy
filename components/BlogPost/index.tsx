@@ -20,15 +20,26 @@ type BlogPostProps = {
   image: string,
   imageAttribution: string,
   imageLink: string,
+  slug: string,
   tags: string,
   title: string,
 }
 
 export const BlogPost = (props: BlogPostProps) => {
-  const { content, date, tags, title } = props;
+  const { content, date, slug, tags, title } = props;
   const theme = useTheme()
   const articleRef = React.useRef<HTMLDivElement>(null)
   const [readingTime, setReadingTime] = React.useState(0)
+
+  const makeRequest = async () => {
+    let response = await fetch(`/api/test?slug=${slug}`);
+    response.json().then(hey => console.log(hey));
+  };
+
+  React.useEffect(() => {
+    makeRequest();
+  }, []);
+
 
   React.useEffect(() => {
     if (!articleRef.current) {
@@ -57,7 +68,7 @@ export const BlogPost = (props: BlogPostProps) => {
         <>
           <ol>
             {splitTags.map(tag => (
-              <li>
+              <li key={tag}>
                 <Link key={tag} href="tags/[tag]" as={`/blog/tags/${tag}`}>{`#${tag}${splitTags.length > 1 ? ', ' : ''}`}</Link>
               </li>
             ))}

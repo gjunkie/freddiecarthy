@@ -69,6 +69,7 @@ const PostPage = (props: PostProps) => {
           image={meta.image}
           imageAttribution={meta.attribution}
           imageLink={meta.attributionLink}
+          slug={meta.slug}
           tags={meta.tags}
           title={meta.title} />
       </main>
