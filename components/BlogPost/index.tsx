@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Heart } from '../Heart';
 import Link from 'next/link';
 import { useTheme } from '../../contexts/ThemeContext'
 import { TweetCTA } from '../TweetCTA'
@@ -31,16 +32,6 @@ export const BlogPost = (props: BlogPostProps) => {
   const articleRef = React.useRef<HTMLDivElement>(null)
   const [readingTime, setReadingTime] = React.useState(0)
 
-  const makeRequest = async () => {
-    let response = await fetch(`/api/test?slug=${slug}`);
-    response.json().then(hey => console.log(hey));
-  };
-
-  React.useEffect(() => {
-    makeRequest();
-  }, []);
-
-
   React.useEffect(() => {
     if (!articleRef.current) {
       return
@@ -50,7 +41,6 @@ export const BlogPost = (props: BlogPostProps) => {
     setReadingTime(Math.ceil(count / avgWordsPerMin))
   }, [articleRef])
 
-
   const splitTags = tags.split(' ')
 
   return (
@@ -58,11 +48,11 @@ export const BlogPost = (props: BlogPostProps) => {
       <PageTitle>{title}</PageTitle>
 
       <ReadingTimeStyles theme={theme}>
-        <span>Posted on {date}</span> - <span>{readingTime} min read</span>
+        <span>Posted on {date}</span> - <span>{readingTime} min read.</span>
+      <Heart articleSlug={slug} />
       </ReadingTimeStyles>
 
       <div>{content}</div>
-
 
       {tags && (
         <>

@@ -16,7 +16,7 @@ const calculateLinesToHighlight = (meta: string) => {
   if (!RE.test(meta)) {
     return () => false
   }
-  const match = RE.exec(meta);
+  const match = RE.exec(meta)
 
   const lineNumbers = match && match[1]
     .split(`,`)
