@@ -1,4 +1,5 @@
 import sha256 from 'crypto-js/sha256';
+import { LIKE_LIMIT_PER_USER } from '../../lib/constants'
 import { MongoClient } from "mongodb"
  
 async function handler(req, resp){
@@ -21,7 +22,7 @@ async function handler(req, resp){
   let articleLikes = await db.collection('likes').findOne({ slug: requestBody.slug })
 
   // limit likes to 16
-  if (!articleLikes || articleLikes.userLikes[hashedIp] < 10) {
+  if (!articleLikes || articleLikes.userLikes[hashedIp] < LIKE_LIMIT_PER_USER) {
     // increment likes
     const articleData = await db.collection('likes').findOneAndUpdate(
       { slug: requestBody.slug },

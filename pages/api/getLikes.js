@@ -1,5 +1,5 @@
 import sha256 from 'crypto-js/sha256';
-import { Collection, MongoClient } from "mongodb"
+import { MongoClient } from "mongodb"
  
 async function handler(req, resp){
   if(req.method !== 'GET') return
@@ -17,8 +17,6 @@ async function handler(req, resp){
 
   // get all likes for the current article slug
   const result = await db.collection('likes').findOne({ slug: req.query.slug })
-
-  // await db.collection('likes').drop()
 
   client.close()
 
