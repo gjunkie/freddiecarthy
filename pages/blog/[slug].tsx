@@ -91,17 +91,13 @@ export async function getServerSideProps(ctx: any) {
 
   const { db } = await connectToDatabase();
 
-  console.log({db})
-
   // create db if it doesn't exist
   if (!db.collection('likes')) {
-    console.log('NO LIKES YET')
     await db.createCollection("likes")
   }
 
   // get all likes for the current article slug
   const result = await db.collection('likes').findOne({ slug: ctx.params.slug })
-  console.log({result, slug: ctx.params.slug})
 
   const postContent = await getPostdata(ctx.params.slug);
   const { data, content } = matter(postContent);
