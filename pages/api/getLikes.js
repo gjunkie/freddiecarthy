@@ -1,5 +1,5 @@
-import sha256 from 'crypto-js/sha256';
-import { MongoClient } from "mongodb"
+import sha256 from 'crypto-js/sha256'
+import { connectToDatabase } from '../../lib/mongodb'
  
 async function handler(req, resp){
   if(req.method !== 'GET') return
@@ -7,8 +7,7 @@ async function handler(req, resp){
   const ipAddress = process.env.NODE_ENV === 'production' ? req['x-forwarded-for'] : '127.0.0.1'
   const hashedIp = sha256(ipAddress).toString()
 
-  const client = await MongoClient.connect(process.env.MONGO_URI)
-  const db = client.db()
+  const { client, db } = connectToDatabase();
 
   // create db if it doesn't exist
   if (!db.collection('likes')) {

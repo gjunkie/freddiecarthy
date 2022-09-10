@@ -1,19 +1,22 @@
 import * as React from 'react'
+import { connectToDatabase } from '../../lib/mongodb'
 import Head from 'next/head'
 import Link from 'next/link'
 import CaesarCipher from  '../../components/blog/CaesarCipher'
-import PlayfairCipher from  '../../components/blog/PlayfairCipher'
-import PlayfairExample from  '../../components/blog/PlayfairExample'
+import { getPostdata } from '../../lib/posts';
+import matter from "gray-matter"
 // @ts-ignore:next-line
 import renderToString from "next-mdx-remote/render-to-string"
 // @ts-ignore:next-line
 import hydrate from "next-mdx-remote/hydrate"
-import matter from "gray-matter"
+// @ts-ignore:next-line
+import sha256 from 'crypto-js/sha256'
 import { format, parseISO } from 'date-fns'
 
-import { getAllPostSlugs, getPostdata } from '../../lib/posts';
 import { BlogPost } from '../../components/BlogPost';
 import { CodeBlock } from '../../components/CodeBlock';
+import PlayfairCipher from  '../../components/blog/PlayfairCipher'
+import PlayfairExample from  '../../components/blog/PlayfairExample'
 import { RandomHighlight } from '../../components/RandomHighlight';
 
 type PostProps = {
@@ -21,6 +24,10 @@ type PostProps = {
     compiledSource: string,
     renderedOutput: string,
     scope: object,
+  },
+  likes: {
+    totalLikes: number,
+    userLikes: number,
   },
   meta: {
     author: string,
@@ -38,7 +45,7 @@ type PostProps = {
 const components = { CaesarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample, RandomHighlight }
 
 const PostPage = (props: PostProps) => {
-  const { meta, source } = props;
+  const { likes, meta, source } = props;
   const content = hydrate(source, { components });
 
   return (
@@ -69,6 +76,7 @@ const PostPage = (props: PostProps) => {
           image={meta.image}
           imageAttribution={meta.attribution}
           imageLink={meta.attributionLink}
+          likes={likes}
           slug={meta.slug}
           tags={meta.tags}
           title={meta.title} />
@@ -77,30 +85,38 @@ const PostPage = (props: PostProps) => {
   )
 }
 
-export async function getStaticPaths() {
-  const paths = getAllPostSlugs();
-  return {
-    paths,
-    fallback: false
-  }
-}
+export async function getServerSideProps(ctx: any) {
+  const ipAddress = process.env.NODE_ENV === 'production' ? ctx.req['x-forwarded-for'] : '127.0.0.1'
+  const hashedIp = sha256(ipAddress).toString()
 
-// @ts-ignore:next-line
-export async function getStaticProps({ params }) {
-  const postContent = await getPostdata(params.slug);
+  const { db } = await connectToDatabase();
+
+  // create db if it doesn't exist
+  if (!db.collection('likes')) {
+    await db.createCollection("likes")
+  }
+
+  // get all likes for the current article slug
+  const result = await db.collection('likes').findOne({ slug: ctx.params.slug })
+
+  const postContent = await getPostdata(ctx.params.slug);
   const { data, content } = matter(postContent);
 
   const meta = {
     ...data,
     date: format(parseISO(data.date), 'MMM dd, yyyy'),
     image: data.image,
-    slug: params.slug,
+    slug: ctx.params.slug,
   }
 
   const mdxSource = await renderToString(content, { components })
 
   return {
     props: {
+      likes: {
+        userLikes: result === null ? 0 : result.userLikes[hashedIp],
+        totalLikes: result === null ? 0 : result.totalLikes
+      },
       source: mdxSource,
       meta,
     }

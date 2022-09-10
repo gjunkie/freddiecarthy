@@ -1,6 +1,6 @@
-import sha256 from 'crypto-js/sha256';
+import sha256 from 'crypto-js/sha256'
+import { connectToDatabase } from '../../lib/mongodb'
 import { LIKE_LIMIT_PER_USER } from '../../lib/constants'
-import { MongoClient } from "mongodb"
  
 async function handler(req, resp){
   const ipAddress = process.env.NODE_ENV === 'production' ? req['x-forwarded-for'] : '127.0.0.1'
@@ -10,8 +10,7 @@ async function handler(req, resp){
   const requestBody = JSON.parse(req.body)
   const hashedIp = sha256(ipAddress).toString()
  
-  const client = await MongoClient.connect(process.env.MONGO_URI)
-  const db = client.db()
+  const { client, db } = await connectToDatabase();
 
   // create db if it doesn't exist
   if (!db.collection('likes')) {

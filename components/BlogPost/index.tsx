@@ -21,13 +21,17 @@ type BlogPostProps = {
   image: string,
   imageAttribution: string,
   imageLink: string,
+  likes: {
+    totalLikes: number,
+    userLikes: number,
+  },
   slug: string,
   tags: string,
   title: string,
 }
 
 export const BlogPost = (props: BlogPostProps) => {
-  const { content, date, slug, tags, title } = props;
+  const { content, date, likes, slug, tags, title } = props;
   const theme = useTheme()
   const articleRef = React.useRef<HTMLDivElement>(null)
   const [readingTime, setReadingTime] = React.useState(0)
@@ -49,7 +53,7 @@ export const BlogPost = (props: BlogPostProps) => {
 
       <ReadingTimeStyles theme={theme}>
         <span>Posted on {date}</span> - <span>{readingTime} min read.</span>
-      <Heart articleSlug={slug} />
+      <Heart articleSlug={slug} likes={likes} />
       </ReadingTimeStyles>
 
       <div>{content}</div>

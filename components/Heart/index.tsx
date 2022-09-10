@@ -4,26 +4,21 @@ import styles from './Heart.module.css'
 
 type Props = {
   articleSlug: string,
+  likes: {
+    totalLikes: number,
+    userLikes: number,
+  }
 }
 
 export const Heart = (props: Props) => {
-  const [totalLikes, setTotalLikes] = React.useState(0)
-  const [userLikes, setUserLikes] = React.useState(0)
+  const { articleSlug, likes } = props;
 
-  const { articleSlug } = props;
+  const [totalLikes, setTotalLikes] = React.useState(likes.totalLikes)
+  const [userLikes, setUserLikes] = React.useState(likes.userLikes)
 
-  // const pop1 = new Audio()
   const musicPlayer = React.useMemo(() => (
     typeof Audio !== "undefined" && userLikes < 16 ? new Audio(`/audio/pop${userLikes < 15 ? '1' : '2'}.ogg`) : undefined
   ), [userLikes]);
-
-  const getLikes = async () => {
-    const response = await fetch(`/api/getLikes?slug=${articleSlug}`)
-    response.json().then(response => {
-      setTotalLikes(response.data.totalLikes)
-      setUserLikes(response.data.userLikes)
-    });
-  };
 
   const setLikes = async () => {
     musicPlayer && musicPlayer.play()
@@ -38,10 +33,6 @@ export const Heart = (props: Props) => {
       setUserLikes(res.data.userLikes)
     });
   };
-
-  React.useEffect(() => {
-    getLikes();
-  }, []);
 
   return (
     <>
