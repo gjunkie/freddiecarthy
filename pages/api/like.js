@@ -7,7 +7,7 @@ async function handler(req, resp){
  
   const requestBody = JSON.parse(req.body)
 
-  const ipAddress = process.env.NODE_ENV === 'development' ? '127.0.0.1' : req['x-forwarded-for']
+  const ipAddress = process.env.NODE_ENV === 'development' ? '127.0.0.1' : req.headers['x-forwarded-for']
   const hashedIp = sha256(ipAddress).toString()
  
   const { db } = await connectToDatabase();
