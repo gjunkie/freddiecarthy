@@ -30,6 +30,7 @@ export const ReadingTimeStyles = styled.div`
     }
     return `
       color: #adadad;
+      margin-bottom: 10px;
       text-align: center;
     `
   }}

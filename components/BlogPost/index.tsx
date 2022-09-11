@@ -53,8 +53,8 @@ export const BlogPost = (props: BlogPostProps) => {
 
       <ReadingTimeStyles theme={theme}>
         <span>Posted on {date}</span> - <span>{readingTime} min read.</span>
-      <Heart articleSlug={slug} likes={likes} />
       </ReadingTimeStyles>
+      <Heart articleSlug={slug} likes={likes} />
 
       <div>{content}</div>
 

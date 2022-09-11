@@ -53,7 +53,7 @@ export const Heart = (props: Props) => {
   }
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <span className={styles.heart}>
         <svg className={`${userLikes < 16 ? styles.incomplete : styles.complete}`} onClick={setLikes} x="0px" y="0px" viewBox="0 0 230 230">
           <linearGradient id="gradient1" x1="0.5" y1="1" x2="0.5" y2="0">
@@ -101,6 +101,6 @@ export const Heart = (props: Props) => {
         </svg>
       </span>
      {totalLikes} likes!
-    </>
+    </div>
   )
 }

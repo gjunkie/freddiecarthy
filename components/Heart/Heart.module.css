@@ -1,3 +1,22 @@
+@keyframes wiggle {
+    0% { transform: rotate(0deg); width: 15px; }
+   48% { transform: rotate(0deg); width: 15px; }
+   50% { transform: rotate(10deg); width: 20px; }
+   52% { transform: rotate(-10deg); width: 20px; }
+   54% { transform: rotate(10deg); width: 20px; }
+   56% { transform: rotate(-10deg); width: 20px; }
+   58% { transform: rotate(0deg); width: 20px; }
+   85% { transform: rotate(0deg); width: 20px; }
+   87% { transform: rotate(0deg); width: 15px; }
+  100% { transform: rotate(0deg); width: 15px; }
+}
+
+.wrapper {
+  color: #adadad;
+  display: flex;
+  justify-content: center;
+}
+
 .heart {
   align-items: center;
   display: inline-flex;
@@ -22,7 +41,8 @@
   width: 13px;
 }
 
-.heart svg.incomplete {
+.heart svg.incomplete:not(:hover) {
+  animation: wiggle 5s infinite;
   fill: #505050;
 }
 

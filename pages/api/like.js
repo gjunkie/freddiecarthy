@@ -3,7 +3,7 @@ import { connectToDatabase } from '../../lib/mongodb'
 import { LIKE_LIMIT_PER_USER } from '../../lib/constants'
  
 async function handler(req, resp){
-  const ipAddress = process.env.NODE_ENV === 'production' ? req['x-forwarded-for'] : '127.0.0.1'
+  const ipAddress = process.env.NODE_ENV === 'development' ? '127.0.0.1' : req['x-forwarded-for']
 
   if(req.method !== 'POST') return
  

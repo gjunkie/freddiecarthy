@@ -4,7 +4,7 @@ import { connectToDatabase } from '../../lib/mongodb'
 async function handler(req, resp){
   if(req.method !== 'GET') return
 
-  const ipAddress = process.env.NODE_ENV === 'production' ? req['x-forwarded-for'] : '127.0.0.1'
+  const ipAddress = process.env.NODE_ENV === 'development' ? '127.0.0.1' : req['x-forwarded-for']
   const hashedIp = sha256(ipAddress).toString()
 
   const { db } = connectToDatabase();
