@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { LIKE_LIMIT_PER_USER } from '../../lib/constants'
+import { LIKE_LIMIT_PER_USER, LIKE_REQUEST_THROTTLE_TIME } from '../../lib/constants'
 import { useThrottledCallback } from '../../hooks/useThrottledCallback'
 import styles from './Heart.module.css'
 
@@ -43,7 +43,7 @@ export const Heart = (props: Props) => {
       body: JSON.stringify({slug: articleSlug, likes: sessionLikes})
     });
     setSessionLikes(0)
-  }, 2000)
+  }, LIKE_REQUEST_THROTTLE_TIME)
 
   // handler for clicking the heart
   const setLikes = () => {
