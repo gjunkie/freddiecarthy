@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { LIKE_LIMIT_PER_USER } from '../../lib/constants'
+import { useThrottledCallback } from '../../hooks/useThrottledCallback'
 import styles from './Heart.module.css'
 
 type Props = {
@@ -13,26 +14,41 @@ type Props = {
 export const Heart = (props: Props) => {
   const { articleSlug, likes } = props;
 
+  // total likes from all users
   const [totalLikes, setTotalLikes] = React.useState(likes.totalLikes)
+  // total likes for the current user
   const [userLikes, setUserLikes] = React.useState(likes.userLikes)
+  // current session likes as the user clicks the heart
+  const [sessionLikes, setSessionLikes] = React.useState(0)
 
-  const musicPlayer = React.useMemo(() => (
+  React.useEffect(() => {
+    setTotalLikes(totalLikes + sessionLikes)
+    setUserLikes(userLikes + sessionLikes)
+    throttledSaveRequest()
+  }, [sessionLikes])
+
+  // the audio player for the pop sound when a user
+  // clicks the heart.
+  const soundPlayer = React.useMemo(() => (
     typeof Audio !== "undefined" && userLikes < 16 ? new Audio(`/audio/pop${userLikes < 15 ? '1' : '2'}.ogg`) : undefined
-  ), [userLikes]);
+  ), [userLikes])
 
-  const setLikes = async () => {
-    musicPlayer && musicPlayer.play()
-    if (userLikes === LIKE_LIMIT_PER_USER) return;
-
-    const response = await fetch(`/api/like`, {
+  // a throttled instance of the request method to make
+  // sure users can click the heart many times but we
+  // only make a single request.
+  const throttledSaveRequest = useThrottledCallback(async () => {
+    await fetch(`/api/like`, {
       method: 'POST',
-      body: JSON.stringify({slug: articleSlug})
+      body: JSON.stringify({slug: articleSlug, likes: sessionLikes})
     });
-    response.json().then((res) => {
-      setTotalLikes(res.data.totalLikes)
-      setUserLikes(res.data.userLikes)
-    });
-  };
+  }, 2000)
+
+  // handler for clicking the heart
+  const setLikes = () => {
+    if (userLikes >= LIKE_LIMIT_PER_USER) return;
+    soundPlayer && soundPlayer.play()
+    setSessionLikes(sessionLikes + 1)
+  }
 
   return (
     <>

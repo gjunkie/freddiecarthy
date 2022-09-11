@@ -7,7 +7,7 @@ async function handler(req, resp){
   const ipAddress = process.env.NODE_ENV === 'production' ? req['x-forwarded-for'] : '127.0.0.1'
   const hashedIp = sha256(ipAddress).toString()
 
-  const { client, db } = connectToDatabase();
+  const { db } = connectToDatabase();
 
   // create db if it doesn't exist
   if (!db.collection('likes')) {
@@ -16,8 +16,6 @@ async function handler(req, resp){
 
   // get all likes for the current article slug
   const result = await db.collection('likes').findOne({ slug: req.query.slug })
-
-  client.close()
 
   return resp.status(201).json({
     data: {

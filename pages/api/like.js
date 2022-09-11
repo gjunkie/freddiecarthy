@@ -10,7 +10,7 @@ async function handler(req, resp){
   const requestBody = JSON.parse(req.body)
   const hashedIp = sha256(ipAddress).toString()
  
-  const { client, db } = await connectToDatabase();
+  const { db } = await connectToDatabase();
 
   // create db if it doesn't exist
   if (!db.collection('likes')) {
@@ -25,14 +25,12 @@ async function handler(req, resp){
     // increment likes
     const articleData = await db.collection('likes').findOneAndUpdate(
       { slug: requestBody.slug },
-      { $inc: { ['userLikes.' + hashedIp]: 1, totalLikes: 1 } },
+      { $inc: { ['userLikes.' + hashedIp]: requestBody.likes, totalLikes: requestBody.likes } },
       { returnDocument: 'after', upsert: true }
     )
 
     articleLikes = articleData.value
   }
-
-  client.close()
 
   return resp.status(201).json({
     data: {
