@@ -11,7 +11,6 @@ export const useThrottledCallback = (callback: () => void, delay: number) => {
     }
 
     const newTimeout = setTimeout(() => {
-      console.log('RUN IT')
       callback()
     }, delay)
 

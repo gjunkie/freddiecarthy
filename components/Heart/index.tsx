@@ -22,8 +22,9 @@ export const Heart = (props: Props) => {
   const [sessionLikes, setSessionLikes] = React.useState(0)
 
   React.useEffect(() => {
-    setTotalLikes(totalLikes + sessionLikes)
-    setUserLikes(userLikes + sessionLikes)
+    if (sessionLikes === 0) return
+    setTotalLikes(totalLikes + 1)
+    setUserLikes(userLikes + 1)
     throttledSaveRequest()
   }, [sessionLikes])
 
@@ -41,6 +42,7 @@ export const Heart = (props: Props) => {
       method: 'POST',
       body: JSON.stringify({slug: articleSlug, likes: sessionLikes})
     });
+    setSessionLikes(0)
   }, 2000)
 
   // handler for clicking the heart

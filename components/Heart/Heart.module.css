@@ -1,21 +1,24 @@
 .heart {
   align-items: center;
   display: inline-flex;
+  height: 15px;
   justify-content: center;
-  margin: 0 5px 0 10px;
+  margin: 0 7px 0 10px;
+  position: relative;
   user-select: none;
   width: 15px;
 }
 
 .heart svg {
+  position: absolute;
   width: 15px;
 }
 
-.heart svg:hover {
+.heart svg:hover:not(.complete) {
   cursor: pointer;
 }
 
-.heart svg:active {
+.heart svg:active:not(.complete) {
   width: 13px;
 }
 
@@ -24,6 +27,7 @@
 }
 
 .heart svg.complete {
+  width: 20px;
 }
 
 .heart .fillup {
