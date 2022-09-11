@@ -49,7 +49,6 @@ const PostPage = (props: PostProps) => {
   const { address, likes, meta, source } = props;
   const content = hydrate(source, { components });
 
-  console.log({address})
   return (
     <>
       <Head>
@@ -116,7 +115,7 @@ export async function getServerSideProps(ctx: any) {
   return {
     props: {
       likes: {
-        userLikes: result === null ? 0 : result.userLikes[hashedIp],
+        userLikes: result !== null && result.userLikes[hashedIp] ? result.userLikes[hashedIp] : 0,
         totalLikes: result === null ? 0 : result.totalLikes
       },
       address: ipAddress,

@@ -21,7 +21,11 @@ async function handler(req, resp){
   let articleLikes = await db.collection('likes').findOne({ slug: requestBody.slug })
 
   // limit likes to 16
-  if (!articleLikes || articleLikes.userLikes[hashedIp] < LIKE_LIMIT_PER_USER) {
+  if (
+    !articleLikes ||
+    !articleLikes.userLikes[hashedIp] ||
+    (articleLikes.userLikes[hashedIp] && articleLikes.userLikes[hashedIp] < LIKE_LIMIT_PER_USER)
+  ) {
     // increment likes
     const articleData = await db.collection('likes').findOneAndUpdate(
       { slug: requestBody.slug },
@@ -31,6 +35,7 @@ async function handler(req, resp){
 
     articleLikes = articleData.value
   }
+
 
   return resp.status(201).json({
     data: {
