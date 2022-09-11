@@ -20,6 +20,7 @@ import PlayfairExample from  '../../components/blog/PlayfairExample'
 import { RandomHighlight } from '../../components/RandomHighlight';
 
 type PostProps = {
+  address: string,
   source: {
     compiledSource: string,
     renderedOutput: string,
@@ -45,9 +46,10 @@ type PostProps = {
 const components = { CaesarCipher, CodeBlock, Link, PlayfairCipher, PlayfairExample, RandomHighlight }
 
 const PostPage = (props: PostProps) => {
-  const { likes, meta, source } = props;
+  const { address, likes, meta, source } = props;
   const content = hydrate(source, { components });
 
+  console.log({address})
   return (
     <>
       <Head>
@@ -117,6 +119,7 @@ export async function getServerSideProps(ctx: any) {
         userLikes: result === null ? 0 : result.userLikes[hashedIp],
         totalLikes: result === null ? 0 : result.totalLikes
       },
+      address: ipAddress,
       meta,
       source: mdxSource,
     }
