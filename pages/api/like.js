@@ -3,11 +3,11 @@ import { connectToDatabase } from '../../lib/mongodb'
 import { LIKE_LIMIT_PER_USER } from '../../lib/constants'
  
 async function handler(req, resp){
-  const ipAddress = process.env.NODE_ENV === 'development' ? '127.0.0.1' : req['x-forwarded-for']
-
   if(req.method !== 'POST') return
  
   const requestBody = JSON.parse(req.body)
+
+  const ipAddress = process.env.NODE_ENV === 'development' ? '127.0.0.1' : req['x-forwarded-for']
   const hashedIp = sha256(ipAddress).toString()
  
   const { db } = await connectToDatabase();

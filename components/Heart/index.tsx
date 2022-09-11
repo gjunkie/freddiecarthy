@@ -52,6 +52,8 @@ export const Heart = (props: Props) => {
     setSessionLikes(sessionLikes + 1)
   }
 
+  const copy = totalLikes === 0 ? 'likes... :(' : totalLikes === 1 ? 'like!' : 'likes!'
+
   return (
     <div className={styles.wrapper}>
       <span className={styles.heart}>
@@ -100,7 +102,7 @@ export const Heart = (props: Props) => {
           <g></g>
         </svg>
       </span>
-     {totalLikes} likes!
+     {totalLikes} {copy}
     </div>
   )
 }
