@@ -17,8 +17,8 @@ const Reading = () => (
     <Heading>Currently Reading</Heading>
     <p>I used to read only one book at a time. I would avoid starting a new one until I finished whatever I was currently reading. If I was slow to finish, or lost interest, I would never pick up another book. I&apos;ve recently flipped that on it&apos;s head and instead started reading anything that I&apos;m interested in.</p>
     <List>
-      <li><strong>For Small Creatures Such as We: Rituals for Finding Meaning in Our Unlikely World</strong> - Sasha Sagan</li>
       <li><strong>Shop Class as Soulcraft: An Inquiry Into the Value of Work</strong> - Matthew B. Crawford</li>
+      <li><strong>The Elephan Vanishes</strong> - Haruki Murakami</li>
       <li><strong>Foundation</strong> - Isaac Asimov</li>
       <li><strong>A Promised Land</strong> - Barack Obama</li>
       <li><strong>Zen and the Art of Motorcycle Maintenance</strong> - Robert M. Pirsig</li>
@@ -46,6 +46,7 @@ const Reading = () => (
       <li><strong>Seven Brief Lessons on Physics</strong> - Carlo Rovelli</li>
       <li><strong>Leviathan Wakes (The Expanse Book 1)</strong> - James S. A. Corey (<Link href="blog/leviathan-wakes-the-expanse-book-review">review</Link>)</li>
       <li><strong>Animal Farm</strong> - George Orwell</li>
+      <li><strong>For Small Creatures Such as We: Rituals for Finding Meaning in Our Unlikely World</strong> - Sasha Sagan</li>
     </List>
 
     <Heading>2021</Heading>

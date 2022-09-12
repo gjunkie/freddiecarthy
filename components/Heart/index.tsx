@@ -55,7 +55,7 @@ export const Heart = (props: Props) => {
   const copy = totalLikes === 0 ? 'likes...' : totalLikes === 1 ? 'like!' : 'likes!'
 
   const heartClass = `${styles.wrapper}
-    ${userLikes ===0 ? styles.empty : ''}
+    ${totalLikes ===0 ? styles.empty : ''}
     ${userLikes < 16 ? styles.incomplete : styles.complete}
   `
 
