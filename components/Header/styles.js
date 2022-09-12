@@ -60,6 +60,12 @@ export const List = styled.ul`
   display: flex;
   font-family: Asap;
   justify-content: flex-end;
+
+  @media (min-width: 1051px) {
+    li:first-child {
+      display: none;
+    }
+  }
 `
 
 export const Nav = styled.nav`

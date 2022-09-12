@@ -52,12 +52,17 @@ export const Heart = (props: Props) => {
     setSessionLikes(sessionLikes + 1)
   }
 
-  const copy = totalLikes === 0 ? 'likes... :(' : totalLikes === 1 ? 'like!' : 'likes!'
+  const copy = totalLikes === 0 ? 'likes...' : totalLikes === 1 ? 'like!' : 'likes!'
+
+  const heartClass = `${styles.wrapper}
+    ${userLikes ===0 ? styles.empty : ''}
+    ${userLikes < 16 ? styles.incomplete : styles.complete}
+  `
 
   return (
-    <div className={styles.wrapper}>
+    <div onClick={setLikes} className={heartClass}>
       <span className={styles.heart}>
-        <svg className={`${userLikes < 16 ? styles.incomplete : styles.complete}`} onClick={setLikes} x="0px" y="0px" viewBox="0 0 230 230">
+        <svg x="0px" y="0px" viewBox="0 0 230 230">
           <linearGradient id="gradient1" x1="0.5" y1="1" x2="0.5" y2="0">
             <stop offset="6.25%" stopOpacity={userLikes > 0 ? '1' : '0'} stopColor="#d31717"/>
             <stop offset="12.5%" stopOpacity={userLikes > 1 ? '1' : '0'} stopColor="#d31717"/>
@@ -77,7 +82,7 @@ export const Heart = (props: Props) => {
             <stop offset="100%" stopOpacity={userLikes > 15 ? '1' : '0'} stopColor="#d31717"/>
           </linearGradient>
           <linearGradient id="gradient2" x1="0.5" y1="1" x2="0.5" y2="0">
-            <stop offset="100%" stopOpacity={1} stopColor="#505050"/>
+            <stop offset="100%" stopOpacity={1} stopColor="#ffffff"/>
           </linearGradient>
           <path fill="url(#gradient2)" d="M213.588,120.982L115,213.445l-98.588-92.463C-6.537,96.466-5.26,57.99,19.248,35.047l2.227-2.083
             c24.51-22.942,62.984-21.674,85.934,2.842L115,43.709l7.592-7.903c22.949-24.516,61.424-25.784,85.936-2.842l2.227,2.083
@@ -102,7 +107,9 @@ export const Heart = (props: Props) => {
           <g></g>
         </svg>
       </span>
-     {totalLikes} {copy}
+      <span className={styles.copy}>
+       {totalLikes} {copy}
+     </span>
     </div>
   )
 }

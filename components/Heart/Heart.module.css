@@ -1,52 +1,61 @@
 @keyframes wiggle {
-    0% { transform: rotate(0deg); width: 15px; }
-   48% { transform: rotate(0deg); width: 15px; }
-   50% { transform: rotate(10deg); width: 20px; }
-   52% { transform: rotate(-10deg); width: 20px; }
-   54% { transform: rotate(10deg); width: 20px; }
-   56% { transform: rotate(-10deg); width: 20px; }
-   58% { transform: rotate(0deg); width: 20px; }
-   85% { transform: rotate(0deg); width: 20px; }
-   87% { transform: rotate(0deg); width: 15px; }
-  100% { transform: rotate(0deg); width: 15px; }
+    0% { transform: rotate(0deg); width: 20px; }
+   48% { transform: rotate(0deg); width: 20px; }
+   50% { transform: rotate(10deg); width: 25px; }
+   52% { transform: rotate(-10deg); width: 25px; }
+   54% { transform: rotate(10deg); width: 25px; }
+   56% { transform: rotate(-10deg); width: 25px; }
+   58% { transform: rotate(0deg); width: 25px; }
+   85% { transform: rotate(0deg); width: 25px; }
+   87% { transform: rotate(0deg); width: 20px; }
+  100% { transform: rotate(0deg); width: 20px; }
 }
 
 .wrapper {
   color: #adadad;
   display: flex;
   justify-content: center;
+  user-select: none;
+}
+
+.wrapper.empty .copy:after {
+  content: ' :(';
+}
+
+.wrapper.empty:hover .copy:after {
+  content: ' :D';
+}
+
+.wrapper.incomplete {
+  cursor: pointer;
+}
+
+.wrapper.incomplete:active .heart svg {
+  width: 16px;
+}
+
+.wrapper.incomplete .heart svg {
+  animation: wiggle 5s infinite;
+  fill: #505050;
+}
+
+.wrapper.complete .heart svg {
+  width: 20px;
 }
 
 .heart {
   align-items: center;
   display: inline-flex;
-  height: 15px;
+  height: 20px;
   justify-content: center;
   margin: 0 7px 0 10px;
   position: relative;
-  user-select: none;
-  width: 15px;
+  top: -2px;
+  width: 20px;
 }
 
 .heart svg {
   position: absolute;
-  width: 15px;
-}
-
-.heart svg:hover:not(.complete) {
-  cursor: pointer;
-}
-
-.heart svg:active:not(.complete) {
-  width: 13px;
-}
-
-.heart svg.incomplete:not(:hover) {
-  animation: wiggle 5s infinite;
-  fill: #505050;
-}
-
-.heart svg.complete {
   width: 20px;
 }
 
