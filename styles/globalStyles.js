@@ -182,10 +182,6 @@ const GlobalStyle = createGlobalStyle`
   main {
     margin: 0 auto;
     width: 1000px;
-
-    @media (max-width: 800px) {
-      margin-top: 70px;
-    }
   }
 
   article ul, article ol {

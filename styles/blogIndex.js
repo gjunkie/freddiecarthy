@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   margin-top: 70px;
+
+  @media (max-width: 800px) {
+    margin-top: 0;
+  }
 `
 
 export const PageTitle = styled.h1`

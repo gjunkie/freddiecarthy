@@ -4,7 +4,7 @@ export const Main = styled.main`
   margin-top: 100px;
 
   @media (max-width: 800px) {
-    margin-top: 70px;
+    margin-top: 0;
   }
 `
 

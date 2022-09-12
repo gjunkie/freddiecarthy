@@ -5,7 +5,7 @@ export const PageTitle = styled.h1`
   text-align: center;
 
   @media (max-width: 800px) {
-    font-size: 30px;
+    font-size: 24px;
     margin: 10px 0 25px;
   }
 `
