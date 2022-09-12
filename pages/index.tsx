@@ -1,9 +1,12 @@
-import * as React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import * as React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import { GetStaticProps } from 'next'
+import { getSortedPosts } from '../lib/posts'
+import { generateRSSFeed } from '../lib/rss'
 
-import globalStyles from '../styles/global.module.css';
-import styles from '../styles/index.module.css';
+import globalStyles from '../styles/global.module.css'
+import styles from '../styles/index.module.css'
 
 const Home = () => (
   <>
@@ -154,5 +157,18 @@ const Home = () => (
     </main>
   </>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const articles = getSortedPosts('blog');
+  articles.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
+
+  generateRSSFeed(articles);
+
+  return {
+    props: {
+      allPostsData: articles,
+    },
+  };
+}
 
 export default Home
