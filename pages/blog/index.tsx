@@ -1,20 +1,8 @@
-import * as React from 'react';
+import * as React from 'react'
 import Head from 'next/head'
-import Link from 'next/link';
-import { getSortedPosts } from '../../lib/posts';
-
-import {
-  Main,
-  PageTitle,
-  Subheader
-} from '../../styles/globalStyledComponents';
-
-import {
-  Article,
-  ArticleList,
-  ArticleTitle,
-  Excerpt
-} from '../../styles/blogIndex';
+import Link from 'next/link'
+import { getSortedPosts } from '../../lib/posts'
+import styles from '../../styles/blog.module.css'
 
 type HomeProps = {
   allPostsData: {
@@ -26,7 +14,7 @@ type HomeProps = {
 };
 
 const BlogIndex = (props: HomeProps) => { 
-  const { allPostsData } = props;
+  const { allPostsData } = props
 
   return (
     <>
@@ -48,24 +36,24 @@ const BlogIndex = (props: HomeProps) => {
         <meta property="og:title" content="Freddie Carthy's Blog" key="ogtitle" />
         <meta property="og:description" content="Writes about career development, tech, and more!" key="ogdesc" />
       </Head>
-      <Main>
-        <PageTitle>The Blog</PageTitle>
-        <Subheader>These are the things I've been writing</Subheader>
+      <main>
+        <h1>The Blog</h1>
+        <h3 className={styles.subheader}>These are the things I've been writing</h3>
 
-        <ArticleList>
+        <ul className={styles.articleList}>
           {allPostsData.map(({ slug, tags, title, description }) => {
             const splitTags = tags.split(' ')
 
             return (
-              <Article key={slug}>
-                <ArticleTitle>{title}</ArticleTitle>
-                <Excerpt>{description}</Excerpt>
+              <li className={styles.article} key={slug}>
+                <h4 className={styles.articleTitle}>{title}</h4>
+                <p className={styles.excerpt}>{description}</p>
                 <Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>Read</Link>
-              </Article>
+              </li>
             )
           })}
-        </ArticleList>
-      </Main>
+        </ul>
+      </main>
     </>
   );
 }

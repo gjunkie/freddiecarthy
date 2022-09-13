@@ -8,7 +8,7 @@ import { Header } from '../components/Header/'
 import { Footer } from '../components/Footer/'
 import { CodeBlock } from '../components/CodeBlock/'
 
-import GlobalStyle from '../styles/globalStyles'
+import '../styles/global.css'
 
 const components = {
   // @ts-ignore:next-line
@@ -30,7 +30,6 @@ function MyApp(props: AppProps) {
     <ThemeProvider systemMode={'dark-mode'}>
       <MDXProvider components={components}>
         <>
-          <GlobalStyle />
           <Header />
           <AnyComponent {...pageProps} />
           <Footer />

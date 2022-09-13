@@ -5,13 +5,12 @@ import {
   Heading,
   List,
   Main,
-  PageTitle,
   Subheader
 } from '../../styles/readingStyles'
 
 const Reading = () => (
   <Main>
-    <PageTitle>The Books</PageTitle>
+    <h1>The Books</h1>
     <Subheader>These are the books I&apos;ve been reading</Subheader>
 
     <Heading>Currently Reading</Heading>

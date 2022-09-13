@@ -31,6 +31,10 @@
   }
 }
 
+.main {
+  margin-top: 100px;
+}
+
 .firstArrow {
   height: 317px;
   right: 0;
@@ -264,6 +268,10 @@
 }
 
 @media (max-width: 800px) {
+  .main {
+    margin-top: 0;
+  }
+
   .header h1 {
     font-size: 30px;
   }

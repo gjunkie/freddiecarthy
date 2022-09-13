@@ -7,7 +7,6 @@ import { TweetCTA } from '../TweetCTA'
 import {
   Article,
   Divider,
-  PageTitle,
   ReadingTimeStyles,
 } from './styles'
 
@@ -49,7 +48,7 @@ export const BlogPost = (props: BlogPostProps) => {
 
   return (
     <Article ref={articleRef}>
-      <PageTitle>{title}</PageTitle>
+      <h1>{title}</h1>
 
       <ReadingTimeStyles theme={theme}>
         <span>Posted on {date}</span> - <span>{readingTime} min read.</span>

@@ -1,0 +1,48 @@
+.subheading {
+  margin: 40px 0;
+}
+
+.line {
+  align-self: center;
+  font-family: AsapItalic;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.line p {
+  margin: 0;
+}
+
+.quote p {
+  text-align: center;
+}
+
+.gear {
+  line-height: 32px;
+}
+
+.gear dt {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.gear dd {
+  margin: 0 0 30px;
+}
+
+.deskImg {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1050px) {
+  .line {
+    font-size: 16px;
+    margin-bottom: 50px;
+  }
+
+  .deskImg {
+    width: 100%;
+  }
+}

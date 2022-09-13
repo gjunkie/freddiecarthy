@@ -5,7 +5,6 @@ import { GetStaticProps } from 'next'
 import { getSortedPosts } from '../lib/posts'
 import { generateRSSFeed } from '../lib/rss'
 
-import globalStyles from '../styles/global.module.css'
 import styles from '../styles/index.module.css'
 
 const Home = () => (
@@ -30,7 +29,7 @@ const Home = () => (
       <meta property="og:description" content="Freddie Carthy is a Software Engineer living in the Pacific Northwest" key="ogdesc" />
     </Head>
 
-    <main className={globalStyles.main}>
+    <main className={styles.main}>
       <div className={styles.header}>
         <h1>
           <div>Hey there 👋</div>

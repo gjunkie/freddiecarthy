@@ -1,19 +1,7 @@
-import * as React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-
-import {
-  Main,
-  PageTitle,
-  Subheader
-} from '../styles/globalStyledComponents';
-
-import {
-  DefinitionList,
-  Heading,
-  Image,
-  Quote
-} from '../styles/kit';
+import * as React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import styles from '../styles/workspace.module.css'
 
 
 const Kit = () => {
@@ -39,23 +27,23 @@ const Kit = () => {
         <meta property="og:description" content="The ethos, hardware, and software I use to get my work done." key="ogdesc" />
       </Head>
 
-      <Main>
-        <PageTitle>How I Work</PageTitle>
-        <Quote>
-          <Subheader>“The test of the machine is the satisfaction it gives you. There isn't any other test. If the machine produces tranquility it's right. If it disturbs you it's wrong until either the machine or your mind is changed.”</Subheader>
+      <main>
+        <h1>How I Work</h1>
+        <div className={styles.quote}>
+          <div className={styles.line}>“The test of the machine is the satisfaction it gives you. There isn't any other test. If the machine produces tranquility it's right. If it disturbs you it's wrong until either the machine or your mind is changed.”</div>
           <p>― Robert M. Pirsig, Zen and the Art of Motorcycle Maintenance: An Inquiry Into Values</p>
-        </Quote>
+        </div>
 
-        <Heading>Ethos</Heading>
+        <h3 className={styles.subheading}>Ethos</h3>
         <p>I strongly believe that one should care deeply about the work they do, how they do it, and how they communicate. This does not mean that one should spend a fortune buying fancy gadgets to do said work, or that what you do should define who you are. It means being intentional about the tools we use and how we use them, the routines we establish, and the way in which we work with others.</p>
 
         <p>I do my absolute best to communicate as effectively as I can and to be helpful where I can be. I tailor my work environment to make me as effective as possible. I try to keep good, organized notes. I have a hunger for learning and improving.</p>
 
-        <Heading>Hardware</Heading>
+        <h3 className={styles.subheading}>Hardware</h3>
 
-        <Image src="/desk.jpg"/>
+        <img className={styles.deskImg} src="/desk.jpg"/>
 
-        <DefinitionList>
+        <dl className={styles.gear}>
           <dt>Mac mini, 2018</dt>
           <dd>This is my personal machine which I use for side projects and family use. I've always been a fan of the Mac mini, having used them for years.</dd>
 
@@ -88,10 +76,10 @@ const Kit = () => {
 
           <dt>Bose QuietComfort 15 wired headphones</dt>
           <dd>I've had these headphones for nearly a decade and they still sound amazing.</dd>
-        </DefinitionList>
+        </dl>
 
-        <Heading>Software</Heading>
-        <DefinitionList>
+        <h3 className={styles.subheading}>Software</h3>
+        <dl className={styles.gear}>
 
           <dt>Vim</dt>
           <dd>I feel a deep sense of pride in using Vim. When I started my career I didn't really have a preference in which tool I used for editing code and I largely followed the my manager's lead. He used Vim so I thought it must be good. I started using it and quickly fell in love. Why do I love it? For starters it is a tool that does one thing and does it well; editing text. Ultimately this is what my job is. However it is highly configurable. I'm tinkerer. I love tweaking it, adding to it, taking stuff away just to get the perfect environment.</dd>
@@ -116,9 +104,9 @@ const Kit = () => {
 
           <dt>Fantastical</dt>
           <dd>One of the best calendar apps I've used.</dd>
-        </DefinitionList>
+        </dl>
 
-      </Main>
+      </main>
     </>
   )
 };
