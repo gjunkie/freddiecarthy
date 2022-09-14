@@ -1,8 +1,8 @@
 import * as React from 'react'
-import type { AppProps } from 'next/app';
+import type { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
 // @ts-ignore:next-line
-import { preToCodeBlock } from "mdx-utils"
+import { preToCodeBlock } from 'mdx-utils'
 import { ThemeProvider } from '../contexts/ThemeContext'
 import { Header } from '../components/Header/'
 import { Footer } from '../components/Footer/'
@@ -12,7 +12,7 @@ import '../styles/global.css'
 
 const components = {
   // @ts-ignore:next-line
-  pre: preProps => {
+  pre: (preProps) => {
     const props = preToCodeBlock(preProps)
     if (props) {
       return <CodeBlock {...props} />
@@ -23,8 +23,8 @@ const components = {
 }
 
 function MyApp(props: AppProps) {
-  const { Component, pageProps } = props;
-  const AnyComponent = Component as any;
+  const { Component, pageProps } = props
+  const AnyComponent = Component as any
 
   return (
     <ThemeProvider systemMode={'dark-mode'}>

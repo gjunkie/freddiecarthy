@@ -1,7 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
 const OfficeHours = () => {
-
   return (
     <main>
       <h1>Office Hours</h1>
@@ -9,4 +8,4 @@ const OfficeHours = () => {
   )
 }
 
-export default OfficeHours;
+export default OfficeHours
