@@ -1,0 +1,45 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  padding-top: 20px;
+}
+
+.footer a {
+  border-bottom: none;
+  margin: 0 5px;
+}
+
+.footer a:hover {
+  border-bottom: none;
+}
+
+.footer svg {
+  fill: #ffffff;
+}
+
+.footer .twitter svg:hover {
+  fill: #1d9bf0;
+}
+
+.footer .github svg:hover {
+  fill: #a394ff;
+}
+
+.contents {
+  display: flex;
+  width: 1000px;
+  z-index: 1;
+}
+
+.copyright {
+  flex-grow: 1;
+}
+
+@media (max-width: 1050px) {
+  .contents {
+    justify-content: left;
+    margin: 0 20px;
+    width: 100%;
+  }
+}
