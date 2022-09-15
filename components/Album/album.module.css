@@ -1,0 +1,26 @@
+.heading {
+  margin-top: 0;  
+}
+
+.year {
+  font-weight: normal;
+}
+
+
+@media (max-width: 800px) {
+  .heading {
+    font-size: 16px;
+  }
+
+  .albumName {
+    font-size: 14px;
+  }
+
+  .year {
+    font-size: 14px;
+  }
+
+  .albumArt img {
+    width: 100%;
+  }
+}

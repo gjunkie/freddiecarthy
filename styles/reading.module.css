@@ -1,0 +1,28 @@
+.subheader {
+  align-self: center;
+  font-family: AsapItalic;
+  font-size: 26px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.bookList {
+  list-style-type: initial;
+  padding-left: 20px;
+}
+
+.year {
+  font-size: 24px;
+}
+
+.blurb {
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+@media (max-width: 1050px) {
+  .subheader {
+    font-size: 16px;
+    margin-bottom: 50px;
+  }
+}

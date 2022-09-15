@@ -34,14 +34,14 @@ export const StyledFooter = styled.footer`
 
 export const StyledContents = styled.div`
   display: flex;
-  width: 800px;
+  width: 1000px;
   z-index: 1;
 
   .copyright {
     flex-grow: 1;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1050px) {
     justify-content: left;
     margin: 0 20px;
     width: 100%;

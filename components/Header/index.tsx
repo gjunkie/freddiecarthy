@@ -1,13 +1,8 @@
-import * as React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import * as React from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-import {
-  HeaderElem,
-  Item,
-  List,
-  Nav
-} from './styles';
+import styles from './styles.module.css'
 
 const menu = [
   { title: 'Home', path: '/' },
@@ -17,28 +12,36 @@ const menu = [
 ]
 
 export const Header = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <>
-      <HeaderElem>
-        <div className="wrapper">
-          <div className="titleWrapper">
-            <Link href="/"><a className="title">Freddie Carthy</a></Link>
+      <header className={styles.header}>
+        <div className={styles.wrapper}>
+          <div className={styles.titleWrapper}>
+            <Link href="/">
+              <a className={styles.title}>Freddie Carthy</a>
+            </Link>
           </div>
-          <Nav>
-            <List>
+          <nav className={styles.navigation}>
+            <ul className={styles.navList}>
               {menu.map((item, index) => (
-              <Item key={index}>
-                <Link href={item.path}>
-                  <a className={router.pathname == item.path ? "active" : ""}>{item.title}</a>
-                </Link>
-              </Item>
+                <li className={styles.navItem} key={index}>
+                  <Link href={item.path}>
+                    <a
+                      className={
+                        router.pathname == item.path ? styles.active : ''
+                      }
+                    >
+                      {item.title}
+                    </a>
+                  </Link>
+                </li>
               ))}
-            </List>
-          </Nav>
+            </ul>
+          </nav>
         </div>
-      </HeaderElem>
+      </header>
     </>
   )
 }

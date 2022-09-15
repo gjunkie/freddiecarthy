@@ -1,29 +1,24 @@
 import * as React from 'react'
-import {
-  AlbumArt,
-  AlbumName,
-  Artist,
-  Year
-} from './styles'
+import styles from './album.module.css'
 
 type AlbumProps = {
-  artist: string,
+  artist: string
   coverUrl: string
-  name: string,
-  year: number,
+  name: string
+  year: number
 }
 
 export const Album = (props: AlbumProps) => {
-  const { artist, coverUrl, name, year } = props;
+  const { artist, coverUrl, name, year } = props
 
   return (
     <>
-      <AlbumArt>
+      <div className={styles.albumArt}>
         <img src={coverUrl} alt={`${name} by ${artist}`} />
-      </AlbumArt>
-      <Artist>{artist}</Artist>
-      <AlbumName>{name}</AlbumName>
-      <Year>Released {year}</Year>
+      </div>
+      <h3 className={styles.heading}>{artist}</h3>
+      <div className={styles.albumName}>{name}</div>
+      <span className={styles.year}>Released {year}</span>
     </>
   )
 }

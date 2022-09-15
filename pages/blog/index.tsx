@@ -73,9 +73,9 @@ const BlogIndex = (props: HomeProps) => {
       </Head>
       <main>
         <h1>The Blog</h1>
-        <h3 className={styles.subheader}>
+        <h2 className={styles.subheader}>
           These are the things I've been writing
-        </h3>
+        </h2>
 
         <ul className={styles.articleList}>
           {allPostsData.map(({ slug, tags, title, description }) => {
@@ -83,7 +83,7 @@ const BlogIndex = (props: HomeProps) => {
 
             return (
               <li className={styles.article} key={slug}>
-                <h4 className={styles.articleTitle}>{title}</h4>
+                <h3 className={styles.articleTitle}>{title}</h3>
                 <p className={styles.excerpt}>{description}</p>
                 <Link key={slug} href="/blog/[slug]" as={`/blog/${slug}`}>
                   Read

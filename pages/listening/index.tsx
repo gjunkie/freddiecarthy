@@ -32,11 +32,11 @@ const Listening = () => {
   return (
     <main>
       <h1>The Music</h1>
-      <h3 className={styles.subheader}>
+      <h2 className={styles.subheader}>
         This is the music I've been listening to
-      </h3>
+      </h2>
 
-      <h2>Hall of Fame</h2>
+      <h3>Hall of Fame</h3>
 
       <p>
         This is the music that I could listen to day in and day out. If I was
@@ -56,7 +56,7 @@ const Listening = () => {
         ))}
       </ul>
 
-      <h2>Favorite Albums by Year</h2>
+      <h3>Favorite Albums by Year</h3>
       <p>
         The albums that have made the biggest impact on me, ordered by the year
         I discovered them.
@@ -64,11 +64,9 @@ const Listening = () => {
 
       {sortedFavorites.map((list) => (
         <>
-          <h3 className={styles.yearHeading}>{list[0].yearDiscovered}</h3>
+          <h4 className={styles.yearHeading}>{list[0].yearDiscovered}</h4>
           <ul className={styles.albumList}>
-            {list.map((album) => (
-              renderAlbum(album)
-            ))}
+            {list.map((album) => renderAlbum(album))}
           </ul>
         </>
       ))}

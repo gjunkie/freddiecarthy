@@ -1,22 +1,22 @@
 import * as React from 'react'
 import Link from 'next/link'
 
-import { Heading, List, Main, Subheader } from '../../styles/readingStyles'
+import styles from '../../styles/reading.module.css'
 
 const Reading = () => (
-  <Main>
+  <main>
     <h1>The Books</h1>
-    <Subheader>These are the books I&apos;ve been reading</Subheader>
+    <h2 className={styles.subheader}>These are the books I've been reading</h2>
 
-    <Heading>Currently Reading</Heading>
-    <p>
+    <h3 className={styles.bookListHeading}>Currently Reading</h3>
+    <p className={styles.blurb}>
       I used to read only one book at a time. I would avoid starting a new one
       until I finished whatever I was currently reading. If I was slow to
       finish, or lost interest, I would never pick up another book. I&apos;ve
       recently flipped that on it&apos;s head and instead started reading
       anything that I&apos;m interested in.
     </p>
-    <List>
+    <ul className={styles.bookList}>
       <li>
         <strong>
           Shop Class as Soulcraft: An Inquiry Into the Value of Work
@@ -36,10 +36,10 @@ const Reading = () => (
         <strong>Zen and the Art of Motorcycle Maintenance</strong> - Robert M.
         Pirsig
       </li>
-    </List>
+    </ul>
 
-    <Heading>2022</Heading>
-    <List>
+    <h4 className={styles.year}>2022</h4>
+    <ul className={styles.bookList}>
       <li>
         <strong>Acceptance: A Novel (The Southern Reach Trilogy, 3)</strong> -
         Jeff VanderMeer
@@ -143,10 +143,10 @@ const Reading = () => (
         </strong>{' '}
         - Sasha Sagan
       </li>
-    </List>
+    </ul>
 
-    <Heading>2021</Heading>
-    <List>
+    <h4 className={styles.year}>2021</h4>
+    <ul className={styles.bookList}>
       <li>
         <strong>Annihilation: A Novel (The Southern Reach Trilogy, 1)</strong> -
         Jeff VanderMeer (
@@ -156,10 +156,10 @@ const Reading = () => (
         <strong>Authority: A Novel (The Southern Reach Trilogy, 2)</strong>-
         Jeff VanderMeer (<Link href="blog/authority-book-review">review</Link>)
       </li>
-    </List>
+    </ul>
 
-    <Heading>2016</Heading>
-    <List>
+    <h4 className={styles.year}>2016</h4>
+    <ul className={styles.bookList}>
       <li>
         <strong>A Game of Thrones</strong> - George R. R. Martin
       </li>
@@ -167,34 +167,34 @@ const Reading = () => (
         <strong>The Expectant Father: The Ultimate Guide for Dads-to-Be</strong>{' '}
         - Armin A. Brott
       </li>
-    </List>
+    </ul>
 
-    <Heading>2011</Heading>
-    <List>
+    <h4 className={styles.year}>2011</h4>
+    <ul className={styles.bookList}>
       <li>
         <strong>The Elephan Vanishes</strong> - Haruki Murakami
       </li>
-    </List>
+    </ul>
 
-    <Heading>2010</Heading>
-    <List>
+    <h4 className={styles.year}>2010</h4>
+    <ul className={styles.bookList}>
       <li>
         <strong>A Wild Sheep Chase</strong> - Haruki Murakami
       </li>
       <li>
         <strong>The Time Traveler&apos;s Wife</strong> - Audrey Niffenegger
       </li>
-    </List>
+    </ul>
 
-    <Heading>2007</Heading>
-    <List>
+    <h4 className={styles.year}>2007</h4>
+    <ul className={styles.bookList}>
       <li>
-        <strong>The Alchemist</strong> - PaListo Coelho
+        <strong>The Alchemist</strong> - Paulo Coelho
       </li>
-    </List>
+    </ul>
 
-    <Heading>2006</Heading>
-    <List>
+    <h4 className={styles.year}>2006</h4>
+    <ul className={styles.bookList}>
       <li>
         <strong>Kafka on the Shore</strong> - Haruki Murakami
       </li>
@@ -204,13 +204,13 @@ const Reading = () => (
       <li>
         <strong>Da Vinci Code</strong> - Dan Brown
       </li>
-    </List>
+    </ul>
 
-    <Heading>Books to finish</Heading>
-    <p>
+    <h4 className={styles.year}>Books to finish</h4>
+    <p className={styles.blurb}>
       Books I started reading but didn&apos;t quite get arround to finishing.
     </p>
-    <List>
+    <ul className={styles.bookList}>
       <li>
         <strong>
           The Most Human Human: What Talking with Computers Teaches Us About
@@ -221,11 +221,11 @@ const Reading = () => (
       <li>
         <strong>The Design of Everyday Things</strong> - Don Norman
       </li>
-    </List>
+    </ul>
 
-    <Heading>On my list</Heading>
-    <p>Books I plan on picking up next.</p>
-    <List>
+    <h3 className={styles.bookListHeading}>On my list</h3>
+    <p className={styles.blurb}>Books I plan on picking up next.</p>
+    <ul className={styles.bookList}>
       <li>
         <strong>
           Together: Why Social Connection Holds the Key to Better Health, Higher
@@ -260,8 +260,8 @@ const Reading = () => (
         </strong>{' '}
         - Robin DiAngelo
       </li>
-    </List>
-  </Main>
+    </ul>
+  </main>
 )
 
 export default Reading
