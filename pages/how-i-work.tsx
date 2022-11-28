@@ -98,15 +98,12 @@ const Kit = () => {
         <img className={styles.deskImg} src="/desk.jpg" />
 
         <dl className={styles.gear}>
-          <dt>Mac mini, 2018</dt>
+          <dt>M1 MacBook Pro 14"</dt>
           <dd>
             This is my personal machine which I use for side projects and family
-            use. I've always been a fan of the Mac mini, having used them for
-            years.
+            use. This is an upgrade from a 2018 Mac Mini and it is an incredible
+            machine.
           </dd>
-
-          <dt>MacBook Pro 16", 2020</dt>
-          <dd>Twitter-issued machine for work.</dd>
 
           <dt>Custom built 60% mechanical keyboard</dt>
           <dd>
@@ -134,7 +131,7 @@ const Kit = () => {
             2007. I will never switch so long as I can afford not to.
           </dd>
 
-          <dt>Apple AirPods</dt>
+          <dt>AirPods Pro</dt>
           <dd>My primary use for these nowadays is for work.</dd>
 
           <dt>Dell 27" LED QHD Monitor</dt>
