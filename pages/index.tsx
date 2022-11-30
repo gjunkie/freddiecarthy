@@ -188,29 +188,27 @@ const Home = () => (
             </svg>
           </div>
 
-          <div>
-            <p className={styles.copy}>
-              Connect with me on{' '}
-              <span className={styles.highlightFour}>
-                <a href="https://twitter.com/freddiecarthy" target="_blank">
-                  Twitter
-                </a>
-              </span>{' '}
-              and{' '}
-              <span className={styles.highlightFive}>
-                <a href="https://www.polywork.com/fcarthy" target="_blank">
-                  Polywork
-                </a>
-              </span>
-              !
-            </p>
-            <p className={styles.copy}>
-              I can be reached at{' '}
-              <a href="mailto:contact@freddiecarthy.com">
-                contact@freddiecarthy.com
+          <p className={styles.copy}>
+            Connect with me on{' '}
+            <span className={styles.highlightFour}>
+              <a href="https://twitter.com/freddiecarthy" target="_blank">
+                Twitter
               </a>
-            </p>
-          </div>
+            </span>{' '}
+            and{' '}
+            <span className={styles.highlightFive}>
+              <a href="https://www.polywork.com/fcarthy" target="_blank">
+                Polywork
+              </a>
+            </span>
+            !
+          </p>
+          <p className={styles.copy}>
+            I can be reached at{' '}
+            <a href="mailto:contact@freddiecarthy.com">
+              contact@freddiecarthy.com
+            </a>
+          </p>
         </div>
       </div>
 

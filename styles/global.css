@@ -1,25 +1,23 @@
 @font-face {
   font-family: PaytoneOne;
-  src: url(/fonts/paytone/PaytoneOne.woff),
-       url(/fonts/paytone/PaytoneOne.otf),
-       url(/fonts/paytone/PaytoneOne.ttf),
-       url(/fonts/paytone/PaytoneOne.svg);
+  src: url(/fonts/paytone/PaytoneOne.woff), url(/fonts/paytone/PaytoneOne.otf),
+    url(/fonts/paytone/PaytoneOne.ttf), url(/fonts/paytone/PaytoneOne.svg);
 }
 
 @font-face {
   font-family: Asap;
   src: url(/fonts/asap/Asap-VariableFont.woff),
-       url(/fonts/asap/Asap-VariableFont.otf),
-       url(/fonts/asap/Asap-VariableFont.ttf),
-       url(/fonts/asap/Asap-VariableFont.svg);
+    url(/fonts/asap/Asap-VariableFont.otf),
+    url(/fonts/asap/Asap-VariableFont.ttf),
+    url(/fonts/asap/Asap-VariableFont.svg);
 }
 
 @font-face {
   font-family: AsapItalic;
   src: url(/fonts/asap/Asap-Italic-VariableFont.woff),
-       url(/fonts/asap/Asap-Italic-VariableFont.otf),
-       url(/fonts/asap/Asap-Italic-VariableFont.ttf),
-       url(/fonts/asap/Asap-Italic-VariableFont.svg);
+    url(/fonts/asap/Asap-Italic-VariableFont.otf),
+    url(/fonts/asap/Asap-Italic-VariableFont.ttf),
+    url(/fonts/asap/Asap-Italic-VariableFont.svg);
 }
 
 html,
@@ -31,8 +29,8 @@ body {
 }
 
 a {
-  border-bottom-color: #2DE2E6;
-  color: #2DE2E6;
+  border-bottom-color: #2de2e6;
+  color: #2de2e6;
   text-decoration: none;
 }
 
@@ -45,7 +43,8 @@ a:hover {
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(90deg, #161616 21px, transparent 1%) center, linear-gradient(#161616 21px, transparent 1%) center, #5e4faf;
+  background: linear-gradient(90deg, #161616 21px, transparent 1%) center,
+    linear-gradient(#161616 21px, transparent 1%) center, #5e4faf;
   background-size: 22px 22px;
   color: #ffffff;
   font-family: AsapItalic, Larsseit, sans-serif;
@@ -131,7 +130,6 @@ h3 {
   font-weight: lighter;
   font-size: 24px;
   line-height: 36px;
-  margin-top: 20px;
 }
 
 p {
@@ -170,13 +168,13 @@ pre {
   padding: 10px 10px 10px 0;
 }
 
-
 main {
   margin: 100px auto 0;
   width: 1000px;
 }
 
-article ul, article ol {
+article ul,
+article ol {
   list-style-type: initial;
   padding-left: 20px;
 }
@@ -209,8 +207,8 @@ li > code {
   overflow: auto;
 }
 
-.mdx-highlight > code[class*="language-"],
-.mdx-highlight > pre[class*="language-"] {
+.mdx-highlight > code[class*='language-'],
+.mdx-highlight > pre[class*='language-'] {
   word-spacing: normal;
   word-break: normal;
   overflow-wrap: normal;

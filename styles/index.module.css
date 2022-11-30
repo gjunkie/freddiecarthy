@@ -44,7 +44,7 @@
   stroke-dashoffset: 0;
   animation: drawLineOne 1.3s ease-in-out reverse;
   animation-fill-mode: forwards;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
 }
 
 .firstArrowTailOne {
@@ -101,7 +101,6 @@
 
 .thirdArrow {
   align-self: flex-end;
-  height: 202px;
   position: relative;
   right: -40px;
   width: 399px;
@@ -163,61 +162,60 @@
 }
 
 .highlightOne {
-  color: #2DE2E6;
+  color: #2de2e6;
 }
 
 .highlightOne a {
-  border-bottom-color: #1D9BF0;
+  border-bottom-color: #1d9bf0;
 }
 
 .highlightTwo {
-  color: #E6862D;
+  color: #e6862d;
 }
 
 .highlightTwo a {
-  border-bottom-color: #E6862D;
+  border-bottom-color: #e6862d;
 }
 
 .highlightThree {
-  color: #E62DD3;
+  color: #e62dd3;
 }
 
 .highlightThree a {
-  border-bottom-color: #E62DD3;
+  border-bottom-color: #e62dd3;
 }
 
 .highlightFour {
-  color: #1D9BF0;
+  color: #1d9bf0;
 }
 
 .highlightFour a {
-  border-bottom-color: #1D9BF0;
+  border-bottom-color: #1d9bf0;
 }
 
 .highlightFive {
-  color: #A394FF;
+  color: #a394ff;
 }
 
 .highlightFive a {
-  border-bottom-color: #A394FF;
+  border-bottom-color: #a394ff;
 }
 
 .highlightSix {
-  color: #2CD95C;
+  color: #2cd95c;
 }
 
 .highlightSix a {
-  border-bottom-color: #2CD95C;
+  border-bottom-color: #2cd95c;
 }
 
 .highlightSeven {
-  color: #BB5B14;
+  color: #bb5b14;
 }
 
 .highlightSeven a {
-  border-bottom-color: #BB5B14;
+  border-bottom-color: #bb5b14;
 }
-
 
 .paragraphContainer {
   display: flex;
@@ -247,24 +245,23 @@
 }
 
 .square {
-  background-color: #1F2326;
+  background-color: #1f2326;
   border-radius: 5px;
   color: #ffffff;
   font-size: 16px;
   padding: 20px 23px 15px 23px;
-  width:  380px;
+  width: 380px;
 }
 
 .square:nth-child(1) {
-    margin-right: 40px;
-  }
+  margin-right: 40px;
+}
 
 .square p {
   margin: 5px 0;
 }
 
 @media (max-width: 800px) {
-
   .header h1 {
     font-size: 30px;
   }
@@ -301,7 +298,6 @@
     height: 130px;
   }
   .paragraphContainer:nth-child(3) {
-    height: 90px;
     margin-top: 20px;
   }
 
@@ -317,7 +313,6 @@
   .copy {
     font-size: 16px;
     line-height: 24px;
-    margin-top: 30px;
   }
 
   .copy:nth-child(1) {
