@@ -3,10 +3,10 @@ import { PlayfairSquare } from './PlayfairSquare'
 import { Table, Row } from './styles'
 
 type Props = {
-  activeEncryptedDigram: string,
-  activePlaintextDigram: string,
-  cipherKey: string,
-  keyIsActive: boolean,
+  activeEncryptedDigram: string
+  activePlaintextDigram: string
+  cipherKey: string
+  keyIsActive: boolean
   table: Array<Array<string>>
 }
 
@@ -15,7 +15,7 @@ const PlayfairTable: React.FC<Props> = ({
   activePlaintextDigram,
   cipherKey,
   keyIsActive,
-  table
+  table,
 }): JSX.Element => {
   return (
     <Table>
@@ -23,9 +23,17 @@ const PlayfairTable: React.FC<Props> = ({
         <Row key={row.toString()}>
           {row.map((letter: string) => (
             <PlayfairSquare
-              isActiveEncrypted={letter === activeEncryptedDigram.charAt(0) || letter === activeEncryptedDigram.charAt(1)}
-              isActiveKey={keyIsActive && cipherKey.toUpperCase().includes(letter)}
-              isActivePlaintext={letter === activePlaintextDigram.charAt(0) || letter === activePlaintextDigram.charAt(1)}
+              isActiveEncrypted={
+                letter === activeEncryptedDigram.charAt(0) ||
+                letter === activeEncryptedDigram.charAt(1)
+              }
+              isActiveKey={
+                keyIsActive && cipherKey.toUpperCase().includes(letter)
+              }
+              isActivePlaintext={
+                letter === activePlaintextDigram.charAt(0) ||
+                letter === activePlaintextDigram.charAt(1)
+              }
               key={letter}
               letter={letter}
             />

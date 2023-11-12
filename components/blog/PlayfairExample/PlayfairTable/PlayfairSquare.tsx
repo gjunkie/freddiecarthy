@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Square } from './styles'
 
 type Props = {
-  isActiveEncrypted: boolean,
-  isActiveKey: boolean,
-  isActivePlaintext: boolean,
+  isActiveEncrypted: boolean
+  isActiveKey: boolean
+  isActivePlaintext: boolean
   letter: string
 }
 
@@ -12,9 +12,9 @@ export const PlayfairSquare: React.FC<Props> = ({
   isActiveEncrypted,
   isActiveKey,
   isActivePlaintext,
-  letter
+  letter,
 }) => {
-  const getActiveClass = ():string => {
+  const getActiveClass = (): string => {
     if (isActiveEncrypted) {
       return 'activeEncrypted'
     }
@@ -26,7 +26,5 @@ export const PlayfairSquare: React.FC<Props> = ({
     }
     return ''
   }
-  return (
-    <Square className={getActiveClass()}>{letter}</Square>
-  )
+  return <Square className={getActiveClass()}>{letter}</Square>
 }

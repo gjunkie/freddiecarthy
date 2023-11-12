@@ -1,21 +1,19 @@
 import * as React from 'react'
-import { Params } from 'next/dist/next-server/server/router'
-// import { getAllPostsWithFrontMatter, getTags } from '@/lib/utils'
-import { getSortedPosts, getTags } from '../../lib/posts';
+import { GetStaticPropsContext } from 'next'
+import { getSortedPosts, getTags } from '../../lib/posts'
 
-type BlogPostProps = {
-  content: React.ReactNode,
-  date: string,
-  image: string,
-  imageAttribution: string,
-  imageLink: string,
-  title: string,
+export type BlogPostProps = {
+  content: React.ReactNode
+  date: string
+  image: string
+  imageAttribution: string
+  imageLink: string
+  title: string
 }
 
 export const BlogTag = (props: BlogPostProps) => {
-  const { content, title } = props;
+  const { content, title } = props
   const articleRef = React.useRef<HTMLDivElement>(null)
-
 
   return (
     <article ref={articleRef}>
@@ -26,7 +24,15 @@ export const BlogTag = (props: BlogPostProps) => {
   )
 }
 
-export async function getStaticProps({ params }: Params) {
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  const tag = params?.tag
+
+  if (!tag || typeof tag !== 'string') {
+    return {
+      notFound: true, // This will render a 404 page
+    }
+  }
+
   const posts = await getSortedPosts(params.tag)
 
   return {

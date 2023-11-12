@@ -14,7 +14,7 @@ export const Square = styled.div`
   background: #ff3864;
   border: 1px dashed #131313;
   border-radius: 4px;
-  color:  #ffffff;
+  color: #ffffff;
   display: flex;
   font-size: 2em;
   height: 58px;

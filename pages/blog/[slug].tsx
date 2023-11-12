@@ -15,6 +15,7 @@ import { CodeBlock } from '../../components/CodeBlock'
 import PlayfairCipher from '../../components/blog/PlayfairCipher'
 import PlayfairExample from '../../components/blog/PlayfairExample'
 import { RandomHighlight } from '../../components/RandomHighlight'
+import { GetServerSidePropsContext } from 'next'
 
 type PostProps = {
   address: string
@@ -50,7 +51,7 @@ const components = {
 }
 
 const PostPage = (props: PostProps) => {
-  const { address, likes, meta, source } = props
+  const { likes, meta, source } = props
 
   return (
     <>
@@ -94,6 +95,7 @@ const PostPage = (props: PostProps) => {
 
       <main>
         <BlogPost
+          // @ts-expect-error:next-line
           content={<MDXRemote {...source} components={components} />}
           date={meta.date}
           image={meta.image}
@@ -109,11 +111,12 @@ const PostPage = (props: PostProps) => {
   )
 }
 
-export async function getServerSideProps(ctx: any) {
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const ipAddress =
     process.env.NODE_ENV === 'development'
       ? '127.0.0.1'
       : ctx.req.headers['x-forwarded-for']
+  // @ts-expect-error:next-line
   const hashedIp = sha256(ipAddress).toString()
 
   const { db } = await connectToDatabase()
@@ -124,16 +127,18 @@ export async function getServerSideProps(ctx: any) {
   }
 
   // get all likes for the current article slug
-  const result = await db.collection('likes').findOne({ slug: ctx.params.slug })
+  const result = await db
+    .collection('likes')
+    .findOne({ slug: ctx.params?.slug })
 
-  const postContent = await getPostdata(ctx.params.slug)
+  const postContent = await getPostdata(ctx.params?.slug)
   const { data, content } = matter(postContent)
 
   const meta = {
     ...data,
     date: format(parseISO(data.date), 'MMM dd, yyyy'),
     image: data.image,
-    slug: ctx.params.slug,
+    slug: ctx.params?.slug,
   }
 
   const mdxSource = await serialize(content)

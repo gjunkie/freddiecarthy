@@ -50,7 +50,7 @@ export const Text = styled.p`
 
   @media (max-width: 800px) {
     & {
-      font-size: .8em;
+      font-size: 0.8em;
     }
   }
 `

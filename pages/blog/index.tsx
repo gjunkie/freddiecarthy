@@ -78,9 +78,7 @@ const BlogIndex = (props: HomeProps) => {
         </h2>
 
         <ul className={styles.articleList}>
-          {allPostsData.map(({ slug, tags, title, description }) => {
-            const splitTags = tags.split(' ')
-
+          {allPostsData.map(({ slug, title, description }) => {
             return (
               <li className={styles.article} key={slug}>
                 <h3 className={styles.articleTitle}>{title}</h3>

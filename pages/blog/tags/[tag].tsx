@@ -5,9 +5,11 @@ import Link from 'next/link'
 import styles from '../../../styles/blog.module.css'
 
 import { getSortedPosts, getTags } from '../../../lib/posts'
+import { GetStaticPropsContext } from 'next'
+import { BlogPostProps } from '../../../components/BlogTag'
 
 type PostProps = {
-  posts: Array<any>
+  posts: Array<BlogPostProps>
   tag: string
 }
 
@@ -74,7 +76,7 @@ const PostPage = (props: PostProps) => {
         <h1>Tag: {tag}</h1>
 
         <ul className={styles.articleList}>
-          {posts.map(({ slug, tags, title, description }) => (
+          {posts.map(({ slug, title, description }) => (
             <li className={styles.article} key={slug}>
               <h4 className={styles.articleTitle}>{title}</h4>
               <p className={styles.excerpt}>{description}</p>
@@ -89,7 +91,15 @@ const PostPage = (props: PostProps) => {
   )
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  const tag = params?.tag
+
+  if (!tag || typeof tag !== 'string') {
+    return {
+      notFound: true, // This will render a 404 page
+    }
+  }
+
   const posts = await getSortedPosts('blog', params.tag)
 
   return {

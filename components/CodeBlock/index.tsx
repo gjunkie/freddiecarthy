@@ -1,11 +1,27 @@
 import * as React from 'react'
-import Highlight, { Language, themes } from 'prism-react-renderer'
+import Highlight, {
+  Token,
+  LineInputProps,
+  LineOutputProps,
+  Language,
+  themes,
+  TokenOutputProps,
+  TokenInputProps,
+} from 'prism-react-renderer'
 import { useTheme } from '../../contexts/ThemeContext'
 
 type Props = {
   codeString: string
   language: Language
   metastring: string
+}
+
+type HighlightProps = {
+  className: string
+  style: React.CSSProperties
+  tokens: Token[][]
+  getLineProps: (token: LineInputProps) => LineOutputProps
+  getTokenProps: (token: TokenInputProps) => TokenOutputProps
 }
 
 const RE = /{([\d,-]+)}/
@@ -42,9 +58,15 @@ export const CodeBlock = (props: Props) => {
     theme === 'light-mode' ? themes.nightOwl : themes.nightOwlLight
 
   return (
-    // @ts-ignore:next-line
+    // @ts-expect-error:next-line
     <Highlight code={codeString} theme={codeTheme} {...props}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+      {({
+        className,
+        style,
+        tokens,
+        getLineProps,
+        getTokenProps,
+      }: HighlightProps) => (
         <div className="code-highlight" data-language={language}>
           <pre className={className} style={style}>
             {tokens.map((line, i: number) => {
@@ -55,10 +77,10 @@ export const CodeBlock = (props: Props) => {
               }
 
               return (
-                <div {...lineProps}>
+                <div {...lineProps} key={i}>
                   <span className="line-number-style">{i + 1}</span>
-                  {line.map((token, key) => (
-                    <span {...getTokenProps({ token, key })} />
+                  {line.map((token: Token, key: number) => (
+                    <span {...getTokenProps({ token, key })} key={key} />
                   ))}
                 </div>
               )

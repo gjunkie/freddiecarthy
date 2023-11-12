@@ -6,6 +6,7 @@ import { getSortedPosts } from '../lib/posts'
 import { generateRSSFeed } from '../lib/rss'
 
 import styles from '../styles/index.module.css'
+import { BlogPostProps } from '../components/BlogTag'
 
 const Home = () => (
   <>
@@ -192,13 +193,21 @@ const Home = () => (
           <p className={styles.copy}>
             Connect with me on{' '}
             <span className={styles.highlightFour}>
-              <a href="https://twitter.com/freddiecarthy" target="_blank">
+              <a
+                href="https://twitter.com/freddiecarthy"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Twitter
               </a>
             </span>{' '}
             and{' '}
             <span className={styles.highlightFive}>
-              <a href="https://www.polywork.com/fcarthy" target="_blank">
+              <a
+                href="https://www.polywork.com/fcarthy"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Polywork
               </a>
             </span>
@@ -222,7 +231,11 @@ const Home = () => (
             or anything of the sort feel free to book some time with me during
             my{' '}
             <span className={styles.highlightSix}>
-              <a href="https://calendly.com/freddiecarthy" target="_blank">
+              <a
+                href="https://calendly.com/freddiecarthy"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Office Hours
               </a>
             </span>
@@ -246,8 +259,10 @@ const Home = () => (
 )
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articles = getSortedPosts('blog')
-  articles.sort((a: any, b: any) => (a.date < b.date ? 1 : -1))
+  const articles: BlogPostProps[] = getSortedPosts('blog')
+  articles.sort((a: BlogPostProps, b: BlogPostProps) =>
+    a.date < b.date ? 1 : -1
+  )
 
   generateRSSFeed(articles)
 

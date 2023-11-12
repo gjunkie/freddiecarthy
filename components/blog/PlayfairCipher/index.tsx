@@ -11,30 +11,59 @@ import {
   LinkWrapper,
   PlayfairBox,
   TableWrapper,
-  TextArea
+  TextArea,
 } from './styles'
 
-const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+const alphabet = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+]
 
 const PlayfairCipher: React.FC = () => {
   const [key, setKey] = React.useState('playfair example'.toUpperCase())
-  const [message, setMessage] = React.useState('WE HOLD THESE TRUTHS TO BE SELF EVIDENT.'.match(/[a-zA-Z]+/g)?.join(' ') || '')
+  const [message, setMessage] = React.useState(
+    'WE HOLD THESE TRUTHS TO BE SELF EVIDENT.'.match(/[a-zA-Z]+/g)?.join(' ') ||
+      ''
+  )
   const defaultDigrams: Array<string> = []
   const [digrams, setDigrams] = React.useState(defaultDigrams)
   const [encryptedMessage, setEncryptedMessage] = React.useState('')
-  const defaultTable: Array<Array<string>> = [[],[],[],[],[]]
+  const defaultTable: Array<Array<string>> = [[], [], [], [], []]
   const [table, setTable] = React.useState(defaultTable)
 
   const addLetterToTable = (newTable: Array<Array<string>>, letter: string) => {
     let letterExists: boolean = false
-    for(let row: number = 0; row < newTable.length; row++) {
-      letterExists = newTable[row].some(l => l === letter)
+    for (let row: number = 0; row < newTable.length; row++) {
+      letterExists = newTable[row].some((l) => l === letter)
       if (letterExists) {
         break
       }
     }
     if (letterExists) return
-    for(let row: number = 0; row < newTable.length; row++) {
+    for (let row: number = 0; row < newTable.length; row++) {
       if (newTable[row].length < 5) {
         newTable[row].push(letter)
         break
@@ -44,7 +73,7 @@ const PlayfairCipher: React.FC = () => {
 
   const buildTable = () => {
     const keyArray: Array<string> = key.replace(/\s/g, '').split('')
-    let newTable: Array<Array<string>> = [[],[],[],[],[],]
+    const newTable: Array<Array<string>> = [[], [], [], [], []]
     keyArray.forEach((letter: string) => {
       addLetterToTable(newTable, letter)
     })
@@ -110,13 +139,18 @@ const PlayfairCipher: React.FC = () => {
     let pass: boolean = false
     let newDigram: string = digram
     for (let row: number = 0; row < table.length; row++) {
-      if (table[row].includes(digram.charAt(0)) && table[row].includes(digram.charAt(1))) {
-        const firstIndex = table[row].indexOf(digram.charAt(0)) < 4
-          ? table[row].indexOf(digram.charAt(0)) + 1
-          : 0
-        const secondIndex = table[row].indexOf(digram.charAt(1)) < 4
-          ? table[row].indexOf(digram.charAt(1)) + 1
-          : 0 
+      if (
+        table[row].includes(digram.charAt(0)) &&
+        table[row].includes(digram.charAt(1))
+      ) {
+        const firstIndex =
+          table[row].indexOf(digram.charAt(0)) < 4
+            ? table[row].indexOf(digram.charAt(0)) + 1
+            : 0
+        const secondIndex =
+          table[row].indexOf(digram.charAt(1)) < 4
+            ? table[row].indexOf(digram.charAt(1)) + 1
+            : 0
         newDigram = table[row][firstIndex] + table[row][secondIndex]
         pass = true
         break
@@ -135,15 +169,24 @@ const PlayfairCipher: React.FC = () => {
       let secondDigramCharIndex = -1
       const secondDigramCharRow = getRow(digram.charAt(1))
 
-      firstDigramCharIndex = getColumn(table[firstDigramCharRow], digram.charAt(0))
+      firstDigramCharIndex = getColumn(
+        table[firstDigramCharRow],
+        digram.charAt(0)
+      )
 
       if (secondDigramCharRow > -1) {
-        secondDigramCharIndex = getColumn(table[secondDigramCharRow], digram.charAt(1))
+        secondDigramCharIndex = getColumn(
+          table[secondDigramCharRow],
+          digram.charAt(1)
+        )
         // Same column check
         if (firstDigramCharIndex === secondDigramCharIndex) {
           const firstIndex = firstDigramCharRow < 4 ? firstDigramCharRow + 1 : 0
-          const secondIndex = secondDigramCharRow < 4 ? secondDigramCharRow + 1 : 0
-          newDigram = table[firstIndex][firstDigramCharIndex] + table[secondIndex][secondDigramCharIndex]
+          const secondIndex =
+            secondDigramCharRow < 4 ? secondDigramCharRow + 1 : 0
+          newDigram =
+            table[firstIndex][firstDigramCharIndex] +
+            table[secondIndex][secondDigramCharIndex]
           pass = true
         }
       }
@@ -159,31 +202,57 @@ const PlayfairCipher: React.FC = () => {
 
     if (firstDigramCharRow > -1) {
       let secondDigramCharIndex = -1
-      const firstDigramCharIndex = getColumn(table[firstDigramCharRow], digram.charAt(0))
+      const firstDigramCharIndex = getColumn(
+        table[firstDigramCharRow],
+        digram.charAt(0)
+      )
       const secondDigramCharRow = getRow(digram.charAt(1))
 
       // we have a rectangle
       if (secondDigramCharRow > -1) {
         // lower left, top right
-        secondDigramCharIndex = getColumn(table[secondDigramCharRow], digram.charAt(1))
-        if (firstDigramCharRow > secondDigramCharRow && firstDigramCharIndex < secondDigramCharIndex) {
+        secondDigramCharIndex = getColumn(
+          table[secondDigramCharRow],
+          digram.charAt(1)
+        )
+        if (
+          firstDigramCharRow > secondDigramCharRow &&
+          firstDigramCharIndex < secondDigramCharIndex
+        ) {
           pass = true
-          newDigram = table[firstDigramCharRow][secondDigramCharIndex] + table[secondDigramCharRow][firstDigramCharIndex] 
+          newDigram =
+            table[firstDigramCharRow][secondDigramCharIndex] +
+            table[secondDigramCharRow][firstDigramCharIndex]
         }
         // lower right, top left
-        if (firstDigramCharRow > secondDigramCharRow && firstDigramCharIndex > secondDigramCharIndex) {
+        if (
+          firstDigramCharRow > secondDigramCharRow &&
+          firstDigramCharIndex > secondDigramCharIndex
+        ) {
           pass = true
-          newDigram = table[firstDigramCharRow][secondDigramCharIndex] + table[secondDigramCharRow][firstDigramCharIndex] 
+          newDigram =
+            table[firstDigramCharRow][secondDigramCharIndex] +
+            table[secondDigramCharRow][firstDigramCharIndex]
         }
         // top left, lower right
-        if (firstDigramCharRow < secondDigramCharRow && firstDigramCharIndex < secondDigramCharIndex) {
+        if (
+          firstDigramCharRow < secondDigramCharRow &&
+          firstDigramCharIndex < secondDigramCharIndex
+        ) {
           pass = true
-          newDigram = table[firstDigramCharRow][secondDigramCharIndex] + table[secondDigramCharRow][firstDigramCharIndex] 
+          newDigram =
+            table[firstDigramCharRow][secondDigramCharIndex] +
+            table[secondDigramCharRow][firstDigramCharIndex]
         }
         // top right, lower left
-        if (firstDigramCharRow < secondDigramCharRow && firstDigramCharIndex > secondDigramCharIndex) {
+        if (
+          firstDigramCharRow < secondDigramCharRow &&
+          firstDigramCharIndex > secondDigramCharIndex
+        ) {
           pass = true
-          newDigram = table[firstDigramCharRow][secondDigramCharIndex] + table[secondDigramCharRow][firstDigramCharIndex] 
+          newDigram =
+            table[firstDigramCharRow][secondDigramCharIndex] +
+            table[secondDigramCharRow][firstDigramCharIndex]
         }
       }
     }
@@ -196,7 +265,8 @@ const PlayfairCipher: React.FC = () => {
     digrams.forEach((digram: string) => {
       const { pass: isInRow, digram: rowDigram } = testRow(digram)
       const { pass: isInColumn, digram: columnDigram } = testColumn(digram)
-      const { pass: isInRectangle, digram: rectangleDigram } = testRectangle(digram)
+      const { pass: isInRectangle, digram: rectangleDigram } =
+        testRectangle(digram)
       if (isInRow) output.push(rowDigram)
       if (isInColumn) output.push(columnDigram)
       if (isInRectangle) output.push(rectangleDigram)
@@ -205,7 +275,7 @@ const PlayfairCipher: React.FC = () => {
   }
 
   return (
-    <PlayfairBox>  
+    <PlayfairBox>
       <KeyGroup>
         <InputWrapper>
           <Label>
@@ -214,22 +284,18 @@ const PlayfairCipher: React.FC = () => {
           </Label>
           <Label>
             <span>Message:</span>
-            <TextArea
-              onChange={onChangeMessage}
-              value={message}/>
+            <TextArea onChange={onChangeMessage} value={message} />
           </Label>
         </InputWrapper>
         <TableWrapper>
           <PlayfairTable table={table} />
         </TableWrapper>
       </KeyGroup>
-      <Encrypted>
-        {encryptedMessage}
-      </Encrypted>
+      <Encrypted>{encryptedMessage}</Encrypted>
       <LinkWrapper>
         <Link href="http://gooogle.com">See the code 🧑‍💻</Link>
       </LinkWrapper>
-    </PlayfairBox>  
+    </PlayfairBox>
   )
 }
 export default PlayfairCipher

@@ -11,7 +11,9 @@ const PlayfairTable = ({ table }: Props): React.ReactElement => {
     <Table>
       {table.map((row) => (
         <Row key={row.toString()}>
-          {row.map((letter: string) => <PlayfairSquare letter={letter} key={letter} />)}
+          {row.map((letter: string) => (
+            <PlayfairSquare letter={letter} key={letter} />
+          ))}
         </Row>
       ))}
     </Table>

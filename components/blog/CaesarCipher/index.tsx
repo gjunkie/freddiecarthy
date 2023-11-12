@@ -2,10 +2,38 @@ import * as React from 'react'
 import CipherKey from './CipherKey'
 import { CaesarBox, Icon, LinkWrapper, Slider, Text } from './styles'
 
-const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+const alphabet = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+]
 
 const CaesarCipher: React.FC = () => {
-  const originalText = 'Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him. The evil that men do lives after them; The good is oft interred with their bones; So let it be with Caesar. The noble Brutus Hath told you Caesar was ambitious: If it were so, it was a grievous fault, and grievously hath Caesar answer’d it.'
+  const originalText =
+    'Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him. The evil that men do lives after them; The good is oft interred with their bones; So let it be with Caesar. The noble Brutus Hath told you Caesar was ambitious: If it were so, it was a grievous fault, and grievously hath Caesar answer’d it.'
   const [encodedText, setEncodedText] = React.useState('')
   const [rot, setRot] = React.useState(0)
 
@@ -56,11 +84,15 @@ const CaesarCipher: React.FC = () => {
         value={rot}
       />
       <CipherKey rot={rot} />
-      <Text>
-        {encodedText}
-      </Text>
+      <Text>{encodedText}</Text>
       <LinkWrapper>
-        <a href="https://github.com/gjunkie/freddiecarthy/tree/main/components/blog/CaesarCipher" target="_blank" rel="nofollow">See the code 🧑‍💻</a>
+        <a
+          href="https://github.com/gjunkie/freddiecarthy/tree/main/components/blog/CaesarCipher"
+          target="_blank"
+          rel="noreferrer"
+        >
+          See the code 🧑‍💻
+        </a>
       </LinkWrapper>
     </CaesarBox>
   )

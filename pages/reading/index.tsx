@@ -18,8 +18,8 @@ const Reading = () => (
       anything that I&apos;m interested in.
     </p>
     <ul className={styles.bookList}>
-      {bookData.currentlyReading.map((book) => (
-        <li>
+      {bookData.currentlyReading.map((book, i) => (
+        <li key={`${book.title}-${i}`}>
           <strong>{book.title}</strong> - {book.author}
         </li>
       ))}
@@ -29,10 +29,10 @@ const Reading = () => (
       <>
         <h4 className={styles.year}>{year.title}</h4>
         <ul className={styles.bookList}>
-          {year.books.map((book) => (
-            <li>
+          {year.books.map((book, i) => (
+            <li key={`${book.title}-${i}`}>
               <strong>{book.title}</strong> - {book.author}
-              {!!book.reviewUrl ? (
+              {book.reviewUrl != null ? (
                 <>
                   {' '}
                   - <Link href={book.reviewUrl}>review</Link>
@@ -49,8 +49,8 @@ const Reading = () => (
       Books I started reading but didn&apos;t quite get arround to finishing.
     </p>
     <ul className={styles.bookList}>
-      {bookData.unfinished.map((book) => (
-        <li>
+      {bookData.unfinished.map((book, i) => (
+        <li key={`${book.title}-${i}`}>
           <strong>{book.title}</strong> - {book.author}
         </li>
       ))}
@@ -59,8 +59,8 @@ const Reading = () => (
     <h3 className={styles.bookListHeading}>On my list</h3>
     <p className={styles.blurb}>Books I plan on picking up next.</p>
     <ul className={styles.bookList}>
-      {bookData.upNext.map((book) => (
-        <li>
+      {bookData.upNext.map((book, i) => (
+        <li key={`${book.title}-${i}`}>
           <strong>{book.title}</strong> - {book.author}
         </li>
       ))}

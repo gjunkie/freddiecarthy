@@ -6,17 +6,47 @@ type Props = {
   rot: number
 }
 
-const alphabet: Array<string> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+const alphabet: Array<string> = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+]
 
 const CipherKey = (props: Props) => {
-  const { rot } = props;
+  const { rot } = props
 
-  const renderAlphabet = () => (
+  const renderAlphabet = () =>
     alphabet.map((letter: string, index: number) => {
       const emphasisize = index === 12 ? 'emphasisize' : ''
-      return <Letter key={letter} className={emphasisize}>{letter}</Letter>
+      return (
+        <Letter key={letter} className={emphasisize}>
+          {letter}
+        </Letter>
+      )
     })
-  )
 
   const renderPair = () => {
     const alphabetClone: Array<string> = [...alphabet]
@@ -27,18 +57,18 @@ const CipherKey = (props: Props) => {
     }
     return alphabetClone.map((letter: string, index: number) => {
       const emphasisize = index === 12 ? 'emphasisize' : ''
-      return <KeyLetter key={index} className={emphasisize}>{letter}</KeyLetter>
+      return (
+        <KeyLetter key={index} className={emphasisize}>
+          {letter}
+        </KeyLetter>
+      )
     })
   }
 
   return (
     <React.Fragment>
-      <Alphabet>
-        {renderAlphabet()}
-      </Alphabet>
-      <Alphabet>
-        {renderPair()}
-      </Alphabet>
+      <Alphabet>{renderAlphabet()}</Alphabet>
+      <Alphabet>{renderPair()}</Alphabet>
     </React.Fragment>
   )
 }

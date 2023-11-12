@@ -3,27 +3,29 @@ import PropTypes from 'prop-types'
 import { useTheme } from '../../contexts/ThemeContext'
 
 type Props = {
-  title: string,
-};
+  title: string
+}
 
-import {
-  StyledContainer
-} from './styles';
+import { StyledContainer } from './styles'
 
-export const TweetCTA: React.FC<Props> = ({
-  title,
-}) => {
+export const TweetCTA: React.FC<Props> = ({ title }) => {
   const theme = useTheme()
   const share = () => {
-    var url ="https://twitter.com/share?url=" + encodeURIComponent(document.location.href);
-    var text = encodeURIComponent(`${title} by @freddiecarthy`);
-    window.open(url + "&text=" + text);
+    const url =
+      'https://twitter.com/share?url=' +
+      encodeURIComponent(document.location.href)
+    const text = encodeURIComponent(`${title} by @freddiecarthy`)
+    window.open(url + '&text=' + text)
   }
 
   return (
     <StyledContainer className={theme}>
       <h3>
-        Thanks for reading! <span onClick={share} role="button">Share this post on Twitter</span> if you enjoyed it!
+        Thanks for reading!{' '}
+        <span onClick={share} role="button">
+          Share this post on Twitter
+        </span>{' '}
+        if you enjoyed it!
       </h3>
     </StyledContainer>
   )

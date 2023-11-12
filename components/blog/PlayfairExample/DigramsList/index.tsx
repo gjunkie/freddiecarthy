@@ -1,11 +1,8 @@
 import * as React from 'react'
-import {
-  Digram,
-  Digrams,
-} from './styles'
+import { Digram, Digrams } from './styles'
 
 type Props = {
-  activeDigramIndex?: number,
+  activeDigramIndex?: number
   digrams: Array<string>
   onHoverDigram?: (index: number) => void
 }
@@ -13,11 +10,11 @@ type Props = {
 export const DigramsList: React.FC<Props> = ({
   activeDigramIndex,
   digrams,
-  onHoverDigram
+  onHoverDigram,
 }) => {
   const handleDigramHover = (index: number) => {
     if (typeof onHoverDigram === 'function') {
-      onHoverDigram(index) 
+      onHoverDigram(index)
     }
   }
 
@@ -28,7 +25,7 @@ export const DigramsList: React.FC<Props> = ({
           className={index === activeDigramIndex ? 'active' : ''}
           key={`${digram}-${index}`}
           onMouseEnter={() => handleDigramHover(index)}
-          >
+        >
           {digram}
         </Digram>
       ))}
