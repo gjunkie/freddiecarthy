@@ -125,7 +125,7 @@ const Kit = () => {
             projects.
           </dd>
 
-          <dt>iPhone 12 Pro</dt>
+          <dt>iPhone 14 Pro</dt>
           <dd>
             I've been an iPhone user since the introduction of the original in
             2007. I will never switch so long as I can afford not to.
@@ -134,14 +134,14 @@ const Kit = () => {
           <dt>AirPods Pro</dt>
           <dd>My primary use for these nowadays is for work.</dd>
 
-          <dt>Dell 27" LED QHD Monitor</dt>
+          <dt>Dell 31" UltraSharp 4K Monitor</dt>
           <dd>
             I'm not a four monitor workstation kind of guy. I like as few
             distractions as possible. One good quality monitor showing me one
             thing at a time; a browser, a terminal, etc.
           </dd>
 
-          <dt>Logitech MX Master 2S Mouse</dt>
+          <dt>Logitech MX Master 3S Mouse</dt>
           <dd>A comfortable and highliy configurable desk companion.</dd>
 
           <dt>UPLIFT 60" Standing Desk</dt>
@@ -163,26 +163,17 @@ const Kit = () => {
 
         <h3 className={styles.subheading}>Software</h3>
         <dl className={styles.gear}>
-          <dt>Vim</dt>
+          <dt>NeoVim</dt>
           <dd>
-            I feel a deep sense of pride in using Vim. When I started my career
-            I didn't really have a preference in which tool I used for editing
-            code and I largely followed the my manager's lead. He used Vim so I
-            thought it must be good. I started using it and quickly fell in
+            I feel a deep sense of pride in using NeoVim. When I started my
+            career I didn't really have a preference on which tool I used for
+            editing code and I largely followed my manager's lead. He used Vi so
+            I thought it must be good. I started using it and quickly fell in
             love. Why do I love it? For starters it is a tool that does one
-            thing and does it well; editing text. Ultimately this is what my job
-            is. However it is highly configurable. I'm tinkerer. I love tweaking
-            it, adding to it, taking stuff away just to get the perfect
-            environment.
-          </dd>
-
-          <dt>VimWiki</dt>
-          <dd>
-            I'm still trying to find the perfect note taking and organization
-            workflow. Being a software engineer and Vim user I spend a lot of
-            time in the Terminal so I need not only quick ways to capture
-            thoughts, but also easy ways to organize and navigate those notes.
-            VimWiki is my current attempt at solving this.
+            thing and does it well; editing text. Ultimately this is what a
+            large part of my job is. However it is highly configurable. I'm
+            tinkerer. I love tweaking it, adding to it, taking stuff away just
+            to get the perfect environment.
           </dd>
 
           <dt>Things 3</dt>
@@ -196,9 +187,11 @@ const Kit = () => {
           <dt>Slack</dt>
           <dd>There's no better communication tool for me.</dd>
 
-          <dt>Apple Music</dt>
+          <dt>Spotify</dt>
           <dd>
-            Apple user through and through.{' '}
+            I'm an Apple user through and through. Once I started working at
+            Spotify I switched over to see what all the fuss was about. The algo
+            is just miles ahead!{' '}
             <Link href="/listening">Check out my Listening page</Link> for some
             of my influences.
           </dd>
@@ -208,9 +201,6 @@ const Kit = () => {
             My primary method of news consumption is via RSS and I've been using
             Reeder since the original release many years ago.
           </dd>
-
-          <dt>Twitter</dt>
-          <dd>❤️</dd>
 
           <dt>Fantastical</dt>
           <dd>One of the best calendar apps I've used.</dd>

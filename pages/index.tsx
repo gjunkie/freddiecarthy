@@ -78,9 +78,10 @@ const Home = () => (
             I've been working as a Software Engineer since 2010. I'm currently
             working as a{' '}
             <span className={styles.highlightOne}>
-              Senior Software Engineer @Twitter
+              Senior Web Engineer as Spotify 🎧
             </span>
-            . Previously I've worked at Discovery Networks, Nike, and Opal Labs.
+            . Previously I've worked at Twitter, Discovery Networks, Nike, and
+            Opal Labs.
           </p>
 
           <div className={styles.firstArrow}>
