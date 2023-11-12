@@ -19,22 +19,21 @@ export const Header = () => {
       <header className={styles.header}>
         <div className={styles.wrapper}>
           <div className={styles.titleWrapper}>
-            <Link href="/">
-              <a className={styles.title}>Freddie Carthy</a>
+            <Link href="/" className={styles.title}>
+              Freddie Carthy
             </Link>
           </div>
           <nav className={styles.navigation}>
             <ul className={styles.navList}>
               {menu.map((item, index) => (
                 <li className={styles.navItem} key={index}>
-                  <Link href={item.path}>
-                    <a
-                      className={
-                        router.pathname == item.path ? styles.active : ''
-                      }
-                    >
-                      {item.title}
-                    </a>
+                  <Link
+                    href={item.path}
+                    className={
+                      router.pathname == item.path ? styles.active : ''
+                    }
+                  >
+                    {item.title}
                   </Link>
                 </li>
               ))}

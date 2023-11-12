@@ -1,18 +1,20 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = [{
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}, {
-  webpack(config, options) {
+  compiler: {
+    styledComponents: true,
+  },
+  webpack: (config, options) => {
     config.module.rules.push({
       test: /\.ogg$/,
       use: {
         loader: 'file-loader',
       },
-    });
-    return config;
+    })
+    return config
   },
-}]
+}
 
 module.exports = nextConfig
 

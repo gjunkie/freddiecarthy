@@ -1,14 +1,12 @@
-import * as React from "react"
-import Highlight, { defaultProps, Language } from "prism-react-renderer"
-import darkTheme from "prism-react-renderer/themes/nightOwl"
-import lightTheme from "prism-react-renderer/themes/nightOwlLight"
+import * as React from 'react'
+import Highlight, { Language, themes } from 'prism-react-renderer'
 import { useTheme } from '../../contexts/ThemeContext'
 
 type Props = {
-  codeString: string,
-  language: Language,
+  codeString: string
+  language: Language
   metastring: string
-};
+}
 
 const RE = /{([\d,-]+)}/
 
@@ -18,12 +16,12 @@ const calculateLinesToHighlight = (meta: string) => {
   }
   const match = RE.exec(meta)
 
-  const lineNumbers = match && match[1]
-    .split(`,`)
-    .map(v => v.split(`-`).map(x => parseInt(x, 10)))
+  const lineNumbers =
+    match &&
+    match[1].split(`,`).map((v) => v.split(`-`).map((x) => parseInt(x, 10)))
 
   if (lineNumbers === null) {
-    return () => false;
+    return () => false
   }
 
   return (index: number) => {
@@ -36,20 +34,16 @@ const calculateLinesToHighlight = (meta: string) => {
 }
 
 export const CodeBlock = (props: Props) => {
-  const { codeString, language, metastring } = props;
+  const { codeString, language, metastring } = props
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
   const theme = useTheme()
 
-  const codeTheme = theme === 'light-mode' ? darkTheme : lightTheme
+  const codeTheme =
+    theme === 'light-mode' ? themes.nightOwl : themes.nightOwlLight
 
   return (
     // @ts-ignore:next-line
-    <Highlight
-      {...defaultProps}
-      code={codeString}
-      theme={codeTheme}
-      {...props}
-    >
+    <Highlight code={codeString} theme={codeTheme} {...props}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div className="code-highlight" data-language={language}>
           <pre className={className} style={style}>

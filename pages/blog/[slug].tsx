@@ -5,11 +5,8 @@ import Link from 'next/link'
 import CaesarCipher from '../../components/blog/CaesarCipher'
 import { getPostdata } from '../../lib/posts'
 import matter from 'gray-matter'
-// @ts-ignore:next-line
-import renderToString from 'next-mdx-remote/render-to-string'
-// @ts-ignore:next-line
-import hydrate from 'next-mdx-remote/hydrate'
-// @ts-ignore:next-line
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 import sha256 from 'crypto-js/sha256'
 import { format, parseISO } from 'date-fns'
 
@@ -54,7 +51,6 @@ const components = {
 
 const PostPage = (props: PostProps) => {
   const { address, likes, meta, source } = props
-  const content = hydrate(source, { components })
 
   return (
     <>
@@ -98,7 +94,7 @@ const PostPage = (props: PostProps) => {
 
       <main>
         <BlogPost
-          content={content}
+          content={<MDXRemote {...source} components={components} />}
           date={meta.date}
           image={meta.image}
           imageAttribution={meta.attribution}
@@ -140,7 +136,7 @@ export async function getServerSideProps(ctx: any) {
     slug: ctx.params.slug,
   }
 
-  const mdxSource = await renderToString(content, { components })
+  const mdxSource = await serialize(content)
 
   return {
     props: {
