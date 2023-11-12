@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledContainer = styled.div`
   text-align: center;
@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
   }
 
   span {
-    color: #1D9BF0;
+    color: #1d9bf0;
     border-bottom: 1px solid;
   }
 

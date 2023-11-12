@@ -37,8 +37,7 @@ export const Input = styled.input`
   width: 100%;
 `
 
-export const InputWrapper = styled.div`
-`
+export const InputWrapper = styled.div``
 
 export const Label = styled.label`
   display: block;

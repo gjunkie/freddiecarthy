@@ -18,10 +18,10 @@ export const Letter = styled.li`
   height: 27px;
   width: 27px;
   &.emphasisize {
-    transform: scale(1.7)
+    transform: scale(1.7);
   }
   @media (max-width: 800px) {
-    &:nth-child(n+9) {
+    &:nth-child(n + 9) {
       display: none;
     }
   }
@@ -38,10 +38,10 @@ export const KeyLetter = styled.li`
   height: 27px;
   width: 27px;
   &.emphasisize {
-    transform: scale(1.7)
+    transform: scale(1.7);
   }
   @media (max-width: 800px) {
-    &:nth-child(n+9) {
+    &:nth-child(n + 9) {
       display: none;
     }
   }

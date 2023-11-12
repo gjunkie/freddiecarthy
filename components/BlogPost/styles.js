@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const PageTitle = styled.h1`
   margin: 100px 0 25px;
@@ -22,7 +22,7 @@ export const HeroImage = styled.img`
   width: 100%;
 `
 export const ReadingTimeStyles = styled.div`
-  ${props => {
+  ${(props) => {
     if (props.theme === 'light') {
       return `
         color: #757575;
@@ -36,7 +36,7 @@ export const ReadingTimeStyles = styled.div`
   }}
 `
 export const DateStyles = styled.div`
-  ${props => {
+  ${(props) => {
     if (props.theme === 'light') {
       return `
         color: #353535;
@@ -52,8 +52,8 @@ export const Article = styled.article`
   flex-direction: column;
 
   a {
-    border-bottom-color: #2DE2E6;
-    color: #2DE2E6;
+    border-bottom-color: #2de2e6;
+    color: #2de2e6;
   }
 
   a:hover {

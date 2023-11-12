@@ -6,12 +6,11 @@ import { Moon } from '../icons/Moon'
 
 import styles from './ThemeToggle.module.css'
 
-export const ThemeToggle = ({
-  onClick,
-}) => {
+export const ThemeToggle = ({ onClick }) => {
   const theme = useTheme()
-  const ariaLabel = theme === 'light-mode' ? 'Switch to dark mode' : 'Switch to light mode';
-  const Icon = theme === 'light-mode' ? Moon : Sun;
+  const ariaLabel =
+    theme === 'light-mode' ? 'Switch to dark mode' : 'Switch to light mode'
+  const Icon = theme === 'light-mode' ? Moon : Sun
 
   React.useEffect(() => {
     document.body.classList.remove('dark-mode', 'light-mode')
@@ -23,10 +22,11 @@ export const ThemeToggle = ({
       className={`${styles.themeToggle} ${styles[theme]}`}
       onClick={onClick}
       aria-label={ariaLabel}
-      type="button">
+      type="button"
+    >
       <Icon />
     </button>
-  ) 
+  )
 }
 
 ThemeToggle.propTypes = {

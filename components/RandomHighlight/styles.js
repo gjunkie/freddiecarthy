@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledSpan = styled.span`
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 
   a {
-    border-bottom: 1px solid ${props => props.color};
+    border-bottom: 1px solid ${(props) => props.color};
   }
 `
