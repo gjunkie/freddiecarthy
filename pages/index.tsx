@@ -6,7 +6,7 @@ import { getSortedPosts } from '../lib/posts'
 import { generateRSSFeed } from '../lib/rss'
 
 import styles from '../styles/index.module.css'
-import { BlogPostProps } from '../components/BlogTag'
+import { BlogPostProps } from '../types'
 
 const Home = () => (
   <>

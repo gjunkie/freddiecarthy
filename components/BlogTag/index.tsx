@@ -1,15 +1,7 @@
 import * as React from 'react'
 import { GetStaticPropsContext } from 'next'
 import { getSortedPosts, getTags } from '../../lib/posts'
-
-export type BlogPostProps = {
-  content: React.ReactNode
-  date: string
-  image: string
-  imageAttribution: string
-  imageLink: string
-  title: string
-}
+import { BlogPostProps } from '../../types'
 
 export const BlogTag = (props: BlogPostProps) => {
   const { content, title } = props

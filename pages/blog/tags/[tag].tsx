@@ -6,7 +6,7 @@ import styles from '../../../styles/blog.module.css'
 
 import { getSortedPosts, getTags } from '../../../lib/posts'
 import { GetStaticPropsContext } from 'next'
-import { BlogPostProps } from '../../../components/BlogTag'
+import { BlogPostProps } from '../../../types'
 
 type PostProps = {
   posts: Array<BlogPostProps>
