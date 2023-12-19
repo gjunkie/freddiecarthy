@@ -76,8 +76,8 @@ const Home = () => (
       <div className={styles.copyGroup}>
         <div className={styles.paragraphContainer}>
           <p className={styles.copy}>
-            I've been working as a Software Engineer since 2010. I'm currently
-            working as a{' '}
+            I've been working as a Software Engineer since 2010. I was most
+            recently working as a{' '}
             <span className={styles.highlightOne}>
               Senior Web Engineer as Spotify 🎧
             </span>
